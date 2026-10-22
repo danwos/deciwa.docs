@@ -1,0 +1,315 @@
+# All decisions
+
+Product and technical decisions on deciwa. All decided by Daniel; they are
+binding requirements for every feature and every piece of code. Business
+decisions (pricing, licence, market) are kept outside this repository.
+
+A new decision comes from an approved proposal in the technical details – see
+[Working on deciwa](../technical/working.md).
+
+```{needtable}
+:types: dec
+:columns: id, title, decided
+:sort: decided
+:style: table
+```
+
+## Purpose and scope
+
+```{dec} deciwa is a review and decision tool for everyone who works with docs and code
+:id: DEC_PURPOSE
+:status: approved
+:decided: 2026-10-17
+:reason: Daniel needs a simple way to review content and agree to statements (trigger: his own work in his knowledge base).
+:alternatives: a decision log only; a tool for one group (developers, AI agents or management).
+```
+
+```{dec} deciwa collects, evaluates and shows; it does not watch that decisions are kept
+:id: DEC_NO_ENFORCING
+:status: approved
+:decided: 2026-10-17
+:reason: Enforcing decisions is not possible; doing the work is the job of the AI or the developer.
+:alternatives: a "watcher" that checks the implementation (dropped).
+```
+
+```{dec} Three ways of working that stay separate: feedback, quality rating, AI communication
+:id: DEC_THREE_MODES
+:status: approved
+:decided: 2026-10-18
+:reason: Stars are a quick judgement independent of any verdict, to focus on weak areas later; AI questions are answered at the element by verdict or text.
+:alternatives: stars as part of a verdict.
+```
+
+## Feedback and decisions
+
+```{dec} The feedback card has four verdicts – approve, reject, approve & freeze, delete – plus a comment; a comment alone is a note; quality is rated with 0–5 stars
+:id: DEC_CARD_VERDICTS
+:status: approved
+:decided: 2026-10-19
+:reason: Seen in the prototype: seven three-line buttons were too big; what should change about a text is said better in the comment than with rephrase or more-details buttons; a note is just a comment without verdict; quality needs a clear scale with keys.
+:alternatives: the seven buttons of the clickable prototype (approve, rephrase, more details, delete, freeze, reject, note) and 1–5 stars.
+```
+
+```{dec} A freeze ends with a new verdict; there is no separate "lift freeze"
+:id: DEC_FREEZE_BY_VERDICT
+:status: approved
+:decided: 2026-10-19
+:reason: Approving an element again replaces one's own freeze anyway (latest verdict wins while the element is unchanged); a second way to lift it only confuses.
+:alternatives: an explicit unfreeze command for humans only; deleting the freeze annotation.
+```
+
+```{dec} Feedback verdicts plus quick actions for the AI
+:id: DEC_VERDICTS
+:status: approved
+:decided: 2026-10-17
+:reason: Approve, reject, note and the quick actions rephrase, more details and delete give the AI a complete instruction with one click.
+:alternatives: free comments only.
+```
+
+```{dec} New verdict freeze
+:id: DEC_FREEZE
+:status: approved
+:decided: 2026-10-17
+:reason: Some wording must survive every edit; the AI must never change it, and deciwa raises an alarm if it changes anyway.
+:alternatives: –
+```
+
+```{dec} A decision is an approved statement, not an extra object
+:id: DEC_DECISION_IS_APPROVAL
+:status: approved
+:decided: 2026-10-17
+:reason: Decisions can then be mapped onto anything that is an element.
+:alternatives: separate decision records in the source.
+```
+
+## Elements and formats
+
+```{dec} No markers in the source; elements come from the content
+:id: DEC_NO_MARKERS
+:status: approved
+:decided: 2026-10-17
+:reason: The source stays clean and every element stays documented (a Sphinx-Needs requirement, a heading, a Python function, an HTML container, a selected word).
+:alternatives: [CHECK]-style markers or ids in the text.
+```
+
+```{dec} deciwa replaces the [CHECK] markers in Daniel's knowledge base
+:id: DEC_REPLACES_CHECK
+:status: approved
+:decided: 2026-10-22
+:reason: A question at the element with addressee and state replaces a marker in the text ({need}`DEC_NO_MARKERS`); open questions show up in every integration instead of being searched with `rg`.
+:alternatives: keeping `[CHECK]` beside deciwa.
+```
+
+```{dec} Formats: text, HTML, Python, C, JS, TS, rST, Markdown, AsciiDoc
+:id: DEC_FORMATS
+:status: approved
+:decided: 2026-10-17
+:reason: Docs-as-code plus the results and code around it.
+:alternatives: Markdown only.
+```
+
+```{dec} Format objects are highlighted on hover and directly selectable; free text selection down to single words
+:id: DEC_HOVER_SELECT
+:status: approved
+:decided: 2026-10-17
+:reason: Pointing must be as fast as looking.
+:alternatives: line-based selection like a code review.
+```
+
+```{dec} Reviews happen on results, not only on source
+:id: DEC_REVIEW_ON_RESULTS
+:status: approved
+:decided: 2026-10-17
+:reason: Rendered docs and websites are what reviewers see; deciwa must not look like a pull-request code review. The source view shows the same element.
+:alternatives: source-only review.
+```
+
+## Architecture and data
+
+```{dec} The CLI is the master, with an openly documented file format
+:id: DEC_CLI_MASTER
+:status: approved
+:decided: 2026-10-17
+:reason: One logic for all front ends; agents and integrations use the same commands and JSON.
+:alternatives: a web app as the core.
+```
+
+```{dec} All deciwa files in one .deciwa/ folder at the repository root or in a parent folder
+:id: DEC_DECIWA_FOLDER
+:status: approved
+:decided: 2026-10-17
+:reason: The files must not get in the user's way; a parent folder covers several repositories or repositories that must stay untouched.
+:alternatives: sidecar files next to each source.
+```
+
+```{dec} .deciwa/ is committed to Git by default
+:id: DEC_GIT_COMMITTED
+:status: approved
+:decided: 2026-10-17
+:reason: Reviews are versioned together with the content.
+:alternatives: git-ignored until a team decides.
+```
+
+```{dec} One or two agent skills for working with deciwa
+:id: DEC_SKILLS
+:status: approved
+:decided: 2026-10-17
+:reason: Agents should pick up feedback and ask questions without extra prompting (deciwa-work, deciwa-ask).
+:alternatives: –
+```
+
+```{dec} Host apps get deciwa as an extension that lives in this repository; the host only offers generic extension points
+:id: DEC_HOST_EXTENSIONS
+:status: approved
+:decided: 2026-10-22
+:reason: deciwa is developed here only; a host such as monsterbrain or VS Code must not carry a copy of deciwa code. The same server API and overlay serve every host, only a thin adapter differs.
+:alternatives: copying the overlay and a port of the engine into the host; a deciwa integration built into the host.
+```
+
+```{dec} The Python parts can be shipped as a standalone binary that host apps bundle
+:id: DEC_STANDALONE_ENGINE
+:status: approved
+:decided: 2026-10-22
+:reason: monsterbrain will be distributed and the VS Code extension must work without Python on the machine; users install one app, not a Python environment.
+:alternatives: Python and `uv tool install deciwa` as a prerequisite for every host; a TypeScript port of the core.
+```
+
+```{dec} A host talks to deciwa serve --api-only: the JSON API for one folder, no build, token and handshake, stops with the host
+:id: DEC_SERVE_API_ONLY
+:status: approved
+:decided: 2026-10-22
+:reason: A host renders the content itself and only needs the engine's logic; port 0 and a token keep several hosts and other local pages apart; closing stdin ends the engine, so it never outlives its host.
+:alternatives: the full `deciwa serve` with a built site; the engine as a Python library inside the host.
+```
+
+```{dec} In a host the overlay gets its elements from the engine's adapter, matched to the blocks the host marks with their source line
+:id: DEC_HOST_ELEMENTS
+:status: approved
+:decided: 2026-10-22
+:reason: The host renders, the adapter knows the elements – feedback gets the same selectors as in the CLI, so `deciwa todo` points at the source line. Rendered HTML files keep the DOM scan with the file path as source.
+:alternatives: a DOM scan of the host's rendering (other selectors than the CLI); the host sending its own element list.
+```
+
+```{dec} One TypeScript client for all hosts finds, starts and checks the engine and calls its API
+:id: DEC_CLIENT_PACKAGE
+:status: approved
+:decided: 2026-10-22
+:reason: monsterbrain and VS Code need the same engine handling; only the adapter that puts the results into the host's UI differs.
+:alternatives: every host adapter talking to the engine on its own.
+```
+
+```{dec} Python source is reviewed per class, function, method and statement outside functions, read with the standard library ast
+:id: DEC_PYTHON_ADAPTER
+:status: approved
+:decided: 2026-10-22
+:reason: Code repositories are reviewed in monsterbrain next to the knowledge base; ast gives exact line ranges without a new dependency. The Python adapter moves up from 0.4; JS, TS and C follow with tree-sitter.
+:alternatives: tree-sitter for all languages at once (more dependencies, a bigger standalone engine); review of single lines only.
+```
+
+```{dec} HTML files are read by an adapter in the engine, with source lines; the rendered page and the source view share its elements
+:id: DEC_HTML_ADAPTER
+:status: approved
+:decided: 2026-10-22
+:reason: HTML results in a knowledge base are reviewed both as a page and as code; with source lines from the engine, feedback on the page points at the source and `deciwa todo` names the line. It follows the rules of the browser's DOM scan, so the selectors stay the same.
+:alternatives: the DOM scan of the rendered page only (no source lines, no review of the code).
+```
+
+```{dec} A fact is a structural block of a facts file – a list item, a table row or a free paragraph – not a meaning found in the text
+:id: DEC_FACT_BLOCKS
+:status: approved
+:decided: 2026-10-22
+:reason: The selectors and fingerprints of the Markdown adapter make every block reviewable without markup, the same on every run; an AI that finds the facts by meaning cuts differently each time and approvals lose their anchor. The brain is written in bullets and tables already, with one fact per list item as the writing rule. A facts file can also be approved as a whole; that approval gets stale on any change in the file, while the approvals of its facts stay per fact.
+:alternatives: a whole section as one fact (fewer, coarser approvals); explicit markup with an id per fact; facts extracted by AI.
+```
+
+```{dec} JSON and YAML files are reviewed value by value; selectors are JSON Pointers
+:id: DEC_DATA_ADAPTERS
+:status: approved
+:decided: 2026-10-22
+:reason: Data files – design tokens, configs, `needs.json`, exports – are results too. Every value is an element, leaves included: the document, every object member and every array item. Selectors are JSON Pointers (RFC 6901) with the index for array items; there are no rules that depend on the data (no id fields, no special views for known files). An item that moves when something is inserted in front keeps its review because the engine follows moved elements, for every format. Only standard JSON (no JSON Lines, no JSONC) and the first document of a YAML file.
+:alternatives: id fields to name array items (data-dependent); special views for `needs.json` or tokens; review by line only.
+```
+
+```{dec} monsterbrain is the first host, before VS Code
+:id: DEC_HOST_ORDER
+:status: approved
+:decided: 2026-10-22
+:reason: Daniel uses monsterbrain daily on his knowledge base, the first use of deciwa; it tests the API server, the host element source and the client that VS Code needs later.
+:alternatives: VS Code first.
+```
+
+## UI and integrations
+
+```{dec} Integrations: VS Code, Chrome, Claude UI, desktop app
+:id: DEC_INTEGRATIONS
+:status: approved
+:decided: 2026-10-17
+:reason: Reviews happen where people already work – editor, browser, chat; the desktop app covers people without an IDE.
+:alternatives: –
+```
+
+```{dec} Feedback card at the element is the default UI; side panel is the alternative; radial menu dropped
+:id: DEC_FEEDBACK_CARD
+:status: approved
+:decided: 2026-10-17
+:reason: Compared in the clickable prototype.
+:alternatives: radial menu at the cursor.
+```
+
+```{dec} deciwa uses the danwos colours and tokens
+:id: DEC_DANWOS_TOKENS
+:status: approved
+:decided: 2026-10-17
+:reason: Recognition across all danwos tools; the deciwa monster colours are only for pictures.
+:alternatives: an own deciwa colour scheme.
+```
+
+```{dec} The web script comes as 0.2, before VS Code
+:id: DEC_WEB_SCRIPT_FIRST
+:status: approved
+:decided: 2026-10-20
+:reason: The first real use is the danwos website; the Chrome extension builds on the same script.
+:alternatives: the web script as part of the Chrome extension in 0.3.
+```
+
+```{dec} One script tag is enough – deciwa always appears where it is loaded
+:id: DEC_WEB_ONE_LINE
+:status: approved
+:decided: 2026-10-20
+:reason: Quick integration and tests without prior knowledge; every setting is optional, hiding deciwa behind `?deciwa` is an opt-in.
+:alternatives: `?deciwa` in the address as the only way to load it.
+```
+
+```{dec} The web script is hosted with the docs under deciwa.danwos.dev/js/<version>/
+:id: DEC_WEB_HOSTING
+:status: approved
+:decided: 2026-10-20
+:reason: The docs workflow already publishes deciwa.danwos.dev; versioned paths allow pinning.
+:alternatives: npm with jsDelivr.
+```
+
+```{dec} Mapping pages to source files is optional; the address is the fallback
+:id: DEC_WEB_SOURCE
+:status: approved
+:decided: 2026-10-20
+:reason: deciwa must work without a configuration file; a mapping added later must not lose feedback.
+:alternatives: a required `deciwa-source` meta tag on every page.
+```
+
+## Working on deciwa
+
+```{dec} deciwa is one repository of separate packages: core, server, CLI, UI and one per integration
+:id: DEC_PACKAGES
+:status: approved
+:decided: 2026-10-20
+:reason: The CLI and the server are reused by every integration; the logic stays in one place (core); integrations such as Sphinx, VS Code or Chrome stay independent of each other.
+:alternatives: one package with everything (the first prototype, deciwa_proto).
+```
+
+```{dec} Decisions, features and concepts live in the repository as Sphinx docs with Sphinx-Needs
+:id: DEC_DOCS_IN_REPO
+:status: approved
+:decided: 2026-10-19
+:reason: Others develop in the repository too, and decisions act as requirements; Sphinx-Needs gives every decision an id, a status and links, and deciwa can later review its own docs.
+:alternatives: decisions in Daniel's knowledge base only; MkDocs Material (plain text without ids or traceability).
+```

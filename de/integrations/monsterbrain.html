@@ -1,0 +1,452 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html"><link rel="next" title="Desktop-App" href="desktop.html"><link rel="prev" title="Claude" href="claude.html">
+        <link rel="canonical" href="https://deciwa.danwos.dev/de/integrations/monsterbrain.html">
+        <link rel="prefetch" href="../_static/deciwa.webp" as="image">
+
+    <link rel="shortcut icon" href="../_static/logo.svg"><!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>monsterbrain - deciwa</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/deciwa-overlay.css?v=72f4c4c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_core.css?v=f5b60a78" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_links.css?v=2150a916" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_style.css?v=92936fa5" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_toggle.css?v=5c6620df" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/needstable.css?v=7b67799e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/modern.css?v=c1bc121d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/danwos.css?v=d2269ede" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #0F766E;
+  --color-brand-content: #0F766E;
+  --color-brand-visited: #0F766E;
+  --color-background-primary: #FFFFFF;
+  --color-foreground-primary: #1B1A22;
+  --font-stack: Inter, system-ui, sans-serif;
+  --font-stack--monospace: 'JetBrains Mono', ui-monospace, monospace;
+  --font-stack--headings: 'Bricolage Grotesque', Inter, system-ui, sans-serif;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #14B8A6;
+  --color-brand-content: #14B8A6;
+  --color-brand-visited: #14B8A6;
+  --color-background-primary: #0D1B2A;
+  --color-background-secondary: #0A1622;
+  --color-foreground-primary: #E8EDF3;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #14B8A6;
+  --color-brand-content: #14B8A6;
+  --color-brand-visited: #14B8A6;
+  --color-background-primary: #0D1B2A;
+  --color-background-secondary: #0A1622;
+  --color-foreground-primary: #E8EDF3;
+  
+      }
+    }
+  }
+</style>
+
+<link rel="alternate" hreflang="en" href="https://deciwa.danwos.dev/integrations/monsterbrain.html">
+<link rel="alternate" hreflang="de" href="https://deciwa.danwos.dev/de/integrations/monsterbrain.html">
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">deciwa</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered dw-brand" href="../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/deciwa.webp" alt=""/>
+  </div>
+  <span class="dw-brand-name">deciwa</span>
+  <span class="dw-brand-slogan">decision watcher</span>
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<nav class="dw-languages" aria-label="Language">
+  <a href="../../integrations/monsterbrain.html" hreflang="en" lang="en">English</a>
+  <span aria-current="true" lang="de">Deutsch</span>
+</nav><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Produkt</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Was deciwa ist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/ways-of-working.html">Drei Arbeitsweisen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/elements.html">Was du reviewen kannst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/review-rules.html">Was freigegeben werden muss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/ui.html">Die Review-Oberfläche</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/cli.html">CLI und Agent-Skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/data.html">Wo Reviews gespeichert werden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/roadmap.html">Roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Integrationen</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Integrationen im Überblick</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="sphinx/index.html">Sphinx</a><input aria-label="Toggle navigation of Sphinx" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx/configuration.html">Konfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx/workflow.html">Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="web.html">Web-Skript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vscode.html">VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chrome.html">Chrome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="claude.html">Claude</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">monsterbrain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="desktop.html">Desktop-App</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Entscheidungen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../decisions/index.html">Alle Entscheidungen</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technische Details</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical/index.html">Technischer Überblick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/stack.html">Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/layers.html">Schichten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/adapters.html">Adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/file-format.html">Dateiformat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/state-engine.html">Zustands-Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/web.html">Web-Skript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/skills.html">Agent-Skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/rollout.html">Einführung in der Wissensbasis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/hosts.html">Host-Apps und die eigenständige Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/questions.html">Offene Fragen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/working.html">An deciwa arbeiten</a></li>
+</ul>
+
+</div></div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="dw-el-1" id="monsterbrain">
+<h1>monsterbrain<a class="headerlink" href="#monsterbrain" title="Link to this heading">¶</a></h1>
+<p class="dw-el-2"><em>Verfügbar für Entwicklungs-Setups – technische Details: <a class="reference internal" href="../technical/hosts.html"><span class="std std-doc">Host-Apps</span></a>.</em></p>
+<p class="dw-el-3">monsterbrain ist die Desktop-App von danwos, um den Überblick über einen Wissensordner zu behalten: Dateibaum, die Datei passend zu ihrem Typ dargestellt, Links und Metadaten und eine Änderungsansicht, die zeigt, was Agenten geändert haben. deciwa ergänzt das Review:</p>
+<ul class="simple">
+<li class="dw-el-4"><p><strong>Review an der dargestellten Datei</strong> – Markdown, HTML und die neue Seite eines Diffs bekommen dieselben Balken, dieselbe Karte und dieselben Tasten wie im Browser,</p></li>
+<li class="dw-el-5"><p><strong>Review am Quelltext</strong> – Python-Dateien und der Quelltext von Markdown- und HTML-Dateien, Element für Element,</p></li>
+<li class="dw-el-6"><p><strong>Review auf Daten</strong> – JSON- und YAML-Dateien als Baum, Wert für Wert,</p></li>
+<li class="dw-el-7"><p><strong>Zustand im Baum und in der Änderungsansicht</strong> – jede Datei zeigt, wie viel davon offen, freigegeben, veraltet oder eingefroren ist und welche Fragen auf eine Antwort warten,</p></li>
+<li class="dw-el-8"><p><strong>Feedback der aktiven Datei</strong> im rechten Bereich von monsterbrain,</p></li>
+<li class="dw-el-9"><p><strong>die Fakten-Ansicht</strong> – jedes Fakt der Faktendateien mit seinem Zustand, einzeln freigegeben oder eine ganze Datei auf einmal (<a class="reference internal" href="../decisions/index.html#DEC_FACT_BLOCKS" title="DEC_FACT_BLOCKS"><em class="xref need">Ein Fakt ist ein Block eine... (DEC_FACT_BLOCKS)</em></a>),</p></li>
+<li class="dw-el-10"><p><strong>Fragen statt <code class="docutils literal notranslate"><span class="pre">[CHECK]</span></code>-Markierungen</strong> (<a class="reference internal" href="../decisions/index.html#DEC_REPLACES_CHECK" title="DEC_REPLACES_CHECK"><em class="xref need">deciwa ersetzt die [CHECK]-... (DEC_REPLACES_CHECK)</em></a>) – was die KI fragt, erscheint am Element und in der Änderungsansicht,</p></li>
+<li class="dw-el-11"><p><strong>dieselben Daten wie überall</strong> – Feedback landet in <code class="docutils literal notranslate"><span class="pre">.deciwa/</span></code> im Ordner, sodass <code class="docutils literal notranslate"><span class="pre">deciwa</span> <span class="pre">todo</span></code>, Claude und die anderen Integrationen es sehen.</p></li>
+</ul>
+<p class="dw-el-12">deciwa kommt als monsterbrain-Erweiterung und bringt seine Engine mit – kein Python, kein Terminal (<a class="reference internal" href="../decisions/index.html#DEC_HOST_EXTENSIONS" title="DEC_HOST_EXTENSIONS"><em class="xref need">Host-Apps bekommen deciwa a... (DEC_HOST_EXTENSIONS)</em></a>, <a class="reference internal" href="../decisions/index.html#DEC_STANDALONE_ENGINE" title="DEC_STANDALONE_ENGINE"><em class="xref need">Die Python-Teile lassen sic... (DEC_STANDALONE_ENGINE)</em></a>). Ohne die Erweiterung funktioniert monsterbrain wie bisher, nur ohne Review.</p>
+<section class="dw-el-13" id="in-monsterbrain">
+<h2>In monsterbrain<a class="headerlink" href="#in-monsterbrain" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li class="dw-el-14"><p><strong>Review-Modus</strong> – <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">R</span></code> oder der Schalter <em>Review on/off</em> neben View · Source · Diff; er erscheint, wenn die Datei prüfbar ist. Dann wirken die Tasten der Review-Oberfläche auf die dargestellte Datei: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">r</span> <span class="pre">f</span> <span class="pre">d</span></code> für ein Urteil, <code class="docutils literal notranslate"><span class="pre">0–5</span></code> für Sterne, <code class="docutils literal notranslate"><span class="pre">n</span></code> für einen Kommentar, <code class="docutils literal notranslate"><span class="pre">v</span></code> geführtes Review, <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">k</span></code> nächstes und vorheriges Element. Außerhalb des Review-Modus behält monsterbrain seine eigenen Tasten.</p></li>
+<li class="dw-el-15"><p><strong>Seitenpanel</strong> – der Abschnitt <em>Review · deciwa</em> enthält das deciwa-Panel der Datei: was offen, freigegeben oder veraltet ist, die Fragen, das ganze Projekt.</p></li>
+<li class="dw-el-16"><p><strong>Baum und Änderungsansicht</strong> – eine Markierung je Datei: <code class="docutils literal notranslate"><span class="pre">2?</span></code> offene Fragen, eine Zahl für Aufgaben für die KI, <code class="docutils literal notranslate"><span class="pre">3/5</span></code> freigegebene Pflichtelemente, <code class="docutils literal notranslate"><span class="pre">✓</span></code> alles geprüft.</p></li>
+<li class="dw-el-17"><p><strong>Diffs</strong> – die neue Seite eines dargestellten oder nebeneinander gezeigten Diffs ist prüfbar; ein freigegebener Absatz, der sich geändert hat, erscheint als veraltet.</p></li>
+<li class="dw-el-18"><p><strong>Quelltext</strong> – Python-Dateien in der Code-Ansicht: Klassen, Funktionen, Methoden und die Anweisungen außerhalb von Funktionen (Importe, Zuweisungen, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">…</span></code>) sind Elemente (<code class="docutils literal notranslate"><span class="pre">Alt</span></code>-Klick für die Klasse um eine Methode); eine freigegebene Funktion, die sich ändert, erscheint als veraltet. Der Tab <em>Source</em> einer Markdown- oder HTML-Datei funktioniert genauso, Zeile für Zeile.</p></li>
+<li class="dw-el-19"><p><strong>JSON- und YAML-Dateien</strong> – monsterbrain zeigt sie als Baum; jeder Knoten ist ein Element, vom ganzen Dokument bis zum einzelnen Wert (<a class="reference internal" href="../decisions/index.html#DEC_DATA_ADAPTERS" title="DEC_DATA_ADAPTERS"><em class="xref need">JSON- und YAML-Dateien werd... (DEC_DATA_ADAPTERS)</em></a>). Wer einen Knoten in einem zugeklappten Teil auswählt, klappt ihn auf; neu formatieren oder Schlüssel umsortieren behält das Review, ein geänderter Wert macht ihn und die Knoten um ihn herum veraltet. Der Reiter <em>Source</em> funktioniert Zeile für Zeile wie bei Python.</p></li>
+<li class="dw-el-20"><p><strong>HTML-Dateien</strong> – die dargestellte Seite ist mit denselben Elementen prüfbar wie ihr Quelltext; der Review-Schalter und <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">R</span></code> wirken auf die Seite, der deciwa-Knopf in der Seite öffnet ihr Panel.</p></li>
+<li class="dw-el-21"><p><strong>Fakten</strong> (<code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">4</span></code>) – deciwa füllt die Fakten-Ansicht von monsterbrain: jeden Listenpunkt, jede Tabellenzeile und jeden freien Absatz einer Datei in <code class="docutils literal notranslate"><span class="pre">20_facts/</span></code> mit seiner Gruppe (approved, open, stale, question, unverified), gezählt je Ordner und Datei. Ein Klick auf ein Fakt öffnet die Datei an dieser Stelle im Review-Modus, <code class="docutils literal notranslate"><span class="pre">a</span></code> gibt es frei; <code class="docutils literal notranslate"><span class="pre">✓</span></code> an einer Datei oder einem Ordner oder <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">A</span></code> für die aktive Datei gibt jedes noch nicht freigegebene Fakt und die Datei als Ganzes frei. Eine Freigabe der ganzen Datei zeigt <code class="docutils literal notranslate"><span class="pre">✓</span></code> an der Datei und veraltet (<code class="docutils literal notranslate"><span class="pre">✓!</span></code>) bei jeder Änderung.</p></li>
+<li class="dw-el-22"><p><strong>Claude informieren</strong> – der Knopf neben dem Review-Schalter sagt der Claude-Sitzung des Ordners Bescheid über das Review (Agent-Aktionen von monsterbrain). Er umfasst das offene Konzept der Datei, wenn dieses Konzept – sein Ordner oder eine Datei, die es unter <code class="docutils literal notranslate"><span class="pre">results:</span></code> aufführt – Review-Einträge hat, die neuer sind als die letzte Übergabe, sonst nur die Datei. Freigaben zählen mit: Claude wartet vielleicht auf eine. Claude liest die Einträge selbst (<code class="docutils literal notranslate"><span class="pre">deciwa</span> <span class="pre">show</span></code>, <code class="docutils literal notranslate"><span class="pre">deciwa</span> <span class="pre">todo</span></code>); ihre <code class="docutils literal notranslate"><span class="pre">created</span></code>-Zeiten zeigen, was neu ist. Der Knopf ist ausgegraut, solange nichts neu ist, und erst ein Klick startet ihn; die Zeit der letzten Übergabe wird nur gehalten, solange monsterbrain läuft – deciwa speichert dafür nichts.</p></li>
+<li class="dw-el-23"><p><strong>Claude-Werkzeuge</strong> – der MCP-Server von monsterbrain bekommt <code class="docutils literal notranslate"><span class="pre">deciwa_feedback</span></code> (der Review-Stand einer Datei oder alle offenen Aufgaben) und <code class="docutils literal notranslate"><span class="pre">deciwa_show</span></code> (eine Datei an einem Element öffnen).</p></li>
+</ul>
+<figure class="dw-el-24 align-default" id="id1">
+<img alt="Die Fakten-Ansicht von monsterbrain mit einem ausgewählten Fakt und offener deciwa-Karte" src="../_images/monsterbrain-facts.webp" />
+<figcaption>
+<p><span class="caption-text">Die Fakten-Ansicht in monsterbrain: Ein Klick auf ein Fakt öffnet es im Review-Modus.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p class="dw-el-25">Die Review-Daten sind das <code class="docutils literal notranslate"><span class="pre">.deciwa/</span></code> des Ordners. Ein Ordner ohne zeigt im Seitenpanel <em>Set up review</em> (<code class="docutils literal notranslate"><span class="pre">deciwa</span> <span class="pre">init</span></code>).</p>
+</section>
+<section class="dw-el-26" id="setting-up-development">
+<h2>Einrichten (Entwicklung)<a class="headerlink" href="#setting-up-development" title="Link to this heading">¶</a></h2>
+<p class="dw-el-27">Bis es die eigenständige Engine gibt, nutzt die Erweiterung die Engine eines deciwa-Checkouts:</p>
+<div class="dw-el-28 highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>~/workspace/deciwa<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>uv<span class="w"> </span>sync
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>packages/monsterbrain<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm<span class="w"> </span>ci<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>build
+</pre></div>
+</div>
+<p class="dw-el-29">In monsterbrain: Einstellungen (<code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">,</span></code>) → <em>Extensions</em> → <em>Add folder …</em> → <code class="docutils literal notranslate"><span class="pre">~/workspace/deciwa/packages/monsterbrain</span></code>, dann <em>Restart to apply</em>. Die Erweiterung findet die Engine im <code class="docutils literal notranslate"><span class="pre">.venv</span></code> des Checkouts; eine andere lässt sich in der <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> von monsterbrain setzen: <code class="docutils literal notranslate"><span class="pre">{&quot;path&quot;:</span> <span class="pre">&quot;…/packages/monsterbrain&quot;,</span> <span class="pre">&quot;options&quot;:</span> <span class="pre">{&quot;enginePath&quot;:</span> <span class="pre">&quot;/pfad/zu/deciwa&quot;}}</span></code>.</p>
+</section>
+</section>
+<script type="application/json" id="deciwa-page">{"doc": "integrations/monsterbrain", "source": "docs/integrations/monsterbrain.md", "mode": "offline", "keys": {"1": "md:heading:monsterbrain", "2": "md:paragraph:monsterbrain#1", "3": "md:paragraph:monsterbrain#2", "4": "md:item:monsterbrain#1", "5": "md:item:monsterbrain#2", "6": "md:item:monsterbrain#3", "7": "md:item:monsterbrain#4", "8": "md:item:monsterbrain#5", "9": "md:item:monsterbrain#6", "10": "md:item:monsterbrain#7", "11": "md:item:monsterbrain#8", "12": "md:paragraph:monsterbrain#3", "13": "md:heading:monsterbrain/In monsterbrain", "14": "md:item:monsterbrain/In monsterbrain#1", "15": "md:item:monsterbrain/In monsterbrain#2", "16": "md:item:monsterbrain/In monsterbrain#3", "17": "md:item:monsterbrain/In monsterbrain#4", "18": "md:item:monsterbrain/In monsterbrain#5", "19": "md:item:monsterbrain/In monsterbrain#6", "20": "md:item:monsterbrain/In monsterbrain#7", "21": "md:item:monsterbrain/In monsterbrain#8", "22": "md:item:monsterbrain/In monsterbrain#9", "23": "md:item:monsterbrain/In monsterbrain#10", "24": "md:figure:monsterbrain/In monsterbrain#1", "25": "md:paragraph:monsterbrain/In monsterbrain#1", "26": "md:heading:monsterbrain/Einrichten (Entwicklung)", "27": "md:paragraph:monsterbrain/Einrichten (Entwicklung)#1", "28": "md:code:monsterbrain/Einrichten (Entwicklung)#1", "29": "md:paragraph:monsterbrain/Einrichten (Entwicklung)#2"}, "kinds": {"1": "heading", "2": "paragraph", "3": "paragraph", "4": "item", "5": "item", "6": "item", "7": "item", "8": "item", "9": "item", "10": "item", "11": "item", "12": "paragraph", "13": "heading", "14": "item", "15": "item", "16": "item", "17": "item", "18": "item", "19": "item", "20": "item", "21": "item", "22": "item", "23": "item", "24": "figure", "25": "paragraph", "26": "heading", "27": "paragraph", "28": "code", "29": "paragraph"}, "labels": {"1": "monsterbrain", "2": "Verf\u00fcgbar f\u00fcr Entwicklungs-Setups \u2013 technische Details: Host-Apps.", "3": "monsterbrain ist die Desktop-App von danwos, um den \u00dcberblick \u00fcber ei\u2026", "4": "Review an der dargestellten Datei \u2013 Markdown, HTML und die neue Seite\u2026", "5": "Review am Quelltext \u2013 Python-Dateien und der Quelltext von Markdown- \u2026", "6": "Review auf Daten \u2013 JSON- und YAML-Dateien als Baum, Wert f\u00fcr Wert,", "7": "Zustand im Baum und in der \u00c4nderungsansicht \u2013 jede Datei zeigt, wie v\u2026", "8": "Feedback der aktiven Datei im rechten Bereich von monsterbrain,", "9": "die Fakten-Ansicht \u2013 jedes Fakt der Faktendateien mit seinem Zustand,\u2026", "10": "Fragen statt [CHECK]-Markierungen (DEC_REPLACES_CHECK) \u2013 was die KI f\u2026", "11": "dieselben Daten wie \u00fcberall \u2013 Feedback landet in .deciwa/ im Ordner, \u2026", "12": "deciwa kommt als monsterbrain-Erweiterung und bringt seine Engine mit\u2026", "13": "In monsterbrain", "14": "Review-Modus \u2013 Shift R oder der Schalter Review on/off neben View \u00b7 S\u2026", "15": "Seitenpanel \u2013 der Abschnitt Review \u00b7 deciwa enth\u00e4lt das deciwa-Panel \u2026", "16": "Baum und \u00c4nderungsansicht \u2013 eine Markierung je Datei: 2? offene Frage\u2026", "17": "Diffs \u2013 die neue Seite eines dargestellten oder nebeneinander gezeigt\u2026", "18": "Quelltext \u2013 Python-Dateien in der Code-Ansicht: Klassen, Funktionen, \u2026", "19": "JSON- und YAML-Dateien \u2013 monsterbrain zeigt sie als Baum; jeder Knote\u2026", "20": "HTML-Dateien \u2013 die dargestellte Seite ist mit denselben Elementen pr\u00fc\u2026", "21": "Fakten (Ctrl 4) \u2013 deciwa f\u00fcllt die Fakten-Ansicht von monsterbrain: j\u2026", "22": "Claude informieren \u2013 der Knopf neben dem Review-Schalter sagt der Cla\u2026", "23": "Claude-Werkzeuge \u2013 der MCP-Server von monsterbrain bekommt deciwa_fee\u2026", "24": "Die Fakten-Ansicht in monsterbrain: Ein Klick auf ein Fakt \u00f6ffnet es \u2026", "25": "Die Review-Daten sind das .deciwa/ des Ordners. Ein Ordner ohne zeigt\u2026", "26": "Einrichten (Entwicklung)", "27": "Bis es die eigenst\u00e4ndige Engine gibt, nutzt die Erweiterung die Engin\u2026", "28": "$ cd ~/workspace/deciwa && uv sync $ cd packages/monsterbrain && npm \u2026", "29": "In monsterbrain: Einstellungen (Ctrl ,) \u2192 Extensions \u2192 Add folder \u2026 \u2192\u2026"}}</script>
+        </article>
+      </div>
+      <footer>
+        
+
+        <div class="related-pages">
+          <a class="next-page" href="desktop.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Desktop-App</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="claude.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Claude</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, danwos
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+<div class="dw-made-by">
+  <a href="https://danwos.dev" title="danwos.dev">
+    <img src="../_static/img/logo.svg" alt="" width="22" height="31">
+    <span>a <b>danwos</b> project</span>
+  </a>
+</div>
+
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">monsterbrain</a><ul>
+<li><a class="reference internal" href="#in-monsterbrain">In monsterbrain</a></li>
+<li><a class="reference internal" href="#setting-up-development">Einrichten (Entwicklung)</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=f20135ca"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/deciwa-data.js"></script>
+    <script defer="defer" src="../_static/deciwa-overlay.js?v=f3188b25"></script>
+    <script src="../_static/translations.js?v=9bf55d28"></script>
+    <script src="../_static/sphinx-data-viewer/jsonview.bundle.js?v=18cd53c5"></script>
+    <script src="../_static/sphinx-data-viewer/jsonview_loader.js?v=f7ff7e7d"></script>
+    <script src="../_static/sphinx-needs/libs/html/sphinx_needs_collapse.js?v=dca66431"></script>
+    </body>
+</html>

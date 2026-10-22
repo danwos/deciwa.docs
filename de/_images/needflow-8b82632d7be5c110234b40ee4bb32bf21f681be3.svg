@@ -1,0 +1,928 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="1202pt" height="1707pt" viewBox="0.00 0.00 1202.00 1707.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1703)">
+<ns0:title>needflow</ns0:title>
+
+<ns0:g id="node1" class="node">
+<ns0:title>PROP_ADAPTER_API</ns0:title>
+<ns0:g id="a_node1"><ns0:a ns1:href="../technical/adapters.html#PROP_ADAPTER_API" ns1:title="PROP_ADAPTER_API" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M809.5,-1052C809.5,-1052 711.5,-1052 711.5,-1052 705.5,-1052 699.5,-1046 699.5,-1040 699.5,-1040 699.5,-984 699.5,-984 699.5,-978 705.5,-972 711.5,-972 711.5,-972 809.5,-972 809.5,-972 815.5,-972 821.5,-978 821.5,-984 821.5,-984 821.5,-1040 821.5,-1040 821.5,-1046 815.5,-1052 809.5,-1052" />
+<ns0:text text-anchor="start" x="708.5" y="-1039.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="708.5" y="-1029" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Eine kleine</ns0:text>
+<ns0:text text-anchor="start" x="708.5" y="-1019" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Adapter-</ns0:text>
+<ns0:text text-anchor="start" x="708.5" y="-1009" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Schnittstelle</ns0:text>
+<ns0:text text-anchor="start" x="708.5" y="-999" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">f&#252;r alle</ns0:text>
+<ns0:text text-anchor="start" x="708.5" y="-989" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Formate</ns0:text>
+<ns0:text text-anchor="start" x="708.5" y="-979" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_ADAPTER_API</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node37" class="node">
+<ns0:title>DEC_NO_MARKERS</ns0:title>
+<ns0:g id="a_node37"><ns0:a ns1:href="../decisions/index.html#DEC_NO_MARKERS" ns1:title="DEC_NO_MARKERS" target="_top">
+<ns0:path fill="#9fe3d9" stroke="#1b1a22" stroke-width="1.2" d="M1016.5,-1057C1016.5,-1057 924.5,-1057 924.5,-1057 918.5,-1057 912.5,-1051 912.5,-1045 912.5,-1045 912.5,-979 912.5,-979 912.5,-973 918.5,-967 924.5,-967 924.5,-967 1016.5,-967 1016.5,-967 1022.5,-967 1028.5,-973 1028.5,-979 1028.5,-979 1028.5,-1045 1028.5,-1045 1028.5,-1051 1022.5,-1057 1016.5,-1057" />
+<ns0:text text-anchor="start" x="921.5" y="-1044.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Entscheidung</ns0:text>
+<ns0:text text-anchor="start" x="921.5" y="-1034" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Keine</ns0:text>
+<ns0:text text-anchor="start" x="921.5" y="-1024" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Markierungen im</ns0:text>
+<ns0:text text-anchor="start" x="921.5" y="-1014" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Quelltext;</ns0:text>
+<ns0:text text-anchor="start" x="921.5" y="-1004" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Elemente</ns0:text>
+<ns0:text text-anchor="start" x="921.5" y="-994" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">ergeben sich</ns0:text>
+<ns0:text text-anchor="start" x="921.5" y="-984" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">aus dem Inhalt</ns0:text>
+<ns0:text text-anchor="start" x="921.5" y="-974" font-family="Helvetica,Arial,sans-serif" font-size="10.00">DEC_NO_MARKERS</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>PROP_ADAPTER_API-&gt;DEC_NO_MARKERS</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M821.66,-1012C847.88,-1012 878.64,-1012 905.29,-1012" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="912.33,-1012 905.33,-1015.15 908.83,-1012 905.33,-1012 905.33,-1012 905.33,-1012 908.83,-1012 905.33,-1008.85 912.33,-1012 912.33,-1012" />
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>PROP_SELECTORS</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:href="../technical/adapters.html#PROP_SELECTORS" ns1:title="PROP_SELECTORS" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M584.5,-1057C584.5,-1057 495.5,-1057 495.5,-1057 489.5,-1057 483.5,-1051 483.5,-1045 483.5,-1045 483.5,-979 483.5,-979 483.5,-973 489.5,-967 495.5,-967 495.5,-967 584.5,-967 584.5,-967 590.5,-967 596.5,-973 596.5,-979 596.5,-979 596.5,-1045 596.5,-1045 596.5,-1051 590.5,-1057 584.5,-1057" />
+<ns0:text text-anchor="start" x="492.5" y="-1044.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="492.5" y="-1034" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Element-</ns0:text>
+<ns0:text text-anchor="start" x="492.5" y="-1024" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Selektoren sind</ns0:text>
+<ns0:text text-anchor="start" x="492.5" y="-1014" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Pfade aus</ns0:text>
+<ns0:text text-anchor="start" x="492.5" y="-1004" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">&#220;berschriften</ns0:text>
+<ns0:text text-anchor="start" x="492.5" y="-994" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">plus ein Z&#228;hler</ns0:text>
+<ns0:text text-anchor="start" x="492.5" y="-984" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">pro Abschnitt</ns0:text>
+<ns0:text text-anchor="start" x="492.5" y="-974" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_SELECTORS</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>PROP_SELECTORS-&gt;PROP_ADAPTER_API</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M596.7,-1012C625.73,-1012 661.46,-1012 692.05,-1012" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="699.3,-1012 692.3,-1015.15 695.8,-1012 692.3,-1012 692.3,-1012 692.3,-1012 695.8,-1012 692.3,-1008.85 699.3,-1012 699.3,-1012" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>PROP_RST_DOCUTILS</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:href="../technical/adapters.html#PROP_RST_DOCUTILS" ns1:title="PROP_RST_DOCUTILS" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M372,-889C372,-889 267,-889 267,-889 261,-889 255,-883 255,-877 255,-877 255,-821 255,-821 255,-815 261,-809 267,-809 267,-809 372,-809 372,-809 378,-809 384,-815 384,-821 384,-821 384,-877 384,-877 384,-883 378,-889 372,-889" />
+<ns0:text text-anchor="start" x="264" y="-876.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="264" y="-866" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Der rST-Adapter</ns0:text>
+<ns0:text text-anchor="start" x="264" y="-856" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">parst mit</ns0:text>
+<ns0:text text-anchor="start" x="264" y="-846" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">docutils, ohne</ns0:text>
+<ns0:text text-anchor="start" x="264" y="-836" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Sphinx</ns0:text>
+<ns0:text text-anchor="start" x="264" y="-826" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">auszuf&#252;hren</ns0:text>
+<ns0:text text-anchor="start" x="264" y="-816" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_RST_DOCUTILS</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node21" class="node">
+<ns0:title>PROP_PYTHON_CORE</ns0:title>
+<ns0:g id="a_node21"><ns0:a ns1:href="../technical/stack.html#PROP_PYTHON_CORE" ns1:title="PROP_PYTHON_CORE" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M592.5,-794C592.5,-794 487.5,-794 487.5,-794 481.5,-794 475.5,-788 475.5,-782 475.5,-782 475.5,-746 475.5,-746 475.5,-740 481.5,-734 487.5,-734 487.5,-734 592.5,-734 592.5,-734 598.5,-734 604.5,-740 604.5,-746 604.5,-746 604.5,-782 604.5,-782 604.5,-788 598.5,-794 592.5,-794" />
+<ns0:text text-anchor="start" x="484.5" y="-781.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="484.5" y="-771" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Core und CLI</ns0:text>
+<ns0:text text-anchor="start" x="484.5" y="-761" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">sind in Python</ns0:text>
+<ns0:text text-anchor="start" x="484.5" y="-751" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">geschrieben</ns0:text>
+<ns0:text text-anchor="start" x="484.5" y="-741" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_PYTHON_CORE</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>PROP_RST_DOCUTILS-&gt;PROP_PYTHON_CORE</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M384.29,-824.19C410.65,-813.93 441.3,-802.01 468.34,-791.49" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="475.13,-788.84 469.75,-794.32 471.87,-790.11 468.61,-791.38 468.61,-791.38 468.61,-791.38 471.87,-790.11 467.47,-788.45 475.13,-788.84 475.13,-788.84" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>PROP_DOM_ADAPTER</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:href="../technical/adapters.html#PROP_DOM_ADAPTER" ns1:title="PROP_DOM_ADAPTER" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M372,-987C372,-987 267,-987 267,-987 261,-987 255,-981 255,-975 255,-975 255,-919 255,-919 255,-913 261,-907 267,-907 267,-907 372,-907 372,-907 378,-907 384,-913 384,-919 384,-919 384,-975 384,-975 384,-981 378,-987 372,-987" />
+<ns0:text text-anchor="start" x="264" y="-974.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="264" y="-964" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Das Web-Skript</ns0:text>
+<ns0:text text-anchor="start" x="264" y="-954" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">findet die</ns0:text>
+<ns0:text text-anchor="start" x="264" y="-944" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Elemente einer</ns0:text>
+<ns0:text text-anchor="start" x="264" y="-934" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">gerenderten</ns0:text>
+<ns0:text text-anchor="start" x="264" y="-924" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Seite selbst</ns0:text>
+<ns0:text text-anchor="start" x="264" y="-914" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_DOM_ADAPTER</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>PROP_DOM_ADAPTER-&gt;PROP_ADAPTER_API</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M384.25,-943.45C444.77,-941.46 537.99,-942.01 617,-958 642.48,-963.16 669.39,-972.31 692.89,-981.63" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="699.42,-984.26 691.75,-984.57 696.17,-982.96 692.93,-981.65 692.93,-981.65 692.93,-981.65 696.17,-982.96 694.1,-978.73 699.42,-984.26 699.42,-984.26" />
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>PROP_DOM_ADAPTER-&gt;PROP_SELECTORS</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M384.29,-965.98C413.32,-974.61 447.58,-984.8 476.46,-993.4" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="483.3,-995.43 475.69,-996.45 479.94,-994.43 476.59,-993.43 476.59,-993.43 476.59,-993.43 479.94,-994.43 477.49,-990.41 483.3,-995.43 483.3,-995.43" />
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>PROP_DOM_ADAPTER-&gt;PROP_PYTHON_CORE</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M384.22,-908.15C388.96,-904.83 393.6,-901.42 398,-898 437.37,-867.32 478.28,-827.4 505.83,-799.14" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="510.81,-794 508.2,-801.22 508.38,-796.51 505.94,-799.02 505.94,-799.02 505.94,-799.02 508.38,-796.51 503.68,-796.83 510.81,-794 510.81,-794" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>PROP_FREE_TEXT</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:href="../technical/adapters.html#PROP_FREE_TEXT" ns1:title="PROP_FREE_TEXT" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M131,-1224C131,-1224 45,-1224 45,-1224 39,-1224 33,-1218 33,-1212 33,-1212 33,-1146 33,-1146 33,-1140 39,-1134 45,-1134 45,-1134 131,-1134 131,-1134 137,-1134 143,-1140 143,-1146 143,-1146 143,-1212 143,-1212 143,-1218 137,-1224 131,-1224" />
+<ns0:text text-anchor="start" x="42" y="-1211.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="42" y="-1201" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Eine freie</ns0:text>
+<ns0:text text-anchor="start" x="42" y="-1191" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Textauswahl ist</ns0:text>
+<ns0:text text-anchor="start" x="42" y="-1181" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">ein Textzitat</ns0:text>
+<ns0:text text-anchor="start" x="42" y="-1171" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">innerhalb ihres</ns0:text>
+<ns0:text text-anchor="start" x="42" y="-1161" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">n&#228;chsten</ns0:text>
+<ns0:text text-anchor="start" x="42" y="-1151" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Elements</ns0:text>
+<ns0:text text-anchor="start" x="42" y="-1141" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_FREE_TEXT</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>PROP_CLI_COMMANDS</ns0:title>
+<ns0:g id="a_node6"><ns0:a ns1:href="../technical/cli.html#PROP_CLI_COMMANDS" ns1:title="PROP_CLI_COMMANDS" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M594.5,-716C594.5,-716 485.5,-716 485.5,-716 479.5,-716 473.5,-710 473.5,-704 473.5,-704 473.5,-688 473.5,-688 473.5,-682 479.5,-676 485.5,-676 485.5,-676 594.5,-676 594.5,-676 600.5,-676 606.5,-682 606.5,-688 606.5,-688 606.5,-704 606.5,-704 606.5,-710 600.5,-716 594.5,-716" />
+<ns0:text text-anchor="start" x="482.5" y="-703.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="482.5" y="-693" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Befehle in 0.1</ns0:text>
+<ns0:text text-anchor="start" x="482.5" y="-683" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_CLI_COMMANDS</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node40" class="node">
+<ns0:title>DEC_CLI_MASTER</ns0:title>
+<ns0:g id="a_node40"><ns0:a ns1:href="../decisions/index.html#DEC_CLI_MASTER" ns1:title="DEC_CLI_MASTER" target="_top">
+<ns0:path fill="#9fe3d9" stroke="#1b1a22" stroke-width="1.2" d="M803,-614C803,-614 718,-614 718,-614 712,-614 706,-608 706,-602 706,-602 706,-546 706,-546 706,-540 712,-534 718,-534 718,-534 803,-534 803,-534 809,-534 815,-540 815,-546 815,-546 815,-602 815,-602 815,-608 809,-614 803,-614" />
+<ns0:text text-anchor="start" x="715" y="-601.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Entscheidung</ns0:text>
+<ns0:text text-anchor="start" x="715" y="-591" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Die CLI ist der</ns0:text>
+<ns0:text text-anchor="start" x="715" y="-581" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Master, mit</ns0:text>
+<ns0:text text-anchor="start" x="715" y="-571" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">einem offen</ns0:text>
+<ns0:text text-anchor="start" x="715" y="-561" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">dokumentierten</ns0:text>
+<ns0:text text-anchor="start" x="715" y="-551" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Dateiformat</ns0:text>
+<ns0:text text-anchor="start" x="715" y="-541" font-family="Helvetica,Arial,sans-serif" font-size="10.00">DEC_CLI_MASTER</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>PROP_CLI_COMMANDS-&gt;DEC_CLI_MASTER</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M597.62,-675.94C604.25,-673.14 610.83,-670.14 617,-667 645.39,-652.53 675.15,-633.75 700.09,-616.85" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="705.99,-612.83 701.98,-619.37 703.1,-614.8 700.21,-616.77 700.21,-616.77 700.21,-616.77 703.1,-614.8 698.43,-614.17 705.99,-612.83 705.99,-612.83" />
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>PROP_CLI_JSON</ns0:title>
+<ns0:g id="a_node7"><ns0:a ns1:href="../technical/cli.html#PROP_CLI_JSON" ns1:title="PROP_CLI_JSON" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M578,-658C578,-658 502,-658 502,-658 496,-658 490,-652 490,-646 490,-646 490,-600 490,-600 490,-594 496,-588 502,-588 502,-588 578,-588 578,-588 584,-588 590,-594 590,-600 590,-600 590,-646 590,-646 590,-652 584,-658 578,-658" />
+<ns0:text text-anchor="start" x="499" y="-645.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="499" y="-635" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">JSON-Ausgaben</ns0:text>
+<ns0:text text-anchor="start" x="499" y="-625" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">haben f&#252;r jeden</ns0:text>
+<ns0:text text-anchor="start" x="499" y="-615" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Befehl dieselbe</ns0:text>
+<ns0:text text-anchor="start" x="499" y="-605" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">H&#252;lle</ns0:text>
+<ns0:text text-anchor="start" x="499" y="-595" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_CLI_JSON</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge8" class="edge">
+<ns0:title>PROP_CLI_JSON-&gt;DEC_CLI_MASTER</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M590.04,-612C622.1,-604.81 664.24,-595.36 698.47,-587.69" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="705.65,-586.08 699.51,-590.68 702.23,-586.84 698.82,-587.61 698.82,-587.61 698.82,-587.61 702.23,-586.84 698.13,-584.53 705.65,-586.08 705.65,-586.08" />
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>PROP_CLI_CHECK</ns0:title>
+<ns0:g id="a_node8"><ns0:a ns1:href="../technical/cli.html#PROP_CLI_CHECK" ns1:title="PROP_CLI_CHECK" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M362,-1581C362,-1581 277,-1581 277,-1581 271,-1581 265,-1575 265,-1569 265,-1569 265,-1493 265,-1493 265,-1487 271,-1481 277,-1481 277,-1481 362,-1481 362,-1481 368,-1481 374,-1487 374,-1493 374,-1493 374,-1569 374,-1569 374,-1575 368,-1581 362,-1581" />
+<ns0:text text-anchor="start" x="274" y="-1568.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-1558" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">deciwa status</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-1548" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">kann einen CI-</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-1538" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Lauf bei</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-1528" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Einfrier-</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-1518" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Alarmen</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-1508" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">scheitern</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-1498" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">lassen</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-1488" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_CLI_CHECK</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node36" class="node">
+<ns0:title>DEC_FREEZE</ns0:title>
+<ns0:g id="a_node36"><ns0:a ns1:href="../decisions/index.html#DEC_FREEZE" ns1:title="DEC_FREEZE" target="_top">
+<ns0:path fill="#9fe3d9" stroke="#1b1a22" stroke-width="1.2" d="M574,-1475C574,-1475 506,-1475 506,-1475 500,-1475 494,-1469 494,-1463 494,-1463 494,-1437 494,-1437 494,-1431 500,-1425 506,-1425 506,-1425 574,-1425 574,-1425 580,-1425 586,-1431 586,-1437 586,-1437 586,-1463 586,-1463 586,-1469 580,-1475 574,-1475" />
+<ns0:text text-anchor="start" x="503" y="-1462.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Entscheidung</ns0:text>
+<ns0:text text-anchor="start" x="503" y="-1452" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Neues Urteil:</ns0:text>
+<ns0:text text-anchor="start" x="503" y="-1442" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">einfrieren</ns0:text>
+<ns0:text text-anchor="start" x="503" y="-1432" font-family="Helvetica,Arial,sans-serif" font-size="10.00">DEC_FREEZE</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge9" class="edge">
+<ns0:title>PROP_CLI_CHECK-&gt;DEC_FREEZE</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M374.23,-1511.08C408.7,-1498.3 453.22,-1481.8 487.29,-1469.17" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="493.96,-1466.7 488.49,-1472.08 490.68,-1467.91 487.39,-1469.13 487.39,-1469.13 487.39,-1469.13 490.68,-1467.91 486.3,-1466.18 493.96,-1466.7 493.96,-1466.7" />
+</ns0:g>
+
+<ns0:g id="node9" class="node">
+<ns0:title>PROP_FILE_LAYOUT</ns0:title>
+<ns0:g id="a_node9"><ns0:a ns1:href="../technical/file-format.html#PROP_FILE_LAYOUT" ns1:title="PROP_FILE_LAYOUT" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M587,-168C587,-168 493,-168 493,-168 487,-168 481,-162 481,-156 481,-156 481,-110 481,-110 481,-104 487,-98 493,-98 493,-98 587,-98 587,-98 593,-98 599,-104 599,-110 599,-110 599,-156 599,-156 599,-162 593,-168 587,-168" />
+<ns0:text text-anchor="start" x="490" y="-155.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="490" y="-145" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Eine Annotation</ns0:text>
+<ns0:text text-anchor="start" x="490" y="-135" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">sdatei pro</ns0:text>
+<ns0:text text-anchor="start" x="490" y="-125" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Quelle, determi</ns0:text>
+<ns0:text text-anchor="start" x="490" y="-115" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">nistisches JSON</ns0:text>
+<ns0:text text-anchor="start" x="490" y="-105" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_FILE_LAYOUT</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node41" class="node">
+<ns0:title>DEC_DECIWA_FOLDER</ns0:title>
+<ns0:g id="a_node41"><ns0:a ns1:href="../decisions/index.html#DEC_DECIWA_FOLDER" ns1:title="DEC_DECIWA_FOLDER" target="_top">
+<ns0:path fill="#9fe3d9" stroke="#1b1a22" stroke-width="1.2" d="M814.5,-213C814.5,-213 706.5,-213 706.5,-213 700.5,-213 694.5,-207 694.5,-201 694.5,-201 694.5,-105 694.5,-105 694.5,-99 700.5,-93 706.5,-93 706.5,-93 814.5,-93 814.5,-93 820.5,-93 826.5,-99 826.5,-105 826.5,-105 826.5,-201 826.5,-201 826.5,-207 820.5,-213 814.5,-213" />
+<ns0:text text-anchor="start" x="703.5" y="-200.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Entscheidung</ns0:text>
+<ns0:text text-anchor="start" x="703.5" y="-190" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Alle deciwa-</ns0:text>
+<ns0:text text-anchor="start" x="703.5" y="-180" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Dateien in</ns0:text>
+<ns0:text text-anchor="start" x="703.5" y="-170" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">einem Ordner</ns0:text>
+<ns0:text text-anchor="start" x="703.5" y="-160" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">.deciwa/ im Wur</ns0:text>
+<ns0:text text-anchor="start" x="703.5" y="-150" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">zelverzeichnis</ns0:text>
+<ns0:text text-anchor="start" x="703.5" y="-140" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">des Repositorys</ns0:text>
+<ns0:text text-anchor="start" x="703.5" y="-130" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">oder in einem</ns0:text>
+<ns0:text text-anchor="start" x="703.5" y="-120" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">&#252;bergeordneten</ns0:text>
+<ns0:text text-anchor="start" x="703.5" y="-110" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Ordner</ns0:text>
+<ns0:text text-anchor="start" x="703.5" y="-100" font-family="Helvetica,Arial,sans-serif" font-size="10.00">DEC_DECIWA_FOLDER</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge10" class="edge">
+<ns0:title>PROP_FILE_LAYOUT-&gt;DEC_DECIWA_FOLDER</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M599.27,-138.33C626.31,-140.81 658.71,-143.77 687.29,-146.39" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="694.47,-147.05 687.21,-149.55 690.98,-146.73 687.49,-146.41 687.49,-146.41 687.49,-146.41 690.98,-146.73 687.78,-143.27 694.47,-147.05 694.47,-147.05" />
+</ns0:g>
+
+<ns0:g id="node42" class="node">
+<ns0:title>DEC_GIT_COMMITTED</ns0:title>
+<ns0:g id="a_node42"><ns0:a ns1:href="../decisions/index.html#DEC_GIT_COMMITTED" ns1:title="DEC_GIT_COMMITTED" target="_top">
+<ns0:path fill="#9fe3d9" stroke="#1b1a22" stroke-width="1.2" d="M812.5,-75C812.5,-75 708.5,-75 708.5,-75 702.5,-75 696.5,-69 696.5,-63 696.5,-63 696.5,-17 696.5,-17 696.5,-11 702.5,-5 708.5,-5 708.5,-5 812.5,-5 812.5,-5 818.5,-5 824.5,-11 824.5,-17 824.5,-17 824.5,-63 824.5,-63 824.5,-69 818.5,-75 812.5,-75" />
+<ns0:text text-anchor="start" x="705.5" y="-62.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Entscheidung</ns0:text>
+<ns0:text text-anchor="start" x="705.5" y="-52" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">.deciwa/ wird</ns0:text>
+<ns0:text text-anchor="start" x="705.5" y="-42" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">standardm&#228;&#223;ig</ns0:text>
+<ns0:text text-anchor="start" x="705.5" y="-32" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">in Git</ns0:text>
+<ns0:text text-anchor="start" x="705.5" y="-22" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">committet</ns0:text>
+<ns0:text text-anchor="start" x="705.5" y="-12" font-family="Helvetica,Arial,sans-serif" font-size="10.00">DEC_GIT_COMMITTED</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge11" class="edge">
+<ns0:title>PROP_FILE_LAYOUT-&gt;DEC_GIT_COMMITTED</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M599.27,-108.2C627.12,-96.34 660.68,-82.06 689.87,-69.64" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="696.41,-66.85 691.2,-72.49 693.19,-68.22 689.97,-69.59 689.97,-69.59 689.97,-69.59 693.19,-68.22 688.74,-66.7 696.41,-66.85 696.41,-66.85" />
+</ns0:g>
+
+<ns0:g id="node10" class="node">
+<ns0:title>PROP_ANNOTATION</ns0:title>
+<ns0:g id="a_node10"><ns0:a ns1:href="../technical/file-format.html#PROP_ANNOTATION" ns1:title="PROP_ANNOTATION" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M366,-1463C366,-1463 273,-1463 273,-1463 267,-1463 261,-1457 261,-1451 261,-1451 261,-1425 261,-1425 261,-1419 267,-1413 273,-1413 273,-1413 366,-1413 366,-1413 372,-1413 378,-1419 378,-1425 378,-1425 378,-1451 378,-1451 378,-1457 372,-1463 366,-1463" />
+<ns0:text text-anchor="start" x="270" y="-1450.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="270" y="-1440" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Aufbau einer</ns0:text>
+<ns0:text text-anchor="start" x="270" y="-1430" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Annotation</ns0:text>
+<ns0:text text-anchor="start" x="270" y="-1420" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_ANNOTATION</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node35" class="node">
+<ns0:title>DEC_THREE_MODES</ns0:title>
+<ns0:g id="a_node35"><ns0:a ns1:href="../decisions/index.html#DEC_THREE_MODES" ns1:title="DEC_THREE_MODES" target="_top">
+<ns0:path fill="#9fe3d9" stroke="#1b1a22" stroke-width="1.2" d="M589,-1407C589,-1407 491,-1407 491,-1407 485,-1407 479,-1401 479,-1395 479,-1395 479,-1309 479,-1309 479,-1303 485,-1297 491,-1297 491,-1297 589,-1297 589,-1297 595,-1297 601,-1303 601,-1309 601,-1309 601,-1395 601,-1395 601,-1401 595,-1407 589,-1407" />
+<ns0:text text-anchor="start" x="488" y="-1394.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Entscheidung</ns0:text>
+<ns0:text text-anchor="start" x="488" y="-1384" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Drei</ns0:text>
+<ns0:text text-anchor="start" x="488" y="-1374" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Arbeitsweisen,</ns0:text>
+<ns0:text text-anchor="start" x="488" y="-1364" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">die getrennt</ns0:text>
+<ns0:text text-anchor="start" x="488" y="-1354" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">bleiben:</ns0:text>
+<ns0:text text-anchor="start" x="488" y="-1344" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Feedback, Quali</ns0:text>
+<ns0:text text-anchor="start" x="488" y="-1334" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">t&#228;tsbewertung,</ns0:text>
+<ns0:text text-anchor="start" x="488" y="-1324" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">KI-</ns0:text>
+<ns0:text text-anchor="start" x="488" y="-1314" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Kommunikation</ns0:text>
+<ns0:text text-anchor="start" x="488" y="-1304" font-family="Helvetica,Arial,sans-serif" font-size="10.00">DEC_THREE_MODES</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge13" class="edge">
+<ns0:title>PROP_ANNOTATION-&gt;DEC_THREE_MODES</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M378.19,-1415.29C406.99,-1403.96 441.99,-1390.18 471.98,-1378.38" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="478.69,-1375.74 473.33,-1381.23 475.43,-1377.02 472.18,-1378.3 472.18,-1378.3 472.18,-1378.3 475.43,-1377.02 471.02,-1375.37 478.69,-1375.74 478.69,-1375.74" />
+</ns0:g>
+
+<ns0:g id="edge12" class="edge">
+<ns0:title>PROP_ANNOTATION-&gt;DEC_FREEZE</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M378.19,-1441.17C411.81,-1443.01 453.88,-1445.33 486.56,-1447.12" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="493.8,-1447.52 486.64,-1450.28 490.31,-1447.33 486.81,-1447.13 486.81,-1447.13 486.81,-1447.13 490.31,-1447.33 486.99,-1443.99 493.8,-1447.52 493.8,-1447.52" />
+</ns0:g>
+
+<ns0:g id="node11" class="node">
+<ns0:title>PROP_LATEST_WINS</ns0:title>
+<ns0:g id="a_node11"><ns0:a ns1:href="../technical/file-format.html#PROP_LATEST_WINS" ns1:title="PROP_LATEST_WINS" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M136.5,-1372C136.5,-1372 39.5,-1372 39.5,-1372 33.5,-1372 27.5,-1366 27.5,-1360 27.5,-1360 27.5,-1254 27.5,-1254 27.5,-1248 33.5,-1242 39.5,-1242 39.5,-1242 136.5,-1242 136.5,-1242 142.5,-1242 148.5,-1248 148.5,-1254 148.5,-1254 148.5,-1360 148.5,-1360 148.5,-1366 142.5,-1372 136.5,-1372" />
+<ns0:text text-anchor="start" x="36.5" y="-1359.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1349" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Solange ein</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1339" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Element</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1329" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">unver&#228;ndert</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1319" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">ist, ersetzen</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1309" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">das neueste</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1299" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Urteil und die</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1289" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">neueste</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1279" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Bewertung einer</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1269" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Person die</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1259" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">fr&#252;heren</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1249" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_LATEST_WINS</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge15" class="edge">
+<ns0:title>PROP_LATEST_WINS-&gt;PROP_ANNOTATION</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M148.73,-1348.14C176.23,-1366.29 209.66,-1387.26 241,-1404 245.37,-1406.33 249.92,-1408.64 254.55,-1410.89" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="260.89,-1413.91 253.21,-1413.74 257.73,-1412.41 254.57,-1410.9 254.57,-1410.9 254.57,-1410.9 257.73,-1412.41 255.93,-1408.06 260.89,-1413.91 260.89,-1413.91" />
+</ns0:g>
+
+<ns0:g id="edge14" class="edge">
+<ns0:title>PROP_LATEST_WINS-&gt;DEC_THREE_MODES</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M148.72,-1308.53C211.1,-1310.63 311.71,-1315.43 398,-1326 422.18,-1328.96 448.48,-1333.46 471.75,-1337.89" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="478.87,-1339.26 471.4,-1341.03 475.43,-1338.59 471.99,-1337.93 471.99,-1337.93 471.99,-1337.93 475.43,-1338.59 472.59,-1334.84 478.87,-1339.26 478.87,-1339.26" />
+</ns0:g>
+
+<ns0:g id="node12" class="node">
+<ns0:title>PROP_SNAPSHOT</ns0:title>
+<ns0:g id="a_node12"><ns0:a ns1:href="../technical/file-format.html#PROP_SNAPSHOT" ns1:title="PROP_SNAPSHOT" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M130,-1490C130,-1490 46,-1490 46,-1490 40,-1490 34,-1484 34,-1478 34,-1478 34,-1402 34,-1402 34,-1396 40,-1390 46,-1390 46,-1390 130,-1390 130,-1390 136,-1390 142,-1396 142,-1402 142,-1402 142,-1478 142,-1478 142,-1484 136,-1490 130,-1490" />
+<ns0:text text-anchor="start" x="43" y="-1477.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="43" y="-1467" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Der</ns0:text>
+<ns0:text text-anchor="start" x="43" y="-1457" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Schnappschuss</ns0:text>
+<ns0:text text-anchor="start" x="43" y="-1447" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">des</ns0:text>
+<ns0:text text-anchor="start" x="43" y="-1437" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Elementtexts</ns0:text>
+<ns0:text text-anchor="start" x="43" y="-1427" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">wird mit jeder</ns0:text>
+<ns0:text text-anchor="start" x="43" y="-1417" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Annotation</ns0:text>
+<ns0:text text-anchor="start" x="43" y="-1407" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">gespeichert</ns0:text>
+<ns0:text text-anchor="start" x="43" y="-1397" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_SNAPSHOT</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge16" class="edge">
+<ns0:title>PROP_SNAPSHOT-&gt;PROP_ANNOTATION</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M142.23,-1439.54C175.36,-1439.25 218.2,-1438.87 253.36,-1438.57" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="260.74,-1438.5 253.76,-1441.71 257.24,-1438.53 253.74,-1438.56 253.74,-1438.56 253.74,-1438.56 257.24,-1438.53 253.71,-1435.41 260.74,-1438.5 260.74,-1438.5" />
+</ns0:g>
+
+<ns0:g id="node13" class="node">
+<ns0:title>PROP_SCHEMA</ns0:title>
+<ns0:g id="a_node13"><ns0:a ns1:href="../technical/file-format.html#PROP_SCHEMA" ns1:title="PROP_SCHEMA" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M580.5,-570C580.5,-570 499.5,-570 499.5,-570 493.5,-570 487.5,-564 487.5,-558 487.5,-558 487.5,-512 487.5,-512 487.5,-506 493.5,-500 499.5,-500 499.5,-500 580.5,-500 580.5,-500 586.5,-500 592.5,-506 592.5,-512 592.5,-512 592.5,-558 592.5,-558 592.5,-564 586.5,-570 580.5,-570" />
+<ns0:text text-anchor="start" x="496.5" y="-557.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="496.5" y="-547" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Ein JSON Schema</ns0:text>
+<ns0:text text-anchor="start" x="496.5" y="-537" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">ist der</ns0:text>
+<ns0:text text-anchor="start" x="496.5" y="-527" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">dokumentierte</ns0:text>
+<ns0:text text-anchor="start" x="496.5" y="-517" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Vertrag</ns0:text>
+<ns0:text text-anchor="start" x="496.5" y="-507" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_SCHEMA</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge17" class="edge">
+<ns0:title>PROP_SCHEMA-&gt;DEC_CLI_MASTER</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M592.5,-544.19C624.31,-549.87 665.27,-557.18 698.67,-563.14" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="705.68,-564.39 698.23,-566.26 702.23,-563.78 698.78,-563.16 698.78,-563.16 698.78,-563.16 702.23,-563.78 699.34,-560.06 705.68,-564.39 705.68,-564.39" />
+</ns0:g>
+
+<ns0:g id="node14" class="node">
+<ns0:title>PROP_WEB_FILES</ns0:title>
+<ns0:g id="a_node14"><ns0:a ns1:href="../technical/file-format.html#PROP_WEB_FILES" ns1:title="PROP_WEB_FILES" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M362,-178C362,-178 277,-178 277,-178 271,-178 265,-172 265,-166 265,-166 265,-110 265,-110 265,-104 271,-98 277,-98 277,-98 362,-98 362,-98 368,-98 374,-104 374,-110 374,-110 374,-166 374,-166 374,-172 368,-178 362,-178" />
+<ns0:text text-anchor="start" x="274" y="-165.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-155" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Webseiten ohne</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-145" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Quelldatei</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-135" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">werden unter</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-125" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">ihrer Adresse</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-115" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">gespeichert</ns0:text>
+<ns0:text text-anchor="start" x="274" y="-105" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_WEB_FILES</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge18" class="edge">
+<ns0:title>PROP_WEB_FILES-&gt;PROP_FILE_LAYOUT</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M374.23,-136.77C404.3,-136.08 442.02,-135.22 473.78,-134.49" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="480.88,-134.33 473.95,-137.64 477.38,-134.41 473.88,-134.49 473.88,-134.49 473.88,-134.49 477.38,-134.41 473.81,-131.34 480.88,-134.33 480.88,-134.33" />
+</ns0:g>
+
+<ns0:g id="node30" class="node">
+<ns0:title>PROP_WEB_SOURCE</ns0:title>
+<ns0:g id="a_node30"><ns0:a ns1:href="../technical/web.html#PROP_WEB_SOURCE" ns1:title="PROP_WEB_SOURCE" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M590,-286C590,-286 490,-286 490,-286 484,-286 478,-280 478,-274 478,-274 478,-198 478,-198 478,-192 484,-186 490,-186 490,-186 590,-186 590,-186 596,-186 602,-192 602,-198 602,-198 602,-274 602,-274 602,-280 596,-286 590,-286" />
+<ns0:text text-anchor="start" x="487" y="-273.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="487" y="-263" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Eine Seite wird</ns0:text>
+<ns0:text text-anchor="start" x="487" y="-253" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">erkannt an</ns0:text>
+<ns0:text text-anchor="start" x="487" y="-243" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">ihrem Meta-Tag,</ns0:text>
+<ns0:text text-anchor="start" x="487" y="-233" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">einer</ns0:text>
+<ns0:text text-anchor="start" x="487" y="-223" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Zuordnungsregel</ns0:text>
+<ns0:text text-anchor="start" x="487" y="-213" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">oder ihrer</ns0:text>
+<ns0:text text-anchor="start" x="487" y="-203" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Adresse</ns0:text>
+<ns0:text text-anchor="start" x="487" y="-193" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_WEB_SOURCE</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge19" class="edge">
+<ns0:title>PROP_WEB_FILES-&gt;PROP_WEB_SOURCE</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M374.23,-162.1C403.49,-175.22 439.98,-191.59 471.18,-205.58" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="477.75,-208.53 470.07,-208.54 474.56,-207.1 471.36,-205.66 471.36,-205.66 471.36,-205.66 474.56,-207.1 472.65,-202.79 477.75,-208.53 477.75,-208.53" />
+</ns0:g>
+
+<ns0:g id="node15" class="node">
+<ns0:title>PROP_ENGINE_BINARY</ns0:title>
+<ns0:g id="a_node15"><ns0:a ns1:href="../technical/hosts.html#PROP_ENGINE_BINARY" ns1:title="PROP_ENGINE_BINARY" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M374.5,-791C374.5,-791 264.5,-791 264.5,-791 258.5,-791 252.5,-785 252.5,-779 252.5,-779 252.5,-723 252.5,-723 252.5,-717 258.5,-711 264.5,-711 264.5,-711 374.5,-711 374.5,-711 380.5,-711 386.5,-717 386.5,-723 386.5,-723 386.5,-779 386.5,-779 386.5,-785 380.5,-791 374.5,-791" />
+<ns0:text text-anchor="start" x="261.5" y="-778.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="261.5" y="-768" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Die Engine wird</ns0:text>
+<ns0:text text-anchor="start" x="261.5" y="-758" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">mit PyInstaller</ns0:text>
+<ns0:text text-anchor="start" x="261.5" y="-748" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">gebaut, ein</ns0:text>
+<ns0:text text-anchor="start" x="261.5" y="-738" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Ordner pro</ns0:text>
+<ns0:text text-anchor="start" x="261.5" y="-728" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Plattform</ns0:text>
+<ns0:text text-anchor="start" x="261.5" y="-718" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_ENGINE_BINARY</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge20" class="edge">
+<ns0:title>PROP_ENGINE_BINARY-&gt;PROP_PYTHON_CORE</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M386.65,-754.94C412.37,-756.47 441.88,-758.22 468.04,-759.78" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="475.32,-760.21 468.15,-762.94 471.83,-760 468.34,-759.8 468.34,-759.8 468.34,-759.8 471.83,-760 468.52,-756.65 475.32,-760.21 475.32,-760.21" />
+</ns0:g>
+
+<ns0:g id="node16" class="node">
+<ns0:title>PROP_VSCODE_PLATFORM</ns0:title>
+<ns0:g id="a_node16"><ns0:a ns1:href="../technical/hosts.html#PROP_VSCODE_PLATFORM" ns1:title="PROP_VSCODE_PLATFORM" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M153,-791C153,-791 23,-791 23,-791 17,-791 11,-785 11,-779 11,-779 11,-723 11,-723 11,-717 17,-711 23,-711 23,-711 153,-711 153,-711 159,-711 165,-717 165,-723 165,-723 165,-779 165,-779 165,-785 159,-791 153,-791" />
+<ns0:text text-anchor="start" x="20" y="-778.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="20" y="-768" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">VS Code bekommt</ns0:text>
+<ns0:text text-anchor="start" x="20" y="-758" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">ein Paket pro</ns0:text>
+<ns0:text text-anchor="start" x="20" y="-748" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Plattform mit</ns0:text>
+<ns0:text text-anchor="start" x="20" y="-738" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">der Engine</ns0:text>
+<ns0:text text-anchor="start" x="20" y="-728" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">darin</ns0:text>
+<ns0:text text-anchor="start" x="20" y="-718" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_VSCODE_PLATFORM</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge21" class="edge">
+<ns0:title>PROP_VSCODE_PLATFORM-&gt;PROP_ENGINE_BINARY</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M165.1,-751C190.86,-751 219.57,-751 245.11,-751" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="252.23,-751 245.23,-754.15 248.73,-751 245.23,-751 245.23,-751 245.23,-751 248.73,-751 245.23,-747.85 252.23,-751 252.23,-751" />
+</ns0:g>
+
+<ns0:g id="node17" class="node">
+<ns0:title>PROP_LAYERS</ns0:title>
+<ns0:g id="a_node17"><ns0:a ns1:href="../technical/layers.html#PROP_LAYERS" ns1:title="PROP_LAYERS" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M576,-482C576,-482 504,-482 504,-482 498,-482 492,-476 492,-470 492,-470 492,-414 492,-414 492,-408 498,-402 504,-402 504,-402 576,-402 576,-402 582,-402 588,-408 588,-414 588,-414 588,-470 588,-470 588,-476 582,-482 576,-482" />
+<ns0:text text-anchor="start" x="501" y="-469.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="501" y="-459" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Der Core ist in</ns0:text>
+<ns0:text text-anchor="start" x="501" y="-449" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Schichten mit</ns0:text>
+<ns0:text text-anchor="start" x="501" y="-439" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">strenger Abh&#228;ng</ns0:text>
+<ns0:text text-anchor="start" x="501" y="-429" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">igkeitsrichtung</ns0:text>
+<ns0:text text-anchor="start" x="501" y="-419" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">aufgeteilt</ns0:text>
+<ns0:text text-anchor="start" x="501" y="-409" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_LAYERS</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge22" class="edge">
+<ns0:title>PROP_LAYERS-&gt;DEC_CLI_MASTER</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M588.14,-470.48C620.87,-490.25 664.74,-516.76 699.9,-538" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="705.91,-541.63 698.29,-540.7 702.92,-539.82 699.92,-538.01 699.92,-538.01 699.92,-538.01 702.92,-539.82 701.55,-535.31 705.91,-541.63 705.91,-541.63" />
+</ns0:g>
+
+<ns0:g id="node18" class="node">
+<ns0:title>PROP_ROLLOUT_LOCATION</ns0:title>
+<ns0:g id="a_node18"><ns0:a ns1:href="../technical/rollout.html#PROP_ROLLOUT_LOCATION" ns1:title="PROP_ROLLOUT_LOCATION" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M605,-80C605,-80 475,-80 475,-80 469,-80 463,-74 463,-68 463,-68 463,-12 463,-12 463,-6 469,0 475,0 475,0 605,0 605,0 611,0 617,-6 617,-12 617,-12 617,-68 617,-68 617,-74 611,-80 605,-80" />
+<ns0:text text-anchor="start" x="472" y="-67.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="472" y="-57" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">.deciwa/ im Wur</ns0:text>
+<ns0:text text-anchor="start" x="472" y="-47" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">zelverzeichnis</ns0:text>
+<ns0:text text-anchor="start" x="472" y="-37" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">der</ns0:text>
+<ns0:text text-anchor="start" x="472" y="-27" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Wissensbasis,</ns0:text>
+<ns0:text text-anchor="start" x="472" y="-17" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">committet</ns0:text>
+<ns0:text text-anchor="start" x="472" y="-7" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_ROLLOUT_LOCATION</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge23" class="edge">
+<ns0:title>PROP_ROLLOUT_LOCATION-&gt;DEC_DECIWA_FOLDER</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M617.11,-79.36C640.08,-91.24 665.2,-104.23 687.87,-115.95" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="694.19,-119.22 686.53,-118.81 691.08,-117.62 687.97,-116.01 687.97,-116.01 687.97,-116.01 691.08,-117.62 689.42,-113.21 694.19,-119.22 694.19,-119.22" />
+</ns0:g>
+
+<ns0:g id="edge24" class="edge">
+<ns0:title>PROP_ROLLOUT_LOCATION-&gt;DEC_GIT_COMMITTED</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M617.11,-40C640.55,-40 666.24,-40 689.27,-40" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="696.32,-40 689.32,-43.15 692.82,-40 689.32,-40 689.32,-40 689.32,-40 692.82,-40 689.32,-36.85 696.32,-40 696.32,-40" />
+</ns0:g>
+
+<ns0:g id="node19" class="node">
+<ns0:title>PROP_ROLLOUT_MIGRATE</ns0:title>
+<ns0:g id="a_node19"><ns0:a ns1:href="../technical/rollout.html#PROP_ROLLOUT_MIGRATE" ns1:title="PROP_ROLLOUT_MIGRATE" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M823,-954C823,-954 698,-954 698,-954 692,-954 686,-948 686,-942 686,-942 686,-876 686,-876 686,-870 692,-864 698,-864 698,-864 823,-864 823,-864 829,-864 835,-870 835,-876 835,-876 835,-942 835,-942 835,-948 829,-954 823,-954" />
+<ns0:text text-anchor="start" x="695" y="-941.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="695" y="-931" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Bestehende [CHE</ns0:text>
+<ns0:text text-anchor="start" x="695" y="-921" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">CK]-</ns0:text>
+<ns0:text text-anchor="start" x="695" y="-911" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Markierungen</ns0:text>
+<ns0:text text-anchor="start" x="695" y="-901" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">werden einmalig</ns0:text>
+<ns0:text text-anchor="start" x="695" y="-891" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">in Anfragen</ns0:text>
+<ns0:text text-anchor="start" x="695" y="-881" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">&#252;berf&#252;hrt</ns0:text>
+<ns0:text text-anchor="start" x="695" y="-871" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_ROLLOUT_MIGRATE</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node20" class="node">
+<ns0:title>PROP_SKILLS_FORMAT</ns0:title>
+<ns0:g id="a_node20"><ns0:a ns1:href="../technical/skills.html#PROP_SKILLS_FORMAT" ns1:title="PROP_SKILLS_FORMAT" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M1025,-949C1025,-949 916,-949 916,-949 910,-949 904,-943 904,-937 904,-937 904,-881 904,-881 904,-875 910,-869 916,-869 916,-869 1025,-869 1025,-869 1031,-869 1037,-875 1037,-881 1037,-881 1037,-937 1037,-937 1037,-943 1031,-949 1025,-949" />
+<ns0:text text-anchor="start" x="913" y="-936.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="913" y="-926" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Zwei Skills im</ns0:text>
+<ns0:text text-anchor="start" x="913" y="-916" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Agent-Skills-</ns0:text>
+<ns0:text text-anchor="start" x="913" y="-906" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Format, im</ns0:text>
+<ns0:text text-anchor="start" x="913" y="-896" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Repository</ns0:text>
+<ns0:text text-anchor="start" x="913" y="-886" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">mitgeliefert</ns0:text>
+<ns0:text text-anchor="start" x="913" y="-876" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_SKILLS_FORMAT</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge26" class="edge">
+<ns0:title>PROP_ROLLOUT_MIGRATE-&gt;PROP_SKILLS_FORMAT</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M835.13,-909C855.2,-909 876.92,-909 896.94,-909" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="903.94,-909 896.94,-912.15 900.44,-909 896.94,-909 896.94,-909 896.94,-909 900.44,-909 896.94,-905.85 903.94,-909 903.94,-909" />
+</ns0:g>
+
+<ns0:g id="edge25" class="edge">
+<ns0:title>PROP_ROLLOUT_MIGRATE-&gt;DEC_NO_MARKERS</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M835.13,-945.46C858.21,-956.89 883.48,-969.4 905.81,-980.46" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="912.33,-983.69 904.66,-983.41 909.2,-982.14 906.06,-980.59 906.06,-980.59 906.06,-980.59 909.2,-982.14 907.46,-977.76 912.33,-983.69 912.33,-983.69" />
+</ns0:g>
+
+<ns0:g id="node43" class="node">
+<ns0:title>DEC_SKILLS</ns0:title>
+<ns0:g id="a_node43"><ns0:a ns1:href="../decisions/index.html#DEC_SKILLS" ns1:title="DEC_SKILLS" target="_top">
+<ns0:path fill="#9fe3d9" stroke="#1b1a22" stroke-width="1.2" d="M1182,-944C1182,-944 1114,-944 1114,-944 1108,-944 1102,-938 1102,-932 1102,-932 1102,-886 1102,-886 1102,-880 1108,-874 1114,-874 1114,-874 1182,-874 1182,-874 1188,-874 1194,-880 1194,-886 1194,-886 1194,-932 1194,-932 1194,-938 1188,-944 1182,-944" />
+<ns0:text text-anchor="start" x="1111" y="-931.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Entscheidung</ns0:text>
+<ns0:text text-anchor="start" x="1111" y="-921" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Ein oder zwei</ns0:text>
+<ns0:text text-anchor="start" x="1111" y="-911" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Agent-Skills</ns0:text>
+<ns0:text text-anchor="start" x="1111" y="-901" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">f&#252;r die Arbeit</ns0:text>
+<ns0:text text-anchor="start" x="1111" y="-891" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">mit deciwa</ns0:text>
+<ns0:text text-anchor="start" x="1111" y="-881" font-family="Helvetica,Arial,sans-serif" font-size="10.00">DEC_SKILLS</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge27" class="edge">
+<ns0:title>PROP_SKILLS_FORMAT-&gt;DEC_SKILLS</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M1037.35,-909C1056.33,-909 1076.76,-909 1094.79,-909" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="1101.83,-909 1094.83,-912.15 1098.33,-909 1094.83,-909 1094.83,-909 1094.83,-909 1098.33,-909 1094.83,-905.85 1101.83,-909 1101.83,-909" />
+</ns0:g>
+
+<ns0:g id="node38" class="node">
+<ns0:title>DEC_FORMATS</ns0:title>
+<ns0:g id="a_node38"><ns0:a ns1:href="../decisions/index.html#DEC_FORMATS" ns1:title="DEC_FORMATS" target="_top">
+<ns0:path fill="#9fe3d9" stroke="#1b1a22" stroke-width="1.2" d="M795.5,-726C795.5,-726 725.5,-726 725.5,-726 719.5,-726 713.5,-720 713.5,-714 713.5,-714 713.5,-658 713.5,-658 713.5,-652 719.5,-646 725.5,-646 725.5,-646 795.5,-646 795.5,-646 801.5,-646 807.5,-652 807.5,-658 807.5,-658 807.5,-714 807.5,-714 807.5,-720 801.5,-726 795.5,-726" />
+<ns0:text text-anchor="start" x="722.5" y="-713.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Entscheidung</ns0:text>
+<ns0:text text-anchor="start" x="722.5" y="-703" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Formate: Text,</ns0:text>
+<ns0:text text-anchor="start" x="722.5" y="-693" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">HTML, Python,</ns0:text>
+<ns0:text text-anchor="start" x="722.5" y="-683" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">C, JS, TS, rST,</ns0:text>
+<ns0:text text-anchor="start" x="722.5" y="-673" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Markdown,</ns0:text>
+<ns0:text text-anchor="start" x="722.5" y="-663" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">AsciiDoc</ns0:text>
+<ns0:text text-anchor="start" x="722.5" y="-653" font-family="Helvetica,Arial,sans-serif" font-size="10.00">DEC_FORMATS</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge29" class="edge">
+<ns0:title>PROP_PYTHON_CORE-&gt;DEC_FORMATS</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M604.79,-741.23C637.11,-729.69 675.89,-715.85 706.54,-704.91" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="713.35,-702.47 707.82,-707.79 710.05,-703.65 706.76,-704.83 706.76,-704.83 706.76,-704.83 710.05,-703.65 705.7,-701.86 713.35,-702.47 713.35,-702.47" />
+</ns0:g>
+
+<ns0:g id="node39" class="node">
+<ns0:title>DEC_REVIEW_ON_RESULTS</ns0:title>
+<ns0:g id="a_node39"><ns0:a ns1:href="../decisions/index.html#DEC_REVIEW_ON_RESULTS" ns1:title="DEC_REVIEW_ON_RESULTS" target="_top">
+<ns0:path fill="#9fe3d9" stroke="#1b1a22" stroke-width="1.2" d="M827,-834C827,-834 694,-834 694,-834 688,-834 682,-828 682,-822 682,-822 682,-756 682,-756 682,-750 688,-744 694,-744 694,-744 827,-744 827,-744 833,-744 839,-750 839,-756 839,-756 839,-822 839,-822 839,-828 833,-834 827,-834" />
+<ns0:text text-anchor="start" x="691" y="-821.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Entscheidung</ns0:text>
+<ns0:text text-anchor="start" x="691" y="-811" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Reviews finden</ns0:text>
+<ns0:text text-anchor="start" x="691" y="-801" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">auf den</ns0:text>
+<ns0:text text-anchor="start" x="691" y="-791" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Ergebnissen</ns0:text>
+<ns0:text text-anchor="start" x="691" y="-781" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">statt, nicht</ns0:text>
+<ns0:text text-anchor="start" x="691" y="-771" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">nur im</ns0:text>
+<ns0:text text-anchor="start" x="691" y="-761" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Quelltext</ns0:text>
+<ns0:text text-anchor="start" x="691" y="-751" font-family="Helvetica,Arial,sans-serif" font-size="10.00">DEC_REVIEW_ON_RESULTS</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge30" class="edge">
+<ns0:title>PROP_PYTHON_CORE-&gt;DEC_REVIEW_ON_RESULTS</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M604.79,-771.3C626.59,-773.79 651.33,-776.62 674.54,-779.28" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="681.69,-780.1 674.37,-782.43 678.21,-779.7 674.73,-779.3 674.73,-779.3 674.73,-779.3 678.21,-779.7 675.09,-776.17 681.69,-780.1 681.69,-780.1" />
+</ns0:g>
+
+<ns0:g id="edge28" class="edge">
+<ns0:title>PROP_PYTHON_CORE-&gt;DEC_CLI_MASTER</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M604.67,-734.25C609,-731.35 613.16,-728.27 617,-725 654.05,-693.51 648.42,-672.17 682,-637 687.8,-630.93 694.18,-624.89 700.71,-619.11" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="706.22,-614.31 703.01,-621.28 703.58,-616.61 700.94,-618.9 700.94,-618.9 700.94,-618.9 703.58,-616.61 698.88,-616.53 706.22,-614.31 706.22,-614.31" />
+</ns0:g>
+
+<ns0:g id="node22" class="node">
+<ns0:title>PROP_TOOLING</ns0:title>
+<ns0:g id="a_node22"><ns0:a ns1:href="../technical/stack.html#PROP_TOOLING" ns1:title="PROP_TOOLING" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M356,-693C356,-693 283,-693 283,-693 277,-693 271,-687 271,-681 271,-681 271,-635 271,-635 271,-629 277,-623 283,-623 283,-623 356,-623 356,-623 362,-623 368,-629 368,-635 368,-635 368,-681 368,-681 368,-687 362,-693 356,-693" />
+<ns0:text text-anchor="start" x="280" y="-680.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="280" y="-670" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Tooling: Python</ns0:text>
+<ns0:text text-anchor="start" x="280" y="-660" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">3.12+, uv,</ns0:text>
+<ns0:text text-anchor="start" x="280" y="-650" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">ruff, pytest,</ns0:text>
+<ns0:text text-anchor="start" x="280" y="-640" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">click</ns0:text>
+<ns0:text text-anchor="start" x="280" y="-630" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_TOOLING</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge31" class="edge">
+<ns0:title>PROP_TOOLING-&gt;PROP_PYTHON_CORE</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M368.18,-681.13C398.08,-695.64 437.12,-714.57 470.33,-730.68" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="476.89,-733.87 469.21,-733.65 473.74,-732.34 470.59,-730.81 470.59,-730.81 470.59,-730.81 473.74,-732.34 471.96,-727.98 476.89,-733.87 476.89,-733.87" />
+</ns0:g>
+
+<ns0:g id="node23" class="node">
+<ns0:title>PROP_RESOLVE</ns0:title>
+<ns0:g id="a_node23"><ns0:a ns1:href="../technical/state-engine.html#PROP_RESOLVE" ns1:title="PROP_RESOLVE" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M357,-1131C357,-1131 282,-1131 282,-1131 276,-1131 270,-1125 270,-1119 270,-1119 270,-1033 270,-1033 270,-1027 276,-1021 282,-1021 282,-1021 357,-1021 357,-1021 363,-1021 369,-1027 369,-1033 369,-1033 369,-1119 369,-1119 369,-1125 363,-1131 357,-1131" />
+<ns0:text text-anchor="start" x="279" y="-1118.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="279" y="-1108" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Selektoren</ns0:text>
+<ns0:text text-anchor="start" x="279" y="-1098" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">werden in</ns0:text>
+<ns0:text text-anchor="start" x="279" y="-1088" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">fester</ns0:text>
+<ns0:text text-anchor="start" x="279" y="-1078" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Reihenfolge</ns0:text>
+<ns0:text text-anchor="start" x="279" y="-1068" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">probiert, und</ns0:text>
+<ns0:text text-anchor="start" x="279" y="-1058" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">der erste</ns0:text>
+<ns0:text text-anchor="start" x="279" y="-1048" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">eindeutige</ns0:text>
+<ns0:text text-anchor="start" x="279" y="-1038" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Treffer gewinnt</ns0:text>
+<ns0:text text-anchor="start" x="279" y="-1028" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_RESOLVE</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge33" class="edge">
+<ns0:title>PROP_RESOLVE-&gt;PROP_SELECTORS</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M369.26,-1061.72C400.85,-1052.46 442.29,-1040.33 476.31,-1030.36" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="483.45,-1028.27 477.62,-1033.26 480.1,-1029.25 476.74,-1030.24 476.74,-1030.24 476.74,-1030.24 480.1,-1029.25 475.85,-1027.21 483.45,-1028.27 483.45,-1028.27" />
+</ns0:g>
+
+<ns0:g id="edge32" class="edge">
+<ns0:title>PROP_RESOLVE-&gt;DEC_NO_MARKERS</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M369.34,-1079.88C461.97,-1086.09 669.12,-1094.39 839,-1061 861.28,-1056.62 884.77,-1048.87 905.58,-1040.8" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="912.23,-1038.18 906.88,-1043.68 908.98,-1039.46 905.72,-1040.75 905.72,-1040.75 905.72,-1040.75 908.98,-1039.46 904.57,-1037.81 912.23,-1038.18 912.23,-1038.18" />
+</ns0:g>
+
+<ns0:g id="node24" class="node">
+<ns0:title>PROP_FINGERPRINT</ns0:title>
+<ns0:g id="a_node24"><ns0:a ns1:href="../technical/state-engine.html#PROP_FINGERPRINT" ns1:title="PROP_FINGERPRINT" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M136.5,-1116C136.5,-1116 39.5,-1116 39.5,-1116 33.5,-1116 27.5,-1110 27.5,-1104 27.5,-1104 27.5,-1048 27.5,-1048 27.5,-1042 33.5,-1036 39.5,-1036 39.5,-1036 136.5,-1036 136.5,-1036 142.5,-1036 148.5,-1042 148.5,-1048 148.5,-1048 148.5,-1104 148.5,-1104 148.5,-1110 142.5,-1116 136.5,-1116" />
+<ns0:text text-anchor="start" x="36.5" y="-1103.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1093" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Der Fingerprint</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1083" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">umfasst den</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1073" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Quelltext mit</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1063" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">normalisierten</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1053" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Leerzeichen</ns0:text>
+<ns0:text text-anchor="start" x="36.5" y="-1043" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_FINGERPRINT</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge34" class="edge">
+<ns0:title>PROP_FINGERPRINT-&gt;PROP_RESOLVE</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M148.7,-1076C183.91,-1076 228.19,-1076 262.7,-1076" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="269.91,-1076 262.91,-1079.15 266.41,-1076 262.91,-1076 262.91,-1076 262.91,-1076 266.41,-1076 262.91,-1072.85 269.91,-1076 269.91,-1076" />
+</ns0:g>
+
+<ns0:g id="node25" class="node">
+<ns0:title>PROP_STATE_RULES</ns0:title>
+<ns0:g id="a_node25"><ns0:a ns1:href="../technical/state-engine.html#PROP_STATE_RULES" ns1:title="PROP_STATE_RULES" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M368.5,-1395C368.5,-1395 270.5,-1395 270.5,-1395 264.5,-1395 258.5,-1389 258.5,-1383 258.5,-1383 258.5,-1347 258.5,-1347 258.5,-1341 264.5,-1335 270.5,-1335 270.5,-1335 368.5,-1335 368.5,-1335 374.5,-1335 380.5,-1341 380.5,-1347 380.5,-1347 380.5,-1383 380.5,-1383 380.5,-1389 374.5,-1395 368.5,-1395" />
+<ns0:text text-anchor="start" x="267.5" y="-1382.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="267.5" y="-1372" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Zustandsregeln</ns0:text>
+<ns0:text text-anchor="start" x="267.5" y="-1362" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">in dieser</ns0:text>
+<ns0:text text-anchor="start" x="267.5" y="-1352" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Reihenfolge</ns0:text>
+<ns0:text text-anchor="start" x="267.5" y="-1342" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_STATE_RULES</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge36" class="edge">
+<ns0:title>PROP_STATE_RULES-&gt;DEC_THREE_MODES</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M380.78,-1361.41C408.97,-1359.74 442.63,-1357.73 471.64,-1356.01" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="478.91,-1355.58 472.11,-1359.14 475.42,-1355.78 471.92,-1355.99 471.92,-1355.99 471.92,-1355.99 475.42,-1355.78 471.74,-1352.85 478.91,-1355.58 478.91,-1355.58" />
+</ns0:g>
+
+<ns0:g id="edge35" class="edge">
+<ns0:title>PROP_STATE_RULES-&gt;DEC_FREEZE</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M380.78,-1388.45C414.16,-1401.43 455.22,-1417.41 487.15,-1429.83" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="493.81,-1432.42 486.15,-1432.82 490.55,-1431.15 487.29,-1429.88 487.29,-1429.88 487.29,-1429.88 490.55,-1431.15 488.43,-1426.95 493.81,-1432.42 493.81,-1432.42" />
+</ns0:g>
+
+<ns0:g id="node26" class="node">
+<ns0:title>PROP_WEB_ONE_LINE</ns0:title>
+<ns0:g id="a_node26"><ns0:a ns1:href="../technical/web.html#PROP_WEB_ONE_LINE" ns1:title="PROP_WEB_ONE_LINE" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M813.5,-340C813.5,-340 707.5,-340 707.5,-340 701.5,-340 695.5,-334 695.5,-328 695.5,-328 695.5,-282 695.5,-282 695.5,-276 701.5,-270 707.5,-270 707.5,-270 813.5,-270 813.5,-270 819.5,-270 825.5,-276 825.5,-282 825.5,-282 825.5,-328 825.5,-328 825.5,-334 819.5,-340 813.5,-340" />
+<ns0:text text-anchor="start" x="704.5" y="-327.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="704.5" y="-317" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Das Skript zu</ns0:text>
+<ns0:text text-anchor="start" x="704.5" y="-307" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">laden gen&#252;gt &#8211;</ns0:text>
+<ns0:text text-anchor="start" x="704.5" y="-297" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">deciwa</ns0:text>
+<ns0:text text-anchor="start" x="704.5" y="-287" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">erscheint immer</ns0:text>
+<ns0:text text-anchor="start" x="704.5" y="-277" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_WEB_ONE_LINE</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node27" class="node">
+<ns0:title>PROP_OVERLAY_PARTS</ns0:title>
+<ns0:g id="a_node27"><ns0:a ns1:href="../technical/web.html#PROP_OVERLAY_PARTS" ns1:title="PROP_OVERLAY_PARTS" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M596,-384C596,-384 484,-384 484,-384 478,-384 472,-378 472,-372 472,-372 472,-316 472,-316 472,-310 478,-304 484,-304 484,-304 596,-304 596,-304 602,-304 608,-310 608,-316 608,-316 608,-372 608,-372 608,-378 602,-384 596,-384" />
+<ns0:text text-anchor="start" x="481" y="-371.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="481" y="-361" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Das Overlay ist</ns0:text>
+<ns0:text text-anchor="start" x="481" y="-351" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">aufgeteilt in</ns0:text>
+<ns0:text text-anchor="start" x="481" y="-341" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Elementquelle,</ns0:text>
+<ns0:text text-anchor="start" x="481" y="-331" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Speicher und</ns0:text>
+<ns0:text text-anchor="start" x="481" y="-321" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Oberfl&#228;che</ns0:text>
+<ns0:text text-anchor="start" x="481" y="-311" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_OVERLAY_PARTS</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge38" class="edge">
+<ns0:title>PROP_OVERLAY_PARTS-&gt;PROP_WEB_ONE_LINE</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M608.04,-332.03C633.38,-327.51 662.31,-322.35 688.04,-317.76" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="695.2,-316.48 688.87,-320.81 691.76,-317.09 688.31,-317.71 688.31,-317.71 688.31,-317.71 691.76,-317.09 687.76,-314.61 695.2,-316.48 695.2,-316.48" />
+</ns0:g>
+
+<ns0:g id="edge37" class="edge">
+<ns0:title>PROP_OVERLAY_PARTS-&gt;DEC_CLI_MASTER</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M606.35,-384.03C610.05,-386.94 613.63,-389.94 617,-393 661.5,-433.5 702.92,-488.91 729.5,-527.72" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="733.64,-533.8 727.1,-529.78 731.67,-530.91 729.7,-528.01 729.7,-528.01 729.7,-528.01 731.67,-530.91 732.3,-526.24 733.64,-533.8 733.64,-533.8" />
+</ns0:g>
+
+<ns0:g id="node28" class="node">
+<ns0:title>PROP_WEB_BUNDLE</ns0:title>
+<ns0:g id="a_node28"><ns0:a ns1:href="../technical/web.html#PROP_WEB_BUNDLE" ns1:title="PROP_WEB_BUNDLE" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M368.5,-389C368.5,-389 270.5,-389 270.5,-389 264.5,-389 258.5,-383 258.5,-377 258.5,-377 258.5,-311 258.5,-311 258.5,-305 264.5,-299 270.5,-299 270.5,-299 368.5,-299 368.5,-299 374.5,-299 380.5,-305 380.5,-311 380.5,-311 380.5,-377 380.5,-377 380.5,-383 374.5,-389 368.5,-389" />
+<ns0:text text-anchor="start" x="267.5" y="-376.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="267.5" y="-366" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Ein Bundle,</ns0:text>
+<ns0:text text-anchor="start" x="267.5" y="-356" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">gebaut mit</ns0:text>
+<ns0:text text-anchor="start" x="267.5" y="-346" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">esbuild, die</ns0:text>
+<ns0:text text-anchor="start" x="267.5" y="-336" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Oberfl&#228;che in</ns0:text>
+<ns0:text text-anchor="start" x="267.5" y="-326" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">einem Shadow</ns0:text>
+<ns0:text text-anchor="start" x="267.5" y="-316" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">DOM</ns0:text>
+<ns0:text text-anchor="start" x="267.5" y="-306" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_WEB_BUNDLE</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge39" class="edge">
+<ns0:title>PROP_WEB_BUNDLE-&gt;PROP_OVERLAY_PARTS</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M380.78,-344C406.76,-344 437.39,-344 464.75,-344" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="472,-344 465,-347.15 468.5,-344 465,-344 465,-344 465,-344 468.5,-344 465,-340.85 472,-344 472,-344" />
+</ns0:g>
+
+<ns0:g id="node29" class="node">
+<ns0:title>PROP_WEB_HOSTING</ns0:title>
+<ns0:g id="a_node29"><ns0:a ns1:href="../technical/web.html#PROP_WEB_HOSTING" ns1:title="PROP_WEB_HOSTING" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M139.5,-389C139.5,-389 36.5,-389 36.5,-389 30.5,-389 24.5,-383 24.5,-377 24.5,-377 24.5,-311 24.5,-311 24.5,-305 30.5,-299 36.5,-299 36.5,-299 139.5,-299 139.5,-299 145.5,-299 151.5,-305 151.5,-311 151.5,-311 151.5,-377 151.5,-377 151.5,-383 145.5,-389 139.5,-389" />
+<ns0:text text-anchor="start" x="33.5" y="-376.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="33.5" y="-366" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Das Web-Skript</ns0:text>
+<ns0:text text-anchor="start" x="33.5" y="-356" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">wird mit der</ns0:text>
+<ns0:text text-anchor="start" x="33.5" y="-346" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Doku unter</ns0:text>
+<ns0:text text-anchor="start" x="33.5" y="-336" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">einem</ns0:text>
+<ns0:text text-anchor="start" x="33.5" y="-326" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">versionierten</ns0:text>
+<ns0:text text-anchor="start" x="33.5" y="-316" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Pfad gehostet</ns0:text>
+<ns0:text text-anchor="start" x="33.5" y="-306" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_WEB_HOSTING</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge40" class="edge">
+<ns0:title>PROP_WEB_HOSTING-&gt;PROP_WEB_BUNDLE</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M151.71,-344C182.56,-344 219.77,-344 251.21,-344" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="258.24,-344 251.24,-347.15 254.74,-344 251.24,-344 251.24,-344 251.24,-344 254.74,-344 251.24,-340.85 258.24,-344 258.24,-344" />
+</ns0:g>
+
+<ns0:g id="edge42" class="edge">
+<ns0:title>PROP_WEB_SOURCE-&gt;PROP_WEB_ONE_LINE</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M602.15,-255.31C628.92,-263.77 660.51,-273.74 688.32,-282.52" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="695.31,-284.73 687.69,-285.63 691.97,-283.68 688.63,-282.62 688.63,-282.62 688.63,-282.62 691.97,-283.68 689.58,-279.62 695.31,-284.73 695.31,-284.73" />
+</ns0:g>
+
+<ns0:g id="edge41" class="edge">
+<ns0:title>PROP_WEB_SOURCE-&gt;DEC_DECIWA_FOLDER</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M602.15,-212.77C628.69,-202.69 659.95,-190.82 687.58,-180.32" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="694.16,-177.82 688.73,-183.25 690.88,-179.06 687.61,-180.31 687.61,-180.31 687.61,-180.31 690.88,-179.06 686.49,-177.36 694.16,-177.82 694.16,-177.82" />
+</ns0:g>
+
+<ns0:g id="node31" class="node">
+<ns0:title>PROP_WEB_INDEX</ns0:title>
+<ns0:g id="a_node31"><ns0:a ns1:href="../technical/web.html#PROP_WEB_INDEX" ns1:title="PROP_WEB_INDEX" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M363.5,-271C363.5,-271 275.5,-271 275.5,-271 269.5,-271 263.5,-265 263.5,-259 263.5,-259 263.5,-213 263.5,-213 263.5,-207 269.5,-201 275.5,-201 275.5,-201 363.5,-201 363.5,-201 369.5,-201 375.5,-207 375.5,-213 375.5,-213 375.5,-259 375.5,-259 375.5,-265 369.5,-271 363.5,-271" />
+<ns0:text text-anchor="start" x="272.5" y="-258.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="272.5" y="-248" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Der Browser</ns0:text>
+<ns0:text text-anchor="start" x="272.5" y="-238" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">merkt sich die</ns0:text>
+<ns0:text text-anchor="start" x="272.5" y="-228" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Elemente jeder</ns0:text>
+<ns0:text text-anchor="start" x="272.5" y="-218" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">besuchten Seite</ns0:text>
+<ns0:text text-anchor="start" x="272.5" y="-208" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_WEB_INDEX</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge43" class="edge">
+<ns0:title>PROP_WEB_INDEX-&gt;PROP_WEB_SOURCE</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M375.64,-236C404.43,-236 439.93,-236 470.47,-236" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="477.72,-236 470.72,-239.15 474.22,-236 470.72,-236 470.72,-236 470.72,-236 474.22,-236 470.72,-232.85 477.72,-236 477.72,-236" />
+</ns0:g>
+
+<ns0:g id="node32" class="node">
+<ns0:title>PROP_WEB_RESCAN</ns0:title>
+<ns0:g id="a_node32"><ns0:a ns1:href="../technical/web.html#PROP_WEB_RESCAN" ns1:title="PROP_WEB_RESCAN" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M138,-987C138,-987 38,-987 38,-987 32,-987 26,-981 26,-975 26,-975 26,-919 26,-919 26,-913 32,-907 38,-907 38,-907 138,-907 138,-907 144,-907 150,-913 150,-919 150,-919 150,-975 150,-975 150,-981 144,-987 138,-987" />
+<ns0:text text-anchor="start" x="35" y="-974.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="35" y="-964" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Seiten, die</ns0:text>
+<ns0:text text-anchor="start" x="35" y="-954" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">sich nach dem</ns0:text>
+<ns0:text text-anchor="start" x="35" y="-944" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Laden &#228;ndern,</ns0:text>
+<ns0:text text-anchor="start" x="35" y="-934" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">werden erneut</ns0:text>
+<ns0:text text-anchor="start" x="35" y="-924" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">gescannt</ns0:text>
+<ns0:text text-anchor="start" x="35" y="-914" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_WEB_RESCAN</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge44" class="edge">
+<ns0:title>PROP_WEB_RESCAN-&gt;PROP_DOM_ADAPTER</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M150.2,-947C180.07,-947 216.19,-947 247.29,-947" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="254.67,-947 247.67,-950.15 251.17,-947 247.67,-947 247.67,-947 247.67,-947 251.17,-947 247.67,-943.85 254.67,-947 254.67,-947" />
+</ns0:g>
+
+<ns0:g id="node33" class="node">
+<ns0:title>PROP_DOCS_TRANSLATION</ns0:title>
+<ns0:g id="a_node33"><ns0:a ns1:href="../technical/working.html#PROP_DOCS_TRANSLATION" ns1:title="PROP_DOCS_TRANSLATION" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M386,-1699C386,-1699 253,-1699 253,-1699 247,-1699 241,-1693 241,-1687 241,-1687 241,-1611 241,-1611 241,-1605 247,-1599 253,-1599 253,-1599 386,-1599 386,-1599 392,-1599 398,-1605 398,-1611 398,-1611 398,-1687 398,-1687 398,-1693 392,-1699 386,-1699" />
+<ns0:text text-anchor="start" x="250" y="-1686.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="250" y="-1676" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Englisch ist</ns0:text>
+<ns0:text text-anchor="start" x="250" y="-1666" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">die Quelle der</ns0:text>
+<ns0:text text-anchor="start" x="250" y="-1656" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Docs; Deutsch</ns0:text>
+<ns0:text text-anchor="start" x="250" y="-1646" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">ist eine</ns0:text>
+<ns0:text text-anchor="start" x="250" y="-1636" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">&#220;bersetzung in</ns0:text>
+<ns0:text text-anchor="start" x="250" y="-1626" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">gettext-</ns0:text>
+<ns0:text text-anchor="start" x="250" y="-1616" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Katalogen</ns0:text>
+<ns0:text text-anchor="start" x="250" y="-1606" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_DOCS_TRANSLATION</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node34" class="node">
+<ns0:title>PROP_DOCS_REVIEW_SOURCE</ns0:title>
+<ns0:g id="a_node34"><ns0:a ns1:href="../technical/working.html#PROP_DOCS_REVIEW_SOURCE" ns1:title="PROP_DOCS_REVIEW_SOURCE" target="_top">
+<ns0:path fill="#efe4d4" stroke="#1b1a22" stroke-width="1.2" d="M164,-1689C164,-1689 12,-1689 12,-1689 6,-1689 0,-1683 0,-1677 0,-1677 0,-1621 0,-1621 0,-1615 6,-1609 12,-1609 12,-1609 164,-1609 164,-1609 170,-1609 176,-1615 176,-1621 176,-1621 176,-1677 176,-1677 176,-1683 170,-1689 164,-1689" />
+<ns0:text text-anchor="start" x="9" y="-1676.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">Vorschlag</ns0:text>
+<ns0:text text-anchor="start" x="9" y="-1666" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Reviews und</ns0:text>
+<ns0:text text-anchor="start" x="9" y="-1656" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Entscheidungen</ns0:text>
+<ns0:text text-anchor="start" x="9" y="-1646" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">finden nur auf</ns0:text>
+<ns0:text text-anchor="start" x="9" y="-1636" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">den englischen</ns0:text>
+<ns0:text text-anchor="start" x="9" y="-1626" font-family="Helvetica,Arial,sans-serif" font-weight="bold" font-size="10.00">Docs statt</ns0:text>
+<ns0:text text-anchor="start" x="9" y="-1616" font-family="Helvetica,Arial,sans-serif" font-size="10.00">PROP_DOCS_REVIEW_SOURCE</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge45" class="edge">
+<ns0:title>PROP_DOCS_REVIEW_SOURCE-&gt;PROP_DOCS_TRANSLATION</ns0:title>
+<ns0:path fill="none" stroke="#5b6470" d="M176.09,-1649C194.9,-1649 214.76,-1649 233.48,-1649" />
+<ns0:polygon fill="#5b6470" stroke="#5b6470" points="240.88,-1649 233.88,-1652.15 237.38,-1649 233.88,-1649 233.88,-1649 233.88,-1649 237.38,-1649 233.88,-1645.85 240.88,-1649 240.88,-1649" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

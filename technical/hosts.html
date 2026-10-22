@@ -1,0 +1,720 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Open questions" href="questions.html"><link rel="prev" title="Rollout in the knowledge base" href="rollout.html">
+        <link rel="canonical" href="https://deciwa.danwos.dev/technical/hosts.html">
+        <link rel="prefetch" href="../_static/deciwa.webp" as="image">
+
+    <link rel="shortcut icon" href="../_static/logo.svg"><!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Host apps and the standalone engine - deciwa</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/deciwa-overlay.css?v=72f4c4c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_core.css?v=f5b60a78" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_links.css?v=2150a916" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_style.css?v=92936fa5" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_toggle.css?v=5c6620df" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/needstable.css?v=7b67799e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/modern.css?v=c1bc121d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/danwos.css?v=d2269ede" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #0F766E;
+  --color-brand-content: #0F766E;
+  --color-brand-visited: #0F766E;
+  --color-background-primary: #FFFFFF;
+  --color-foreground-primary: #1B1A22;
+  --font-stack: Inter, system-ui, sans-serif;
+  --font-stack--monospace: 'JetBrains Mono', ui-monospace, monospace;
+  --font-stack--headings: 'Bricolage Grotesque', Inter, system-ui, sans-serif;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #14B8A6;
+  --color-brand-content: #14B8A6;
+  --color-brand-visited: #14B8A6;
+  --color-background-primary: #0D1B2A;
+  --color-background-secondary: #0A1622;
+  --color-foreground-primary: #E8EDF3;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #14B8A6;
+  --color-brand-content: #14B8A6;
+  --color-brand-visited: #14B8A6;
+  --color-background-primary: #0D1B2A;
+  --color-background-secondary: #0A1622;
+  --color-foreground-primary: #E8EDF3;
+  
+      }
+    }
+  }
+</style>
+
+<link rel="alternate" hreflang="en" href="https://deciwa.danwos.dev/technical/hosts.html">
+<link rel="alternate" hreflang="de" href="https://deciwa.danwos.dev/de/technical/hosts.html">
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">deciwa</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered dw-brand" href="../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/deciwa.webp" alt=""/>
+  </div>
+  <span class="dw-brand-name">deciwa</span>
+  <span class="dw-brand-slogan">decision watcher</span>
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<nav class="dw-languages" aria-label="Language">
+  <span aria-current="true" lang="en">English</span>
+  <a href="../de/technical/hosts.html" hreflang="de" lang="de">Deutsch</a>
+</nav><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Product</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">What deciwa is</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/ways-of-working.html">Three ways of working</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/elements.html">What you can review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/review-rules.html">What must be approved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/ui.html">The review UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/cli.html">CLI and agent skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/data.html">Where reviews are stored</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/roadmap.html">Roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Integrations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/index.html">Integration overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../integrations/sphinx/index.html">Sphinx</a><input aria-label="Toggle navigation of Sphinx" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/sphinx/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/sphinx/configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/sphinx/workflow.html">Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/web.html">Web script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/vscode.html">VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/chrome.html">Chrome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/claude.html">Claude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/monsterbrain.html">monsterbrain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/desktop.html">Desktop app</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Decisions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../decisions/index.html">All decisions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical details</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapters.html">Adapters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file-format.html">File format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="state-engine.html">State engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web.html">Web script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skills.html">Agent skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rollout.html">Rollout in the knowledge base</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Host apps and the standalone engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="questions.html">Open questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="working.html">Working on deciwa</a></li>
+</ul>
+
+</div></div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="dw-el-1" id="host-apps-and-the-standalone-engine">
+<h1>Host apps and the standalone engine<a class="headerlink" href="#host-apps-and-the-standalone-engine" title="Link to this heading">¶</a></h1>
+<div class="status-draft dw-el-2 admonition">
+<p class="admonition-title">Status: hosts decided, standalone engine draft</p>
+<p class="dw-el-3">The engine server, the host element source and the client are decided
+(2026-10-22) and built; monsterbrain is the first host
+(<a class="reference internal" href="../decisions/index.html#DEC_HOST_ORDER" title="DEC_HOST_ORDER"><em class="xref need">monsterbrain is the first h... (DEC_HOST_ORDER)</em></a>). The standalone engine further down is still a
+proposal.</p>
+</div>
+<p class="dw-el-4">A <strong>host</strong> is an app that renders content itself and shows deciwa inside
+it: <a class="reference internal" href="../integrations/monsterbrain.html"><span class="std std-doc">monsterbrain</span></a> first, then
+<a class="reference internal" href="../integrations/vscode.html"><span class="std std-doc">VS Code</span></a>. Two decisions frame this page:</p>
+<ul class="simple">
+<li class="dw-el-5"><p><a class="reference internal" href="../decisions/index.html#DEC_HOST_EXTENSIONS" title="DEC_HOST_EXTENSIONS"><em class="xref need">Host apps get deciwa as an ... (DEC_HOST_EXTENSIONS)</em></a> – the host only offers generic extension
+points; everything deciwa-specific is an extension in this repository.</p></li>
+<li class="dw-el-6"><p><a class="reference internal" href="../decisions/index.html#DEC_STANDALONE_ENGINE" title="DEC_STANDALONE_ENGINE"><em class="xref need">The Python parts can be shi... (DEC_STANDALONE_ENGINE)</em></a> – the Python parts ship as a standalone
+binary, so a host works without Python on the machine.</p></li>
+</ul>
+<section class="dw-el-7" id="parts">
+<h2>Parts<a class="headerlink" href="#parts" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Part</p></th>
+<th class="head"><p>Where</p></th>
+<th class="head"><p>Task</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="dw-el-8 row-even"><td><p>engine</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deciwa</span></code> binary: core, CLI, server and the overlay files</p></td>
+<td><p>all logic, <code class="docutils literal notranslate"><span class="pre">.deciwa/</span></code>, the JSON API</p></td>
+</tr>
+<tr class="dw-el-9 row-odd"><td><p>client</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">packages/client</span></code> (TypeScript, npm <code class="docutils literal notranslate"><span class="pre">&#64;danwos/deciwa-client</span></code>)</p></td>
+<td><p>find, start and stop the engine, check its version, typed calls to the JSON API</p></td>
+</tr>
+<tr class="dw-el-10 row-even"><td><p>overlay</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">packages/ui</span></code></p></td>
+<td><p>card, panel, bars, guided review – with a third element source for hosts (<code class="docutils literal notranslate"><span class="pre">js/host.js</span></code>)</p></td>
+</tr>
+<tr class="dw-el-11 row-odd"><td><p>host adapter</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">packages/monsterbrain</span></code>, later <code class="docutils literal notranslate"><span class="pre">packages/vscode</span></code></p></td>
+<td><p>maps the host’s extension points to client and overlay – small, no logic</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="dw-el-12">The host adapters depend on client and overlay, never on each other
+(<a class="reference internal" href="../decisions/index.html#DEC_PACKAGES" title="DEC_PACKAGES"><em class="xref need">deciwa is one repository of... (DEC_PACKAGES)</em></a>). Logic stays in <code class="docutils literal notranslate"><span class="pre">deciwa-core</span></code> (<a class="reference internal" href="../decisions/index.html#DEC_CLI_MASTER" title="DEC_CLI_MASTER"><em class="xref need">The CLI is the master, with... (DEC_CLI_MASTER)</em></a>);
+the TypeScript parts only call the engine.</p>
+</section>
+<section class="dw-el-13" id="engine-as-a-server-for-a-host">
+<h2>Engine as a server for a host<a class="headerlink" href="#engine-as-a-server-for-a-host" title="Link to this heading">¶</a></h2>
+<p class="dw-el-14"><a class="reference internal" href="../decisions/index.html#DEC_SERVE_API_ONLY" title="DEC_SERVE_API_ONLY"><em class="xref need">A host talks to deciwa serv... (DEC_SERVE_API_ONLY)</em></a></p>
+<div class="dw-el-15 highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>deciwa<span class="w"> </span>serve<span class="w"> </span>--api-only<span class="w"> </span>--root<span class="w"> </span>&lt;folder&gt;<span class="w"> </span>--port<span class="w"> </span><span class="m">0</span>
+<span class="go">{"deciwa": "0.0.1", "api": 1, "port": 41873, "token": "…", "root": "/home/daniel/brain"}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li class="dw-el-16"><p><strong>Handshake:</strong> the first line on stdout. <code class="docutils literal notranslate"><span class="pre">root</span></code> is the folder that holds
+<code class="docutils literal notranslate"><span class="pre">.deciwa/</span></code> – it may lie above the folder the host opened; the host maps its
+paths by the difference. Without <code class="docutils literal notranslate"><span class="pre">.deciwa/</span></code> the line is
+<code class="docutils literal notranslate"><span class="pre">{&quot;api&quot;:</span> <span class="pre">1,</span> <span class="pre">&quot;error&quot;:</span> <span class="pre">{&quot;code&quot;:</span> <span class="pre">&quot;no-deciwa&quot;,</span> <span class="pre">…}}</span></code> and the engine exits with 2;
+the host can then offer <code class="docutils literal notranslate"><span class="pre">deciwa</span> <span class="pre">init</span> <span class="pre">--at</span> <span class="pre">&lt;folder&gt;</span></code>.</p></li>
+<li class="dw-el-17"><p><strong>Token:</strong> every request carries the header <code class="docutils literal notranslate"><span class="pre">X-Deciwa-Token</span></code>; other local
+pages cannot call the API. <code class="docutils literal notranslate"><span class="pre">--token</span></code> or <code class="docutils literal notranslate"><span class="pre">DECIWA_TOKEN</span></code> set it, otherwise it
+is random.</p></li>
+<li class="dw-el-18"><p><strong>Lifetime:</strong> the engine stops when its stdin closes, so it never outlives
+the host. <code class="docutils literal notranslate"><span class="pre">--keep-running</span></code> turns this off (for trying it in a terminal).</p></li>
+<li class="dw-el-19"><p><strong>No site:</strong> everything outside <code class="docutils literal notranslate"><span class="pre">/api/</span></code> answers 404.</p></li>
+</ul>
+<p class="dw-el-20">Endpoints for hosts, next to the ones of the review server (<code class="docutils literal notranslate"><span class="pre">/api/page</span></code>,
+<code class="docutils literal notranslate"><span class="pre">/api/annotate</span></code>, <code class="docutils literal notranslate"><span class="pre">/api/reply</span></code>, <code class="docutils literal notranslate"><span class="pre">/api/project</span></code>, <code class="docutils literal notranslate"><span class="pre">/api/todo</span></code>, …):</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Endpoint</p></th>
+<th class="head"><p>Returns</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="dw-el-21 row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/version</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">app</span></code> (engine version), <code class="docutils literal notranslate"><span class="pre">api</span></code> (major of the JSON API), <code class="docutils literal notranslate"><span class="pre">root</span></code></p></td>
+</tr>
+<tr class="dw-el-22 row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/elements?source=&lt;path&gt;</span></code></p></td>
+<td><p>the elements of a file with selector, kind, label, line, text and fingerprint – from the elements index of a build, else from the adapter for the file type</p></td>
+</tr>
+<tr class="dw-el-23 row-even"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/api/elements</span></code> <code class="docutils literal notranslate"><span class="pre">{source,</span> <span class="pre">title,</span> <span class="pre">elements}</span></code></p></td>
+<td><p>keeps the elements of a page the host scanned itself (rendered HTML), like the pages of a website in <code class="docutils literal notranslate"><span class="pre">.deciwa/web-pages.json</span></code></p></td>
+</tr>
+<tr class="dw-el-24 row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/summary[?sources=a,b]</span></code></p></td>
+<td><p>per file: counts per state, open questions, jobs for the AI, required and done – without <code class="docutils literal notranslate"><span class="pre">sources</span></code> for every file with review data</p></td>
+</tr>
+<tr class="dw-el-25 row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/facts[?sources=a,b]</span></code></p></td>
+<td><p>the facts of facts files (<code class="docutils literal notranslate"><span class="pre">[facts]</span></code> in the configuration): per file its facts with selector, kind, label, heading path, line, state and group, the state of the whole-file approval (<code class="docutils literal notranslate"><span class="pre">file:</span></code>) and the counts per group – without <code class="docutils literal notranslate"><span class="pre">sources</span></code> every facts file</p></td>
+</tr>
+<tr class="dw-el-26 row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/api/approve-facts</span></code> <code class="docutils literal notranslate"><span class="pre">{sources}</span></code></p></td>
+<td><p>approve every fact of these facts files that is not approved yet, and each file as a whole</p></td>
+</tr>
+<tr class="dw-el-27 row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/events</span></code></p></td>
+<td><p>server-sent events <code class="docutils literal notranslate"><span class="pre">{&quot;type&quot;:</span> <span class="pre">&quot;changed&quot;,</span> <span class="pre">&quot;sources&quot;:</span> <span class="pre">[…],</span> <span class="pre">&quot;review&quot;:</span> <span class="pre">…,</span> <span class="pre">&quot;config&quot;:</span> <span class="pre">…}</span></code> when <code class="docutils literal notranslate"><span class="pre">.deciwa/</span></code> or a reviewed file changes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="dw-el-28">Files without a build are read by their adapter on the fly
+(<a class="reference internal" href="adapters.html"><span class="std std-doc">Adapters</span></a>), so a plain Markdown folder such as a knowledge
+base needs no Sphinx: <code class="docutils literal notranslate"><span class="pre">deciwa</span> <span class="pre">todo</span></code>, <code class="docutils literal notranslate"><span class="pre">show</span></code> and the project overview cover
+every file with review data and every file under <code class="docutils literal notranslate"><span class="pre">review.paths</span></code>.</p>
+</section>
+<section class="dw-el-29" id="overlay-in-a-host">
+<h2>Overlay in a host<a class="headerlink" href="#overlay-in-a-host" title="Link to this heading">¶</a></h2>
+<p class="dw-el-30"><a class="reference internal" href="../decisions/index.html#DEC_HOST_ELEMENTS" title="DEC_HOST_ELEMENTS"><em class="xref need">In a host the overlay gets ... (DEC_HOST_ELEMENTS)</em></a></p>
+<p class="dw-el-31">The host marks its rendered view:</p>
+<ul class="simple">
+<li class="dw-el-32"><p>every block carries <code class="docutils literal notranslate"><span class="pre">data-line=&quot;&lt;first</span> <span class="pre">source</span> <span class="pre">line,</span> <span class="pre">0-based&gt;&quot;</span></code> – what
+markdown-it does with its token maps and what the VS Code Markdown preview
+already does; lines count the frontmatter,</p></li>
+<li class="dw-el-33"><p>the host adapter sets <code class="docutils literal notranslate"><span class="pre">data-deciwa-source=&quot;&lt;path</span> <span class="pre">relative</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">root&gt;&quot;</span></code>
+on the container.</p></li>
+</ul>
+<p class="dw-el-34"><code class="docutils literal notranslate"><span class="pre">hostElements()</span></code> in <code class="docutils literal notranslate"><span class="pre">packages/ui/js/host.js</span></code> loads nothing itself: the
+adapter passes the elements from <code class="docutils literal notranslate"><span class="pre">/api/elements</span></code>, and each is matched to the
+block of its kind that starts on its line (heading → <code class="docutils literal notranslate"><span class="pre">h1</span></code>–<code class="docutils literal notranslate"><span class="pre">h6</span></code>, paragraph →
+<code class="docutils literal notranslate"><span class="pre">p</span></code>, item → <code class="docutils literal notranslate"><span class="pre">li</span></code>, row → <code class="docutils literal notranslate"><span class="pre">tr</span></code>, code → <code class="docutils literal notranslate"><span class="pre">pre</span></code>). Elements of a build index whose
+lines are not exact (Sphinx) fall back to their text. Blocks without a match
+are not reviewable.</p>
+<p class="dw-el-35"><code class="docutils literal notranslate"><span class="pre">startOverlay()</span></code> takes a few options for hosts: <code class="docutils literal notranslate"><span class="pre">api</span></code> (calls go through the
+host, not <code class="docutils literal notranslate"><span class="pre">fetch</span></code>), <code class="docutils literal notranslate"><span class="pre">scroller</span></code> (the element the content scrolls in; the UI is
+mounted inside it), <code class="docutils literal notranslate"><span class="pre">keys:</span> <span class="pre">&quot;review&quot;</span></code> (keys only in review mode – the host keeps
+its own shortcuts), <code class="docutils literal notranslate"><span class="pre">tools:</span> <span class="pre">false</span></code> (no floating pill), <code class="docutils literal notranslate"><span class="pre">openDoc</span></code> (open another
+file in the host) and <code class="docutils literal notranslate"><span class="pre">focus</span></code>. It returns <code class="docutils literal notranslate"><span class="pre">dock()</span></code> / <code class="docutils literal notranslate"><span class="pre">undock()</span></code> to put the
+panel into the host’s side panel, <code class="docutils literal notranslate"><span class="pre">setReview()</span></code>, <code class="docutils literal notranslate"><span class="pre">focus()</span></code>, <code class="docutils literal notranslate"><span class="pre">refresh()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">destroy()</span></code>. Tree views also pass <code class="docutils literal notranslate"><span class="pre">reveal(node)</span></code> (see below).</p>
+<p class="dw-el-36">Line views (source code): the host marks every line with <code class="docutils literal notranslate"><span class="pre">data-line</span></code>; with
+<code class="docutils literal notranslate"><span class="pre">hostElements(container,</span> <span class="pre">elements,</span> <span class="pre">{ranges:</span> <span class="pre">true})</span></code> the lines from <code class="docutils literal notranslate"><span class="pre">line</span></code> to
+<code class="docutils literal notranslate"><span class="pre">end</span></code> of each element are grouped into one block, nested as the elements
+are, so methods sit inside their class. <code class="docutils literal notranslate"><span class="pre">unwrapRanges()</span></code> undoes it.</p>
+<p class="dw-el-37">Tree views (JSON, YAML): the host marks every node of the tree with
+<code class="docutils literal notranslate"><span class="pre">data-pointer=&quot;&lt;JSON</span> <span class="pre">Pointer&gt;&quot;</span></code>. Elements that carry a <code class="docutils literal notranslate"><span class="pre">pointer</span></code> (the data
+adapters, <a class="reference internal" href="../decisions/index.html#DEC_DATA_ADAPTERS" title="DEC_DATA_ADAPTERS"><em class="xref need">JSON and YAML files are rev... (DEC_DATA_ADAPTERS)</em></a>) are matched to the node with the same
+pointer (<code class="docutils literal notranslate"><span class="pre">pointerElements()</span></code> in <code class="docutils literal notranslate"><span class="pre">host.js</span></code>). A tree hides collapsed nodes, so
+the host passes <code class="docutils literal notranslate"><span class="pre">reveal(node)</span></code> to <code class="docutils literal notranslate"><span class="pre">startOverlay()</span></code>: the overlay calls it
+before it shows or opens an element, and the host opens the collapsed nodes
+around it. The state bars skip elements that are hidden.</p>
+<p class="dw-el-38">In a diff the overlay runs on the new side only; the old side is read only.
+Rendered HTML files: the host marks every start tag with <code class="docutils literal notranslate"><span class="pre">data-line</span></code>; the
+elements come from the engine’s HTML adapter and are matched by line and
+tag (<a class="reference internal" href="../decisions/index.html#DEC_HTML_ADAPTER" title="DEC_HTML_ADAPTER"><em class="xref need">HTML files are read by an a... (DEC_HTML_ADAPTER)</em></a>). Only a page the adapter cannot read falls
+back to the DOM scan of the web script, whose elements go to the engine with
+<code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/api/elements</span></code>.</p>
+</section>
+<section class="dw-el-39" id="the-monsterbrain-extension">
+<h2>The monsterbrain extension<a class="headerlink" href="#the-monsterbrain-extension" title="Link to this heading">¶</a></h2>
+<p class="dw-el-40"><code class="docutils literal notranslate"><span class="pre">packages/monsterbrain</span></code> maps monsterbrain’s extension interface v0
+(<code class="docutils literal notranslate"><span class="pre">docs/extensions.md</span></code> in the monsterbrain repository) to client and overlay:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>monsterbrain extension point</p></th>
+<th class="head"><p>deciwa uses it for</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="dw-el-41 row-even"><td><p>background process (<code class="docutils literal notranslate"><span class="pre">onRoot</span></code>, <code class="docutils literal notranslate"><span class="pre">deactivate</span></code>)</p></td>
+<td><p>start the engine for the open folder, stop it with the app</p></td>
+</tr>
+<tr class="dw-el-42 row-odd"><td><p>calls and events</p></td>
+<td><p>the window’s API calls go through the main process (the token stays there); change events refresh overlays and marks</p></td>
+</tr>
+<tr class="dw-el-43 row-even"><td><p>view injection (<code class="docutils literal notranslate"><span class="pre">mountView</span></code>)</p></td>
+<td><p>overlay on rendered Markdown (<code class="docutils literal notranslate"><span class="pre">mode:</span> <span class="pre">&quot;rendered&quot;</span></code>), on code views (<code class="docutils literal notranslate"><span class="pre">mode:</span> <span class="pre">&quot;lines&quot;</span></code>, line ranges) and on the tree of JSON and YAML files (<code class="docutils literal notranslate"><span class="pre">mode:</span> <span class="pre">&quot;tree&quot;</span></code>, nodes by <code class="docutils literal notranslate"><span class="pre">data-pointer</span></code>, <code class="docutils literal notranslate"><span class="pre">reveal(node)</span></code> opens collapsed nodes) – not on the old side of a diff</p></td>
+</tr>
+<tr class="dw-el-44 row-odd"><td><p>frame scripts</p></td>
+<td><p>overlay in rendered HTML pages; monsterbrain marks start tags with <code class="docutils literal notranslate"><span class="pre">data-line</span></code>; calls from pages reach only reading and feedback</p></td>
+</tr>
+<tr class="dw-el-45 row-even"><td><p>panel section</p></td>
+<td><p>the deciwa panel of the file, docked (<code class="docutils literal notranslate"><span class="pre">dock()</span></code>), or <em>Set up review</em> for a folder without <code class="docutils literal notranslate"><span class="pre">.deciwa/</span></code></p></td>
+</tr>
+<tr class="dw-el-46 row-odd"><td><p>toolbar</p></td>
+<td><p>the switch <em>Review on/off</em> next to View · Source · Diff</p></td>
+</tr>
+<tr class="dw-el-47 row-even"><td><p>decorations</p></td>
+<td><p>marks in tree and change view from <code class="docutils literal notranslate"><span class="pre">/api/summary</span></code>: <code class="docutils literal notranslate"><span class="pre">2?</span></code> questions, a number for jobs, <code class="docutils literal notranslate"><span class="pre">1!</span></code> stale, <code class="docutils literal notranslate"><span class="pre">3/5</span></code> required, <code class="docutils literal notranslate"><span class="pre">✓</span></code></p></td>
+</tr>
+<tr class="dw-el-48 row-odd"><td><p>commands</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">R</span></code> (review mode); the overlay’s keys listed in monsterbrain’s help</p></td>
+</tr>
+<tr class="dw-el-49 row-even"><td><p>children of side bar views</p></td>
+<td><p>the facts view: the facts of every file from <code class="docutils literal notranslate"><span class="pre">/api/facts</span></code>, a click selects the fact in review mode, the action <em>Approve all facts</em> (<code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">A</span></code>)</p></td>
+</tr>
+<tr class="dw-el-50 row-odd"><td><p>MCP tools</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deciwa_feedback</span></code>, <code class="docutils literal notranslate"><span class="pre">deciwa_show</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="dw-el-51">Views opened while the engine is still starting attach as soon as it is
+ready. Review mode is one setting for all files: the overlay keeps it, and
+rendered HTML pages follow it.</p>
+</section>
+<section class="dw-el-52" id="client">
+<h2>Client<a class="headerlink" href="#client" title="Link to this heading">¶</a></h2>
+<p class="dw-el-53"><a class="reference internal" href="../decisions/index.html#DEC_CLIENT_PACKAGE" title="DEC_CLIENT_PACKAGE"><em class="xref need">One TypeScript client for a... (DEC_CLIENT_PACKAGE)</em></a></p>
+<p class="dw-el-54"><code class="docutils literal notranslate"><span class="pre">packages/client</span></code> (<code class="docutils literal notranslate"><span class="pre">&#64;danwos/deciwa-client</span></code>) runs in Node – the host’s main or
+extension process, never in a page, so the token stays there:</p>
+<ul class="simple">
+<li class="dw-el-55"><p><code class="docutils literal notranslate"><span class="pre">findEngine()</span></code> – the path from the host’s settings, the engines bundled
+with the host, then <code class="docutils literal notranslate"><span class="pre">deciwa</span></code> on <code class="docutils literal notranslate"><span class="pre">PATH</span></code>,</p></li>
+<li class="dw-el-56"><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Engine({root,</span> <span class="pre">enginePath,</span> <span class="pre">bundled}).start()</span></code> – starts
+<code class="docutils literal notranslate"><span class="pre">serve</span> <span class="pre">--api-only</span></code>, reads the handshake, refuses another API major
+(<code class="docutils literal notranslate"><span class="pre">api-mismatch</span></code>), restarts after a crash (at most three times a minute),</p></li>
+<li class="dw-el-57"><p>typed calls (<code class="docutils literal notranslate"><span class="pre">elements</span></code>, <code class="docutils literal notranslate"><span class="pre">page</span></code>, <code class="docutils literal notranslate"><span class="pre">summary</span></code>, <code class="docutils literal notranslate"><span class="pre">todo</span></code>, <code class="docutils literal notranslate"><span class="pre">annotate</span></code>, <code class="docutils literal notranslate"><span class="pre">hostPage</span></code>,
+<code class="docutils literal notranslate"><span class="pre">call</span></code> for any endpoint) and <code class="docutils literal notranslate"><span class="pre">events()</span></code> with reconnect,</p></li>
+<li class="dw-el-58"><p><code class="docutils literal notranslate"><span class="pre">initFolder()</span></code> – <code class="docutils literal notranslate"><span class="pre">deciwa</span> <span class="pre">init</span> <span class="pre">--at</span> <span class="pre">&lt;folder&gt;</span></code>.</p></li>
+</ul>
+<p class="dw-el-59"><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">test</span></code> in <code class="docutils literal notranslate"><span class="pre">packages/client</span></code> starts the engine of the checkout against a
+temporary folder.</p>
+</section>
+<section class="dw-el-60" id="standalone-engine">
+<h2>Standalone engine<a class="headerlink" href="#standalone-engine" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-024b7a2b">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_prop docutils align-default" id="PROP_ENGINE_BINARY">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Proposal</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">The engine is built with PyInstaller, one folder per platform</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#PROP_ENGINE_BINARY" title="PROP_ENGINE_BINARY">PROP_ENGINE_BINARY</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">draft</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refines: <span class="refines"><span><a class="reference internal" href="../decisions/index.html#DEC_STANDALONE_ENGINE" title="PROP_ENGINE_BINARY">DEC_STANDALONE_ENGINE</a>, <a class="reference internal" href="stack.html#PROP_PYTHON_CORE" title="PROP_ENGINE_BINARY">PROP_PYTHON_CORE</a></span></span></div>
+<div class="line">refined by: <span class="refines"><span><a class="reference internal" href="#PROP_VSCODE_PLATFORM" title="PROP_ENGINE_BINARY">PROP_VSCODE_PLATFORM</a></span></span></div>
+<div class="line">answered by: <span class="answers"><span><a class="reference internal" href="#Q_ENGINE_BINARY_TOOL" title="PROP_ENGINE_BINARY">Q_ENGINE_BINARY_TOOL</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><ul class="simple">
+<li><p><strong>Content:</strong> <code class="docutils literal notranslate"><span class="pre">deciwa-core</span></code>, <code class="docutils literal notranslate"><span class="pre">-server</span></code>, <code class="docutils literal notranslate"><span class="pre">-cli</span></code> and the overlay files of
+<code class="docutils literal notranslate"><span class="pre">deciwa-ui</span></code>. Not <code class="docutils literal notranslate"><span class="pre">deciwa-sphinx</span></code>: Sphinx builds keep running in the docs
+project’s own Python environment.</p></li>
+<li><p><strong>Form:</strong> PyInstaller <em>one-folder</em> (starts fast; <em>one-file</em> unpacks on every
+start), so the host can sign every file inside.</p></li>
+<li><p><strong>Platforms:</strong> linux-x64, linux-arm64, macos-arm64, macos-x64, windows-x64 –
+built in GitHub Actions on each platform, smoke-tested with
+<code class="docutils literal notranslate"><span class="pre">deciwa</span> <span class="pre">--version</span></code> and <code class="docutils literal notranslate"><span class="pre">serve</span> <span class="pre">--api-only</span></code> against a test folder.</p></li>
+<li><p><strong>Release:</strong> a zip per platform in the releases of <code class="docutils literal notranslate"><span class="pre">danwos/deciwa</span></code>. A host
+pins an engine version and fetches it at its own build time; it never
+downloads code at run time.</p></li>
+<li><p><strong>Signing:</strong> the host signs the bundled engine together with its own code
+(Apple notarisation requires every binary inside the app to be signed).</p></li>
+<li><p><strong>Size:</strong> expected 20–40 MB per platform; to be measured with the first
+build.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-0b01266a">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_prop docutils align-default" id="PROP_VSCODE_PLATFORM">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Proposal</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">VS Code ships one package per platform with the engine inside</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#PROP_VSCODE_PLATFORM" title="PROP_VSCODE_PLATFORM">PROP_VSCODE_PLATFORM</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">draft</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refines: <span class="refines"><span><a class="reference internal" href="#PROP_ENGINE_BINARY" title="PROP_VSCODE_PLATFORM">PROP_ENGINE_BINARY</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p><code class="docutils literal notranslate"><span class="pre">vsce</span> <span class="pre">package</span> <span class="pre">--target</span> <span class="pre">&lt;platform&gt;</span></code> builds one extension package per platform,
+each with its engine. A universal package without engine uses <code class="docutils literal notranslate"><span class="pre">deciwa</span></code> on
+<code class="docutils literal notranslate"><span class="pre">PATH</span></code> – for platforms without a build.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-7490deb2">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_question docutils align-default" id="Q_ENGINE_BINARY_TOOL">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Question</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Which tool builds the standalone engine?</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#Q_ENGINE_BINARY_TOOL" title="Q_ENGINE_BINARY_TOOL">Q_ENGINE_BINARY_TOOL</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">open</span></span></div>
+<div class="line"><span class="needs_to"><span class="needs_label">to: </span><span class="needs_data">Daniel</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">answers: <span class="answers"><span><a class="reference internal" href="#PROP_ENGINE_BINARY" title="Q_ENGINE_BINARY_TOOL">PROP_ENGINE_BINARY</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Proposal: PyInstaller – widely used, simple, no C compiler. Alternatives:
+Nuitka (compiles to C: faster and smaller, but long builds and a C compiler
+per platform); python-build-standalone plus the installed packages (no
+freezing problems, but bigger and many loose files).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<script type="application/json" id="deciwa-page">{"doc": "technical/hosts", "source": "docs/technical/hosts.md", "mode": "offline", "keys": {"1": "md:heading:Host apps and the standalone engine", "2": "md:note:Host apps and the standalone engine#1", "3": "md:paragraph:Host apps and the standalone engine#1", "4": "md:paragraph:Host apps and the standalone engine#2", "5": "md:item:Host apps and the standalone engine#1", "6": "md:item:Host apps and the standalone engine#2", "7": "md:heading:Host apps and the standalone engine/Parts", "8": "md:row:Host apps and the standalone engine/Parts#1", "9": "md:row:Host apps and the standalone engine/Parts#2", "10": "md:row:Host apps and the standalone engine/Parts#3", "11": "md:row:Host apps and the standalone engine/Parts#4", "12": "md:paragraph:Host apps and the standalone engine/Parts#1", "13": "md:heading:Host apps and the standalone engine/Engine as a server for a host", "14": "md:paragraph:Host apps and the standalone engine/Engine as a server for a host#1", "15": "md:code:Host apps and the standalone engine/Engine as a server for a host#1", "16": "md:item:Host apps and the standalone engine/Engine as a server for a host#1", "17": "md:item:Host apps and the standalone engine/Engine as a server for a host#2", "18": "md:item:Host apps and the standalone engine/Engine as a server for a host#3", "19": "md:item:Host apps and the standalone engine/Engine as a server for a host#4", "20": "md:paragraph:Host apps and the standalone engine/Engine as a server for a host#2", "21": "md:row:Host apps and the standalone engine/Engine as a server for a host#1", "22": "md:row:Host apps and the standalone engine/Engine as a server for a host#2", "23": "md:row:Host apps and the standalone engine/Engine as a server for a host#3", "24": "md:row:Host apps and the standalone engine/Engine as a server for a host#4", "25": "md:row:Host apps and the standalone engine/Engine as a server for a host#5", "26": "md:row:Host apps and the standalone engine/Engine as a server for a host#6", "27": "md:row:Host apps and the standalone engine/Engine as a server for a host#7", "28": "md:paragraph:Host apps and the standalone engine/Engine as a server for a host#3", "29": "md:heading:Host apps and the standalone engine/Overlay in a host", "30": "md:paragraph:Host apps and the standalone engine/Overlay in a host#1", "31": "md:paragraph:Host apps and the standalone engine/Overlay in a host#2", "32": "md:item:Host apps and the standalone engine/Overlay in a host#1", "33": "md:item:Host apps and the standalone engine/Overlay in a host#2", "34": "md:paragraph:Host apps and the standalone engine/Overlay in a host#3", "35": "md:paragraph:Host apps and the standalone engine/Overlay in a host#4", "36": "md:paragraph:Host apps and the standalone engine/Overlay in a host#5", "37": "md:paragraph:Host apps and the standalone engine/Overlay in a host#6", "38": "md:paragraph:Host apps and the standalone engine/Overlay in a host#7", "39": "md:heading:Host apps and the standalone engine/The monsterbrain extension", "40": "md:paragraph:Host apps and the standalone engine/The monsterbrain extension#1", "41": "md:row:Host apps and the standalone engine/The monsterbrain extension#1", "42": "md:row:Host apps and the standalone engine/The monsterbrain extension#2", "43": "md:row:Host apps and the standalone engine/The monsterbrain extension#3", "44": "md:row:Host apps and the standalone engine/The monsterbrain extension#4", "45": "md:row:Host apps and the standalone engine/The monsterbrain extension#5", "46": "md:row:Host apps and the standalone engine/The monsterbrain extension#6", "47": "md:row:Host apps and the standalone engine/The monsterbrain extension#7", "48": "md:row:Host apps and the standalone engine/The monsterbrain extension#8", "49": "md:row:Host apps and the standalone engine/The monsterbrain extension#9", "50": "md:row:Host apps and the standalone engine/The monsterbrain extension#10", "51": "md:paragraph:Host apps and the standalone engine/The monsterbrain extension#2", "52": "md:heading:Host apps and the standalone engine/Client", "53": "md:paragraph:Host apps and the standalone engine/Client#1", "54": "md:paragraph:Host apps and the standalone engine/Client#2", "55": "md:item:Host apps and the standalone engine/Client#1", "56": "md:item:Host apps and the standalone engine/Client#2", "57": "md:item:Host apps and the standalone engine/Client#3", "58": "md:item:Host apps and the standalone engine/Client#4", "59": "md:paragraph:Host apps and the standalone engine/Client#3", "60": "md:heading:Host apps and the standalone engine/Standalone engine", "61": "sphinx-needs:PROP_ENGINE_BINARY", "62": "sphinx-needs:PROP_VSCODE_PLATFORM", "63": "sphinx-needs:Q_ENGINE_BINARY_TOOL"}, "kinds": {"1": "heading", "2": "note", "3": "paragraph", "4": "paragraph", "5": "item", "6": "item", "7": "heading", "8": "row", "9": "row", "10": "row", "11": "row", "12": "paragraph", "13": "heading", "14": "paragraph", "15": "code", "16": "item", "17": "item", "18": "item", "19": "item", "20": "paragraph", "21": "row", "22": "row", "23": "row", "24": "row", "25": "row", "26": "row", "27": "row", "28": "paragraph", "29": "heading", "30": "paragraph", "31": "paragraph", "32": "item", "33": "item", "34": "paragraph", "35": "paragraph", "36": "paragraph", "37": "paragraph", "38": "paragraph", "39": "heading", "40": "paragraph", "41": "row", "42": "row", "43": "row", "44": "row", "45": "row", "46": "row", "47": "row", "48": "row", "49": "row", "50": "row", "51": "paragraph", "52": "heading", "53": "paragraph", "54": "paragraph", "55": "item", "56": "item", "57": "item", "58": "item", "59": "paragraph", "60": "heading", "61": "need", "62": "need", "63": "need"}, "labels": {"1": "Host apps and the standalone engine", "2": "Status: hosts decided, standalone engine draft The engine server, the\u2026", "3": "The engine server, the host element source and the client are decided\u2026", "4": "A host is an app that renders content itself and shows deciwa inside \u2026", "5": "DEC_HOST_EXTENSIONS \u2013 the host only offers generic extension points; \u2026", "6": "DEC_STANDALONE_ENGINE \u2013 the Python parts ship as a standalone binary,\u2026", "7": "Parts", "8": "engine deciwa binary: core, CLI, server and the overlay files all log\u2026", "9": "client packages/client (TypeScript, npm @danwos/deciwa-client) find, \u2026", "10": "overlay packages/ui card, panel, bars, guided review \u2013 with a third e\u2026", "11": "host adapter packages/monsterbrain, later packages/vscode maps the ho\u2026", "12": "The host adapters depend on client and overlay, never on each other (\u2026", "13": "Engine as a server for a host", "14": "DEC_SERVE_API_ONLY", "15": "$ deciwa serve --api-only --root <folder> --port 0 {\"deciwa\": \"0.0.1\"\u2026", "16": "Handshake: the first line on stdout. root is the folder that holds .d\u2026", "17": "Token: every request carries the header X-Deciwa-Token; other local p\u2026", "18": "Lifetime: the engine stops when its stdin closes, so it never outlive\u2026", "19": "No site: everything outside /api/ answers 404.", "20": "Endpoints for hosts, next to the ones of the review server (/api/page\u2026", "21": "GET /api/version app (engine version), api (major of the JSON API), r\u2026", "22": "GET /api/elements?source=<path> the elements of a file with selector,\u2026", "23": "POST /api/elements {source, title, elements} keeps the elements of a \u2026", "24": "GET /api/summary[?sources=a,b] per file: counts per state, open quest\u2026", "25": "GET /api/facts[?sources=a,b] the facts of facts files ([facts] in the\u2026", "26": "POST /api/approve-facts {sources} approve every fact of these facts f\u2026", "27": "GET /api/events server-sent events {\"type\": \"changed\", \"sources\": [\u2026]\u2026", "28": "Files without a build are read by their adapter on the fly (Adapters)\u2026", "29": "Overlay in a host", "30": "DEC_HOST_ELEMENTS", "31": "The host marks its rendered view:", "32": "every block carries data-line=\"<first source line, 0-based>\" \u2013 what m\u2026", "33": "the host adapter sets data-deciwa-source=\"<path relative to the root>\u2026", "34": "hostElements() in packages/ui/js/host.js loads nothing itself: the ad\u2026", "35": "startOverlay() takes a few options for hosts: api (calls go through t\u2026", "36": "Line views (source code): the host marks every line with data-line; w\u2026", "37": "Tree views (JSON, YAML): the host marks every node of the tree with d\u2026", "38": "In a diff the overlay runs on the new side only; the old side is read\u2026", "39": "The monsterbrain extension", "40": "packages/monsterbrain maps monsterbrain\u2019s extension interface v0 (doc\u2026", "41": "background process (onRoot, deactivate) start the engine for the open\u2026", "42": "calls and events the window\u2019s API calls go through the main process (\u2026", "43": "view injection (mountView) overlay on rendered Markdown (mode: \"rende\u2026", "44": "frame scripts overlay in rendered HTML pages; monsterbrain marks star\u2026", "45": "panel section the deciwa panel of the file, docked (dock()), or Set u\u2026", "46": "toolbar the switch Review on/off next to View \u00b7 Source \u00b7 Diff", "47": "decorations marks in tree and change view from /api/summary: 2? quest\u2026", "48": "commands Shift R (review mode); the overlay\u2019s keys listed in monsterb\u2026", "49": "children of side bar views the facts view: the facts of every file fr\u2026", "50": "MCP tools deciwa_feedback, deciwa_show", "51": "Views opened while the engine is still starting attach as soon as it \u2026", "52": "Client", "53": "DEC_CLIENT_PACKAGE", "54": "packages/client (@danwos/deciwa-client) runs in Node \u2013 the host\u2019s mai\u2026", "55": "findEngine() \u2013 the path from the host\u2019s settings, the engines bundled\u2026", "56": "new Engine({root, enginePath, bundled}).start() \u2013 starts serve --api-\u2026", "57": "typed calls (elements, page, summary, todo, annotate, hostPage, call \u2026", "58": "initFolder() \u2013 deciwa init --at <folder>.", "59": "npm test in packages/client starts the engine of the checkout against\u2026", "60": "Standalone engine", "61": "PROP_ENGINE_BINARY \u2013 The engine is built with PyInstaller, one folder per platfo\u2026", "62": "PROP_VSCODE_PLATFORM \u2013 VS Code ships one package per platform with the engine insi\u2026", "63": "Q_ENGINE_BINARY_TOOL \u2013 Which tool builds the standalone engine?"}}</script>
+        </article>
+      </div>
+      <footer>
+        
+
+        <div class="related-pages">
+          <a class="next-page" href="questions.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Open questions</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="rollout.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Rollout in the knowledge base</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, danwos
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+<div class="dw-made-by">
+  <a href="https://danwos.dev" title="danwos.dev">
+    <img src="../_static/img/logo.svg" alt="" width="22" height="31">
+    <span>a <b>danwos</b> project</span>
+  </a>
+</div>
+
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Host apps and the standalone engine</a><ul>
+<li><a class="reference internal" href="#parts">Parts</a></li>
+<li><a class="reference internal" href="#engine-as-a-server-for-a-host">Engine as a server for a host</a></li>
+<li><a class="reference internal" href="#overlay-in-a-host">Overlay in a host</a></li>
+<li><a class="reference internal" href="#the-monsterbrain-extension">The monsterbrain extension</a></li>
+<li><a class="reference internal" href="#client">Client</a></li>
+<li><a class="reference internal" href="#standalone-engine">Standalone engine</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/deciwa-data.js"></script>
+    <script defer="defer" src="../_static/deciwa-overlay.js?v=f3188b25"></script>
+    <script src="../_static/sphinx-data-viewer/jsonview.bundle.js?v=18cd53c5"></script>
+    <script src="../_static/sphinx-data-viewer/jsonview_loader.js?v=f7ff7e7d"></script>
+    <script src="../_static/sphinx-needs/libs/html/sphinx_needs_collapse.js?v=dca66431"></script>
+    </body>
+</html>

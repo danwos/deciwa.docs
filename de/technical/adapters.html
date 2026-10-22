@@ -1,0 +1,705 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html"><link rel="next" title="Dateiformat" href="file-format.html"><link rel="prev" title="Schichten" href="layers.html">
+        <link rel="canonical" href="https://deciwa.danwos.dev/de/technical/adapters.html">
+        <link rel="prefetch" href="../_static/deciwa.webp" as="image">
+
+    <link rel="shortcut icon" href="../_static/logo.svg"><!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Adapter - deciwa</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/deciwa-overlay.css?v=72f4c4c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_core.css?v=f5b60a78" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_links.css?v=2150a916" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_style.css?v=92936fa5" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_toggle.css?v=5c6620df" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/needstable.css?v=7b67799e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/modern.css?v=c1bc121d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/danwos.css?v=d2269ede" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #0F766E;
+  --color-brand-content: #0F766E;
+  --color-brand-visited: #0F766E;
+  --color-background-primary: #FFFFFF;
+  --color-foreground-primary: #1B1A22;
+  --font-stack: Inter, system-ui, sans-serif;
+  --font-stack--monospace: 'JetBrains Mono', ui-monospace, monospace;
+  --font-stack--headings: 'Bricolage Grotesque', Inter, system-ui, sans-serif;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #14B8A6;
+  --color-brand-content: #14B8A6;
+  --color-brand-visited: #14B8A6;
+  --color-background-primary: #0D1B2A;
+  --color-background-secondary: #0A1622;
+  --color-foreground-primary: #E8EDF3;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #14B8A6;
+  --color-brand-content: #14B8A6;
+  --color-brand-visited: #14B8A6;
+  --color-background-primary: #0D1B2A;
+  --color-background-secondary: #0A1622;
+  --color-foreground-primary: #E8EDF3;
+  
+      }
+    }
+  }
+</style>
+
+<link rel="alternate" hreflang="en" href="https://deciwa.danwos.dev/technical/adapters.html">
+<link rel="alternate" hreflang="de" href="https://deciwa.danwos.dev/de/technical/adapters.html">
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">deciwa</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered dw-brand" href="../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/deciwa.webp" alt=""/>
+  </div>
+  <span class="dw-brand-name">deciwa</span>
+  <span class="dw-brand-slogan">decision watcher</span>
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<nav class="dw-languages" aria-label="Language">
+  <a href="../../technical/adapters.html" hreflang="en" lang="en">English</a>
+  <span aria-current="true" lang="de">Deutsch</span>
+</nav><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Produkt</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Was deciwa ist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/ways-of-working.html">Drei Arbeitsweisen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/elements.html">Was du reviewen kannst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/review-rules.html">Was freigegeben werden muss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/ui.html">Die Review-Oberfläche</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/cli.html">CLI und Agent-Skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/data.html">Wo Reviews gespeichert werden</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/roadmap.html">Roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Integrationen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/index.html">Integrationen im Überblick</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../integrations/sphinx/index.html">Sphinx</a><input aria-label="Toggle navigation of Sphinx" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/sphinx/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/sphinx/configuration.html">Konfiguration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/sphinx/workflow.html">Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/web.html">Web-Skript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/vscode.html">VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/chrome.html">Chrome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/claude.html">Claude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/monsterbrain.html">monsterbrain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/desktop.html">Desktop-App</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Entscheidungen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../decisions/index.html">Alle Entscheidungen</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technische Details</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Technischer Überblick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layers.html">Schichten</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Adapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file-format.html">Dateiformat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="state-engine.html">Zustands-Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web.html">Web-Skript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skills.html">Agent-Skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rollout.html">Einführung in der Wissensbasis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hosts.html">Host-Apps und die eigenständige Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="questions.html">Offene Fragen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="working.html">An deciwa arbeiten</a></li>
+</ul>
+
+</div></div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="dw-el-1" id="adapters">
+<h1>Adapter<a class="headerlink" href="#adapters" title="Link to this heading">¶</a></h1>
+<div class="status-draft dw-el-2 admonition">
+<p class="admonition-title">Status: Entwurf</p>
+<p class="dw-el-3">Vorschläge von Claude – nicht verbindlich, bis Daniel sie freigibt.</p>
+</div>
+<p class="dw-el-4">Ein Adapter weiß, welche Objekte es in seinem Format gibt. Er macht aus dem Text einer Quelldatei einen Baum von Elementen, jedes mit einem strukturellen Selektor, einem Textbereich und dem Text, der für den Fingerprint genutzt wird.</p>
+<div class="need_container docutils container" id="SNCB-796559c4">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_prop docutils align-default" id="PROP_ADAPTER_API">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Vorschlag</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Eine kleine Adapter-Schnittstelle für alle Formate</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#PROP_ADAPTER_API" title="PROP_ADAPTER_API">PROP_ADAPTER_API</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">draft</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refines: <span class="refines"><span><a class="reference internal" href="../decisions/index.html#DEC_HOVER_SELECT" title="PROP_ADAPTER_API">DEC_HOVER_SELECT</a>, <a class="reference internal" href="../decisions/index.html#DEC_NO_MARKERS" title="PROP_ADAPTER_API">DEC_NO_MARKERS</a></span></span></div>
+<div class="line">refined by: <span class="refines"><span><a class="reference internal" href="#PROP_DOM_ADAPTER" title="PROP_ADAPTER_API">PROP_DOM_ADAPTER</a>, <a class="reference internal" href="#PROP_SELECTORS" title="PROP_ADAPTER_API">PROP_SELECTORS</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="dw-el-6 highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Element</span><span class="p">:</span>
+    <span class="n">selector</span><span class="p">:</span> <span class="nb">str</span>            <span class="c1"># "md:heading:Career/Advisor"</span>
+    <span class="n">kind</span><span class="p">:</span> <span class="nb">str</span>                <span class="c1"># "heading", "paragraph", "need", ...</span>
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span>               <span class="c1"># short text for UIs and the CLI</span>
+    <span class="n">start</span><span class="p">:</span> <span class="nb">int</span>               <span class="c1"># character offsets in the source</span>
+    <span class="n">end</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">line</span><span class="p">:</span> <span class="nb">int</span>                <span class="c1"># 1-based, for humans and editors</span>
+    <span class="n">text</span><span class="p">:</span> <span class="nb">str</span>                <span class="c1"># source text of the element (fingerprint input)</span>
+    <span class="n">children</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="s2">"Element"</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Adapter</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>                         <span class="c1"># "md", "rst", "text"</span>
+    <span class="n">suffixes</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>         <span class="c1"># (".md",), (".rst",), (".txt",)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">elements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Element</span><span class="p">]:</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p class="dw-el-7">Adapter sind pur: kein Dateizugriff, kein Zustand. Dadurch lassen sie sich schnell mit Golden Files testen (Quelle rein, Elementliste als JSON raus), und die Sphinx-Erweiterung kann sie später wiederverwenden.</p>
+<section class="dw-el-8" id="structural-selectors">
+<h2>Strukturelle Selektoren<a class="headerlink" href="#structural-selectors" title="Link to this heading">¶</a></h2>
+<p class="dw-el-9">Ein Selektor ist ein String <code class="docutils literal notranslate"><span class="pre">&lt;adapter&gt;:&lt;kind&gt;:&lt;path&gt;</span></code>. Ihn sehen Nutzer in der CLI, und ihn speichert das Dateiformat.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Adapter</p></th>
+<th class="head"><p>Selektor</p></th>
+<th class="head"><p>Element</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="dw-el-10 row-even"><td><p>md</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">md:heading:Career/Advisor</span></code></p></td>
+<td><p>der Abschnitt unter diesem Überschriftenpfad, mit seinem Inhalt</p></td>
+</tr>
+<tr class="dw-el-11 row-odd"><td><p>md</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">md:paragraph:Career/Advisor#2</span></code></p></td>
+<td><p>der 2. Absatz in diesem Abschnitt</p></td>
+</tr>
+<tr class="dw-el-12 row-even"><td><p>md</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">md:item:Open#3</span></code> · <code class="docutils literal notranslate"><span class="pre">md:row:Formats#5</span></code> · <code class="docutils literal notranslate"><span class="pre">md:code:Setup#1</span></code></p></td>
+<td><p>Listenpunkt, Tabellenzeile, Codeblock – pro Abschnitt nummeriert</p></td>
+</tr>
+<tr class="dw-el-13 row-odd"><td><p>md</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">md:front:summary</span></code></p></td>
+<td><p>ein Frontmatter-Feld</p></td>
+</tr>
+<tr class="dw-el-14 row-even"><td><p>rst</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rst:section:Install/Linux</span></code> · <code class="docutils literal notranslate"><span class="pre">rst:paragraph:Install/Linux#1</span></code></p></td>
+<td><p>wie in Markdown</p></td>
+</tr>
+<tr class="dw-el-15 row-odd"><td><p>rst</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sphinx-needs:REQ_042</span></code></p></td>
+<td><p>ein Need, gefunden über seine ID – der robusteste Selektor, den es gibt</p></td>
+</tr>
+<tr class="dw-el-16 row-even"><td><p>rst</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sphinx-needs:REQ_042:status</span></code></p></td>
+<td><p>eine Option eines Needs</p></td>
+</tr>
+<tr class="dw-el-17 row-odd"><td><p>rst</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rst:directive:Install/Linux#note1</span></code></p></td>
+<td><p>die erste <code class="docutils literal notranslate"><span class="pre">note</span></code>-Directive in diesem Abschnitt</p></td>
+</tr>
+<tr class="dw-el-18 row-even"><td><p>text</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">text:paragraph#4</span></code> · <code class="docutils literal notranslate"><span class="pre">text:line#17</span></code></p></td>
+<td><p>reiner Text</p></td>
+</tr>
+<tr class="dw-el-19 row-odd"><td><p>html</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">html:heading:Services/Consulting</span></code> · <code class="docutils literal notranslate"><span class="pre">html:paragraph:Services/Consulting#2</span></code></p></td>
+<td><p>eine gerenderte Webseite, im Browser gefunden (<a class="reference internal" href="web.html"><span class="doc">Web-Skript</span></a>)</p></td>
+</tr>
+<tr class="dw-el-20 row-even"><td><p>py</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">py:class:Engine</span></code> · <code class="docutils literal notranslate"><span class="pre">py:function:Engine.start</span></code> · <code class="docutils literal notranslate"><span class="pre">py:function:main</span></code></p></td>
+<td><p>eine Klasse, Methode oder Funktion, benannt nach ihrem Pfad im Code (<a class="reference internal" href="../decisions/index.html#DEC_PYTHON_ADAPTER" title="DEC_PYTHON_ADAPTER"><em class="xref need">Python-Quelltext wird je Kl... (DEC_PYTHON_ADAPTER)</em></a>)</p></td>
+</tr>
+<tr class="dw-el-21 row-odd"><td><p>py</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">py:statement:imports</span></code> · <code class="docutils literal notranslate"><span class="pre">py:statement:API</span></code> · <code class="docutils literal notranslate"><span class="pre">py:statement:#2</span></code></p></td>
+<td><p>Anweisungen außerhalb von Funktionen: der Importblock, eine Zuweisung nach Namen, jede andere Anweisung gezählt je Bereich</p></td>
+</tr>
+<tr class="dw-el-22 row-even"><td><p>json</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">json:</span></code> · <code class="docutils literal notranslate"><span class="pre">json:/color/primary</span></code> · <code class="docutils literal notranslate"><span class="pre">json:/versions/0</span></code></p></td>
+<td><p>das Dokument, ein Objekt-Mitglied, ein Array-Eintrag – ein JSON Pointer (<a class="reference internal" href="../decisions/index.html#DEC_DATA_ADAPTERS" title="DEC_DATA_ADAPTERS"><em class="xref need">JSON- und YAML-Dateien werd... (DEC_DATA_ADAPTERS)</em></a>)</p></td>
+</tr>
+<tr class="dw-el-23 row-odd"><td><p>yaml</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">yaml:</span></code> · <code class="docutils literal notranslate"><span class="pre">yaml:/jobs/build/steps/2</span></code></p></td>
+<td><p>dasselbe für YAML</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-d743c1d5">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_prop docutils align-default" id="PROP_SELECTORS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Vorschlag</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Element-Selektoren sind Pfade aus Überschriften plus ein Zähler pro Abschnitt</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#PROP_SELECTORS" title="PROP_SELECTORS">PROP_SELECTORS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">draft</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refines: <span class="refines"><span><a class="reference internal" href="#PROP_ADAPTER_API" title="PROP_SELECTORS">PROP_ADAPTER_API</a></span></span></div>
+<div class="line">refined by: <span class="refines"><span><a class="reference internal" href="#PROP_DOM_ADAPTER" title="PROP_SELECTORS">PROP_DOM_ADAPTER</a>, <a class="reference internal" href="state-engine.html#PROP_RESOLVE" title="PROP_SELECTORS">PROP_RESOLVE</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Überschriftenpfade überstehen das Verschieben ganzer Abschnitte und Änderungen in anderen Abschnitten. Der Zähler (<code class="docutils literal notranslate"><span class="pre">#2</span></code>) bricht, wenn darüber ein Absatz eingefügt wird – deshalb speichert jede Annotation zusätzlich ein Textzitat (<a class="reference internal" href="file-format.html"><span class="doc">Dateiformat</span></a>), das die Engine als Nächstes probiert. Doppelte Überschriften in einem Pfad bekommen ein Suffix (<code class="docutils literal notranslate"><span class="pre">Notes~2</span></code>).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="dw-el-25" id="markdown">
+<h2>Markdown<a class="headerlink" href="#markdown" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li class="dw-el-26"><p>Parser: markdown-it-py (CommonMark + Tabellen); Token-Maps liefern Zeilenbereiche, Offsets ergeben sich aus den Zeilenbereichen.</p></li>
+<li class="dw-el-27"><p>Elemente: Überschriften-Abschnitte, Absätze, Listenpunkte (verschachtelt), Tabellenzeilen, Codeblöcke, Frontmatter-Felder (YAML-Schlüssel auf oberster Ebene).</p></li>
+</ul>
+<p class="dw-el-28">Als Erstes gebaut, für Host-Apps (<a class="reference internal" href="../decisions/index.html#DEC_HOST_ELEMENTS" title="DEC_HOST_ELEMENTS"><em class="xref need">In einem Host bekommt das O... (DEC_HOST_ELEMENTS)</em></a>): <code class="docutils literal notranslate"><span class="pre">deciwa.core.adapters.markdown</span></code> liefert die Elemente als Dicts in der Form des Sphinx-Elementindex (<code class="docutils literal notranslate"><span class="pre">selector</span></code>, <code class="docutils literal notranslate"><span class="pre">kind</span></code>, <code class="docutils literal notranslate"><span class="pre">label</span></code>, <code class="docutils literal notranslate"><span class="pre">line</span></code>, <code class="docutils literal notranslate"><span class="pre">end</span></code>, <code class="docutils literal notranslate"><span class="pre">text</span></code>, <code class="docutils literal notranslate"><span class="pre">fingerprint</span></code>, <code class="docutils literal notranslate"><span class="pre">parent</span></code>) – Abschnitte, Absätze, Listenpunkte, Tabellenzeilen, Codeblöcke und Bilder. Frontmatter-Felder und Zeichen-Offsets fehlen noch. Der Text eines Elements ist das, was Lesende sehen (ohne Inline-Markup), wie in den Sphinx- und Browser-Adaptern; so wird ein in einer dargestellten Ansicht markiertes Zitat darin gefunden, und ein geändertes Linkziel allein macht ein Element nicht veraltet. Zeilen zählen ab 1 und schließen die Frontmatter ein. Die Engine nutzt den Adapter für jede Datei, die kein Build-Index kennt.</p>
+</section>
+<section class="dw-el-29" id="rst-and-sphinx-needs">
+<h2>rST und Sphinx-Needs<a class="headerlink" href="#rst-and-sphinx-needs" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-eabf5896">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_prop docutils align-default" id="PROP_RST_DOCUTILS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Vorschlag</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Der rST-Adapter parst mit docutils, ohne Sphinx auszuführen</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#PROP_RST_DOCUTILS" title="PROP_RST_DOCUTILS">PROP_RST_DOCUTILS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">draft</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refines: <span class="refines"><span><a class="reference internal" href="stack.html#PROP_PYTHON_CORE" title="PROP_RST_DOCUTILS">PROP_PYTHON_CORE</a></span></span></div>
+<div class="line">refined by: <span class="refines"><span><a class="reference internal" href="#Q_NEED_TYPES" title="PROP_RST_DOCUTILS">Q_NEED_TYPES</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>docutils merkt sich an jedem Knoten die Quellzeilen. Unbekannte Directives und Rollen (Sphinx, Sphinx-Needs, beliebige Erweiterungen) werden als generische Platzhalter registriert, sodass eine Datei ohne <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> und ohne Import von Erweiterungen geparst wird. Need-Directives werden am Namen erkannt; ihre <code class="docutils literal notranslate"><span class="pre">:id:</span></code> ergibt den <code class="docutils literal notranslate"><span class="pre">sphinx-needs:</span></code>-Selektor.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-3b2ba7fd">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_question docutils align-default" id="Q_NEED_TYPES">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Frage</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Welche Directive-Namen zählen als Needs?</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#Q_NEED_TYPES" title="Q_NEED_TYPES">Q_NEED_TYPES</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">open</span></span></div>
+<div class="line"><span class="needs_to"><span class="needs_label">to: </span><span class="needs_data">Daniel</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refines: <span class="refines"><span><a class="reference internal" href="#PROP_RST_DOCUTILS" title="Q_NEED_TYPES">PROP_RST_DOCUTILS</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Vorschlag: aus <code class="docutils literal notranslate"><span class="pre">needs.json</span></code> lesen, wenn das Projekt eines baut, sonst aus <code class="docutils literal notranslate"><span class="pre">.deciwa/config.toml</span></code> (<code class="docutils literal notranslate"><span class="pre">needs.directives</span> <span class="pre">=</span> <span class="pre">[&quot;req&quot;,</span> <span class="pre">&quot;spec&quot;,</span> <span class="pre">...]</span></code>), und auf die Standardwerte von Sphinx-Needs zurückfallen (<code class="docutils literal notranslate"><span class="pre">req</span></code>, <code class="docutils literal notranslate"><span class="pre">spec</span></code>, <code class="docutils literal notranslate"><span class="pre">impl</span></code>, <code class="docutils literal notranslate"><span class="pre">test</span></code>, <code class="docutils literal notranslate"><span class="pre">need</span></code>). OK, oder soll deciwa <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> / <code class="docutils literal notranslate"><span class="pre">ubproject.toml</span></code> direkt lesen?</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="dw-el-32" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Link to this heading">¶</a></h2>
+<p class="dw-el-33"><a class="reference internal" href="../decisions/index.html#DEC_PYTHON_ADAPTER" title="DEC_PYTHON_ADAPTER"><em class="xref need">Python-Quelltext wird je Kl... (DEC_PYTHON_ADAPTER)</em></a> – <code class="docutils literal notranslate"><span class="pre">deciwa.core.adapters.python</span></code> liest <code class="docutils literal notranslate"><span class="pre">.py</span></code>- und <code class="docutils literal notranslate"><span class="pre">.pyi</span></code>-Dateien mit <code class="docutils literal notranslate"><span class="pre">ast</span></code> aus der Standardbibliothek:</p>
+<ul class="simple">
+<li class="dw-el-34"><p>Elemente: Klassen, Funktionen und Methoden, verschachtelt wie im Code (das Elternelement einer Methode ist ihre Klasse, das einer inneren Funktion die Funktion darum); Definitionen in <code class="docutils literal notranslate"><span class="pre">if</span></code>-, <code class="docutils literal notranslate"><span class="pre">try</span></code>- oder <code class="docutils literal notranslate"><span class="pre">with</span></code>-Blöcken zählen auf ihrer Ebene.</p></li>
+<li class="dw-el-35"><p>Anweisungen außerhalb von Funktionen – auf Modulebene und im Rumpf einer Klasse – sind Elemente der Art <code class="docutils literal notranslate"><span class="pre">statement</span></code>: der Docstring (<code class="docutils literal notranslate"><span class="pre">py:statement:__doc__</span></code>), ein Block von Importen (<code class="docutils literal notranslate"><span class="pre">py:statement:imports</span></code>), eine Zuweisung nach ihrem Namen (<code class="docutils literal notranslate"><span class="pre">py:statement:API</span></code>, <code class="docutils literal notranslate"><span class="pre">py:statement:Engine.size</span></code>), jede andere Anweisung gezählt je Bereich (<code class="docutils literal notranslate"><span class="pre">py:statement:#1</span></code> – z. B. <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code>; <code class="docutils literal notranslate"><span class="pre">py:statement:Engine#2</span></code>). Anweisungen in einer Funktion gehören zur Funktion.</p></li>
+<li class="dw-el-36"><p>Selektoren: <code class="docutils literal notranslate"><span class="pre">py:&lt;class|function&gt;:&lt;path&gt;</span></code> – <code class="docutils literal notranslate"><span class="pre">py:function:Engine.start</span></code>; eine zweite Definition mit demselben Pfad (ein Property-Setter, eine Neudefinition) bekommt <code class="docutils literal notranslate"><span class="pre">~2</span></code>.</p></li>
+<li class="dw-el-37"><p>Text: der Quelltext der Definition, Dekoratoren eingeschlossen – jede Änderung an einer freigegebenen Funktion macht sie veraltet. Bezeichnung: ihre erste Zeile (<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">start(self)</span> <span class="pre">-&gt;</span> <span class="pre">Handshake:</span></code>).</p></li>
+<li class="dw-el-38"><p>Zeilen: <code class="docutils literal notranslate"><span class="pre">line</span></code> ist die erste Zeile (der erste Dekorator), <code class="docutils literal notranslate"><span class="pre">end</span></code> die letzte.</p></li>
+<li class="dw-el-39"><p>Eine Datei mit Syntaxfehler hat keine Elemente.</p></li>
+<li class="dw-el-40"><p>Die Elementarten <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">function</span></code> und <code class="docutils literal notranslate"><span class="pre">statement</span></code> lassen sich in den Review-Regeln nennen.</p></li>
+</ul>
+<p class="dw-el-41">Noch nicht: Kommentare als Elemente; JS, TS und C (tree-sitter, als Nächstes).</p>
+</section>
+<section class="dw-el-42" id="html-files">
+<h2>HTML-Dateien<a class="headerlink" href="#html-files" title="Link to this heading">¶</a></h2>
+<p class="dw-el-43"><a class="reference internal" href="../decisions/index.html#DEC_HTML_ADAPTER" title="DEC_HTML_ADAPTER"><em class="xref need">HTML-Dateien liest ein Adap... (DEC_HTML_ADAPTER)</em></a> – <code class="docutils literal notranslate"><span class="pre">deciwa.core.adapters.html</span></code> liest <code class="docutils literal notranslate"><span class="pre">.html</span></code>- und <code class="docutils literal notranslate"><span class="pre">.htm</span></code>-Dateien mit <code class="docutils literal notranslate"><span class="pre">html.parser</span></code> aus der Standardbibliothek und folgt den Regeln des DOM-Scans im Browser (<a class="reference internal" href="#PROP_DOM_ADAPTER" title="PROP_DOM_ADAPTER"><em class="xref need">Das Web-Skript findet die E... (PROP_DOM_ADAPTER)</em></a>): die Review-Wurzel (<code class="docutils literal notranslate"><span class="pre">main</span></code>, ein einzelnes <code class="docutils literal notranslate"><span class="pre">article</span></code>, sonst <code class="docutils literal notranslate"><span class="pre">body</span></code>), Abschnitte nach der Überschriftengliederung, Absätze, Listenpunkte, Tabellenzeilen, Codeblöcke, Hinweise und Bilder, gezählt je Abschnitt – dieselben <code class="docutils literal notranslate"><span class="pre">html:</span></code>-Selektoren. Jedes Element trägt seine Anfangszeile, seine Endzeile und sein <code class="docutils literal notranslate"><span class="pre">tag</span></code>. Ohne Browser gibt es kein Layout, deshalb zählen auch per CSS versteckte Elemente und kleine Icons.</p>
+<p class="dw-el-44">Ein Host markiert jedes Start-Tag der dargestellten Seite mit seiner Quellzeile; das Overlay ordnet jedes Element dem Tag seiner Art auf seiner Zeile zu. Dargestellte Seite und Quelltextansicht teilen sich so ihre Elemente, und Feedback auf der Seite zeigt auf die Quellzeile. Eine unter ihrer Adresse gespeicherte Webseite (aus einem Browser) weicht dem Adapter, sobald ihre Quelldatei bekannt ist.</p>
+<p class="dw-el-45">In einem Host werden die Zeilen jedes Elements zu einem Block der Code-Ansicht zusammengefasst (<a class="reference internal" href="hosts.html"><span class="std std-doc">Host-Apps</span></a>).</p>
+</section>
+<section class="dw-el-46" id="data-files-json-yaml">
+<h2>Datendateien (JSON, YAML)<a class="headerlink" href="#data-files-json-yaml" title="Link to this heading">¶</a></h2>
+<p class="dw-el-47"><a class="reference internal" href="../decisions/index.html#DEC_DATA_ADAPTERS" title="DEC_DATA_ADAPTERS"><em class="xref need">JSON- und YAML-Dateien werd... (DEC_DATA_ADAPTERS)</em></a> – <code class="docutils literal notranslate"><span class="pre">deciwa.core.adapters.json</span></code> liest <code class="docutils literal notranslate"><span class="pre">.json</span></code>-Dateien, <code class="docutils literal notranslate"><span class="pre">deciwa.core.adapters.yaml</span></code> liest <code class="docutils literal notranslate"><span class="pre">.yaml</span></code>- und <code class="docutils literal notranslate"><span class="pre">.yml</span></code>-Dateien. Beide liefern dieselben Elemente:</p>
+<ul class="simple">
+<li class="dw-el-48"><p>Elemente: das Dokument, jedes Objekt-Mitglied und jeder Array-Eintrag, Blätter eingeschlossen, verschachtelt wie in der Datei. Arten: <code class="docutils literal notranslate"><span class="pre">object</span></code>, <code class="docutils literal notranslate"><span class="pre">array</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code> – sie können in den Review-Regeln genannt werden. Ein YAML-Mapping ist ein Objekt, eine Sequenz ein Array, ein Skalar ein Wert.</p></li>
+<li class="dw-el-49"><p>Selektoren: der Name des Adapters plus der JSON Pointer des Elements (<a class="reference external" href="https://www.rfc-editor.org/rfc/rfc6901">RFC 6901</a>): <code class="docutils literal notranslate"><span class="pre">json:</span></code> für das Dokument, <code class="docutils literal notranslate"><span class="pre">json:/color/primary</span></code>, <code class="docutils literal notranslate"><span class="pre">json:/versions/0</span></code>; <code class="docutils literal notranslate"><span class="pre">~</span></code> und <code class="docutils literal notranslate"><span class="pre">/</span></code> in einem Schlüssel werden zu <code class="docutils literal notranslate"><span class="pre">~0</span></code> und <code class="docutils literal notranslate"><span class="pre">~1</span></code>. Jedes Element trägt außerdem seinen <code class="docutils literal notranslate"><span class="pre">pointer</span></code>, damit ein Host den Knoten in seiner eigenen Baumansicht findet (<a class="reference internal" href="hosts.html"><span class="std std-doc">Host-Apps</span></a>).</p></li>
+<li class="dw-el-50"><p>Text: der Wert in kanonischer Form – sortierte Schlüssel, keine Leerzeichen (<code class="docutils literal notranslate"><span class="pre">json.dumps(value,</span> <span class="pre">sort_keys=True,</span> <span class="pre">ensure_ascii=False,</span> <span class="pre">separators=(&quot;,&quot;,</span> <span class="pre">&quot;:&quot;))</span></code>). Neu formatieren, neu einrücken oder Schlüssel umsortieren behält den Review-Stand; ein geänderter Wert macht sein Element und alle Eltern veraltet.</p></li>
+<li class="dw-el-51"><p>Bezeichnung: der Schlüssel plus eine kurze Vorschau – <code class="docutils literal notranslate"><span class="pre">primary:</span> <span class="pre">&quot;#1f6feb&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">needs</span> <span class="pre">{312}</span></code>, <code class="docutils literal notranslate"><span class="pre">steps</span> <span class="pre">[4]</span></code>; Array-Einträge nehmen ihren Index als Schlüssel.</p></li>
+<li class="dw-el-52"><p>Zeilen: <code class="docutils literal notranslate"><span class="pre">line</span></code> ist die Zeile des Schlüssels (Array-Einträge: ihre erste Zeile), <code class="docutils literal notranslate"><span class="pre">end</span></code> die letzte Zeile des Werts.</p></li>
+<li class="dw-el-53"><p>JSON: die Standardbibliothek liefert keine Positionen, deshalb liest ein kleiner Scanner die Datei einmal und merkt sich die Zeilen jedes Schlüssels und Werts. Nur Standard-JSON – kein JSON Lines, keine Kommentare, kein <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p></li>
+<li class="dw-el-54"><p>YAML: der Safe Loader von PyYAML – der Knotenbaum liefert die Positionen, der Safe Constructor die Werte. Nur das erste Dokument wird gelesen. Schlüssel, die keine Strings sind, werden zu ihrer JSON-Form (<code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">true</span></code>). Anker, Aliase und Merge-Schlüssel sind in den Werten aufgelöst; Mitglieder, die ein Mapping über einen Merge-Schlüssel (<code class="docutils literal notranslate"><span class="pre">&lt;&lt;:</span> <span class="pre">*base</span></code>) bekommt, und das Innere eines Alias werden dort reviewt, wo sie stehen, nicht als eigene Elemente.</p></li>
+<li class="dw-el-55"><p>Eine ungültige Datei hat keine Elemente.</p></li>
+</ul>
+<p class="dw-el-56">Ein Array-Index verschiebt sich, wenn davor ein Eintrag eingefügt wird. Die Engine folgt dann dem reviewten Wert zu seinem neuen Index (<a class="reference internal" href="state-engine.html"><span class="std std-doc">State-Engine</span></a>, <em>Verschobene Elemente</em>), so bleibt das Review beim Wert.</p>
+</section>
+<section class="dw-el-57" id="plain-text">
+<h2>Reiner Text<a class="headerlink" href="#plain-text" title="Link to this heading">¶</a></h2>
+<p class="dw-el-58">Absätze sind durch Leerzeilen getrennte Blöcke; Zeilen sind eine zweite Ebene. Alles andere ist freie Textauswahl.</p>
+</section>
+<section class="dw-el-59" id="html-in-the-browser">
+<h2>HTML im Browser<a class="headerlink" href="#html-in-the-browser" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-eece86f0">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_prop docutils align-default" id="PROP_DOM_ADAPTER">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Vorschlag</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Das Web-Skript findet die Elemente einer gerenderten Seite selbst</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#PROP_DOM_ADAPTER" title="PROP_DOM_ADAPTER">PROP_DOM_ADAPTER</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">draft</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refines: <span class="refines"><span><a class="reference internal" href="#PROP_ADAPTER_API" title="PROP_DOM_ADAPTER">PROP_ADAPTER_API</a>, <a class="reference internal" href="stack.html#PROP_PYTHON_CORE" title="PROP_DOM_ADAPTER">PROP_PYTHON_CORE</a>, <a class="reference internal" href="#PROP_SELECTORS" title="PROP_DOM_ADAPTER">PROP_SELECTORS</a></span></span></div>
+<div class="line">refined by: <span class="refines"><span><a class="reference internal" href="web.html#PROP_WEB_RESCAN" title="PROP_DOM_ADAPTER">PROP_WEB_RESCAN</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Ein kleiner Adapter in JavaScript liest das DOM der Review-Wurzel und liefert dieselbe Elementliste wie die anderen Adapter:</p>
+<ul class="simple">
+<li><p>Abschnitte aus der Überschriftengliederung <code class="docutils literal notranslate"><span class="pre">h1</span></code>–<code class="docutils literal notranslate"><span class="pre">h6</span></code> (Webseiten verschachteln selten echte <code class="docutils literal notranslate"><span class="pre">&lt;section&gt;</span></code>-Elemente), benannt nach ihrem Überschriftenpfad,</p></li>
+<li><p>Absätze, Listenpunkte, Tabellenzeilen (<code class="docutils literal notranslate"><span class="pre">tr</span></code> außerhalb von <code class="docutils literal notranslate"><span class="pre">thead</span></code>), Codeblöcke (<code class="docutils literal notranslate"><span class="pre">pre</span></code>), Hinweise (<code class="docutils literal notranslate"><span class="pre">aside</span></code>, <code class="docutils literal notranslate"><span class="pre">[role=note]</span></code>), Bilder (<code class="docutils literal notranslate"><span class="pre">img</span></code>, <code class="docutils literal notranslate"><span class="pre">svg</span></code>, <code class="docutils literal notranslate"><span class="pre">figure</span></code>, <code class="docutils literal notranslate"><span class="pre">picture</span></code>) – pro Abschnitt gezählt wie in Markdown,</p></li>
+<li><p>ausgelassen: <code class="docutils literal notranslate"><span class="pre">nav</span></code>, <code class="docutils literal notranslate"><span class="pre">header</span></code>, <code class="docutils literal notranslate"><span class="pre">footer</span></code>, <code class="docutils literal notranslate"><span class="pre">form</span></code>, <code class="docutils literal notranslate"><span class="pre">[hidden]</span></code>, <code class="docutils literal notranslate"><span class="pre">[aria-hidden=true]</span></code>, <code class="docutils literal notranslate"><span class="pre">script</span></code>, <code class="docutils literal notranslate"><span class="pre">style</span></code> und alles, worauf <code class="docutils literal notranslate"><span class="pre">data-ignore</span></code> passt.</p></li>
+</ul>
+<p>Der Fingerprint ist SHA-256 über den normalisierten Text, berechnet mit <code class="docutils literal notranslate"><span class="pre">crypto.subtle</span></code> – derselbe Wert wie <code class="docutils literal notranslate"><span class="pre">model.fingerprint</span></code> in Python, damit CLI und Browser sich bei veralteten Elementen einig sind. Das Offline-Overlay wechselt von seinem lokalen FNV-Hash zu diesem. Bei Bildern bilden <code class="docutils literal notranslate"><span class="pre">src</span></code>, <code class="docutils literal notranslate"><span class="pre">alt</span></code> und Bildunterschrift den Fingerprint.</p>
+<p>Seiten mit Build-Hinweisen (<code class="docutils literal notranslate"><span class="pre">#deciwa-page</span></code>, wie die Sphinx-Erweiterung es schreibt) überspringen den Scan und nutzen die Hinweise.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="dw-el-61" id="free-text-selection">
+<h2>Freie Textauswahl<a class="headerlink" href="#free-text-selection" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-d1155aa3">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_prop docutils align-default" id="PROP_FREE_TEXT">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Vorschlag</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Eine freie Textauswahl ist ein Textzitat innerhalb ihres nächsten Elements</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#PROP_FREE_TEXT" title="PROP_FREE_TEXT">PROP_FREE_TEXT</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">draft</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refines: <span class="refines"><span><a class="reference internal" href="../decisions/index.html#DEC_HOVER_SELECT" title="PROP_FREE_TEXT">DEC_HOVER_SELECT</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Wird ein Wort markiert, speichert deciwa den strukturellen Selektor des Elements, das es enthält, plus einen <code class="docutils literal notranslate"><span class="pre">TextQuoteSelector</span></code> (exact, prefix, suffix) und einen <code class="docutils literal notranslate"><span class="pre">TextPositionSelector</span></code> relativ zu diesem Element. Das funktioniert in jedem Format, und der Fingerprint umfasst nur den markierten Text.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<script type="application/json" id="deciwa-page">{"doc": "technical/adapters", "source": "docs/technical/adapters.md", "mode": "offline", "keys": {"1": "md:heading:Adapter", "2": "md:note:Adapter#1", "3": "md:paragraph:Adapter#1", "4": "md:paragraph:Adapter#2", "5": "sphinx-needs:PROP_ADAPTER_API", "6": "md:code:Adapter#1", "7": "md:paragraph:Adapter#3", "8": "md:heading:Adapter/Strukturelle Selektoren", "9": "md:paragraph:Adapter/Strukturelle Selektoren#1", "10": "md:row:Adapter/Strukturelle Selektoren#1", "11": "md:row:Adapter/Strukturelle Selektoren#2", "12": "md:row:Adapter/Strukturelle Selektoren#3", "13": "md:row:Adapter/Strukturelle Selektoren#4", "14": "md:row:Adapter/Strukturelle Selektoren#5", "15": "md:row:Adapter/Strukturelle Selektoren#6", "16": "md:row:Adapter/Strukturelle Selektoren#7", "17": "md:row:Adapter/Strukturelle Selektoren#8", "18": "md:row:Adapter/Strukturelle Selektoren#9", "19": "md:row:Adapter/Strukturelle Selektoren#10", "20": "md:row:Adapter/Strukturelle Selektoren#11", "21": "md:row:Adapter/Strukturelle Selektoren#12", "22": "md:row:Adapter/Strukturelle Selektoren#13", "23": "md:row:Adapter/Strukturelle Selektoren#14", "24": "sphinx-needs:PROP_SELECTORS", "25": "md:heading:Adapter/Markdown", "26": "md:item:Adapter/Markdown#1", "27": "md:item:Adapter/Markdown#2", "28": "md:paragraph:Adapter/Markdown#1", "29": "md:heading:Adapter/rST und Sphinx-Needs", "30": "sphinx-needs:PROP_RST_DOCUTILS", "31": "sphinx-needs:Q_NEED_TYPES", "32": "md:heading:Adapter/Python", "33": "md:paragraph:Adapter/Python#1", "34": "md:item:Adapter/Python#1", "35": "md:item:Adapter/Python#2", "36": "md:item:Adapter/Python#3", "37": "md:item:Adapter/Python#4", "38": "md:item:Adapter/Python#5", "39": "md:item:Adapter/Python#6", "40": "md:item:Adapter/Python#7", "41": "md:paragraph:Adapter/Python#2", "42": "md:heading:Adapter/HTML-Dateien", "43": "md:paragraph:Adapter/HTML-Dateien#1", "44": "md:paragraph:Adapter/HTML-Dateien#2", "45": "md:paragraph:Adapter/HTML-Dateien#3", "46": "md:heading:Adapter/Datendateien (JSON, YAML)", "47": "md:paragraph:Adapter/Datendateien (JSON, YAML)#1", "48": "md:item:Adapter/Datendateien (JSON, YAML)#1", "49": "md:item:Adapter/Datendateien (JSON, YAML)#2", "50": "md:item:Adapter/Datendateien (JSON, YAML)#3", "51": "md:item:Adapter/Datendateien (JSON, YAML)#4", "52": "md:item:Adapter/Datendateien (JSON, YAML)#5", "53": "md:item:Adapter/Datendateien (JSON, YAML)#6", "54": "md:item:Adapter/Datendateien (JSON, YAML)#7", "55": "md:item:Adapter/Datendateien (JSON, YAML)#8", "56": "md:paragraph:Adapter/Datendateien (JSON, YAML)#2", "57": "md:heading:Adapter/Reiner Text", "58": "md:paragraph:Adapter/Reiner Text#1", "59": "md:heading:Adapter/HTML im Browser", "60": "sphinx-needs:PROP_DOM_ADAPTER", "61": "md:heading:Adapter/Freie Textauswahl", "62": "sphinx-needs:PROP_FREE_TEXT"}, "kinds": {"1": "heading", "2": "note", "3": "paragraph", "4": "paragraph", "5": "need", "6": "code", "7": "paragraph", "8": "heading", "9": "paragraph", "10": "row", "11": "row", "12": "row", "13": "row", "14": "row", "15": "row", "16": "row", "17": "row", "18": "row", "19": "row", "20": "row", "21": "row", "22": "row", "23": "row", "24": "need", "25": "heading", "26": "item", "27": "item", "28": "paragraph", "29": "heading", "30": "need", "31": "need", "32": "heading", "33": "paragraph", "34": "item", "35": "item", "36": "item", "37": "item", "38": "item", "39": "item", "40": "item", "41": "paragraph", "42": "heading", "43": "paragraph", "44": "paragraph", "45": "paragraph", "46": "heading", "47": "paragraph", "48": "item", "49": "item", "50": "item", "51": "item", "52": "item", "53": "item", "54": "item", "55": "item", "56": "paragraph", "57": "heading", "58": "paragraph", "59": "heading", "60": "need", "61": "heading", "62": "need"}, "labels": {"1": "Adapter", "2": "Status: Entwurf Vorschl\u00e4ge von Claude \u2013 nicht verbindlich, bis Daniel\u2026", "3": "Vorschl\u00e4ge von Claude \u2013 nicht verbindlich, bis Daniel sie freigibt.", "4": "Ein Adapter wei\u00df, welche Objekte es in seinem Format gibt. Er macht a\u2026", "5": "PROP_ADAPTER_API \u2013 Eine kleine Adapter-Schnittstelle f\u00fcr alle Formate", "6": "@dataclass(frozen=True) class Element: selector: str # \"md:heading:Ca\u2026", "7": "Adapter sind pur: kein Dateizugriff, kein Zustand. Dadurch lassen sie\u2026", "8": "Strukturelle Selektoren", "9": "Ein Selektor ist ein String <adapter>:<kind>:<path>. Ihn sehen Nutzer\u2026", "10": "md md:heading:Career/Advisor der Abschnitt unter diesem \u00dcberschriften\u2026", "11": "md md:paragraph:Career/Advisor#2 der 2. Absatz in diesem Abschnitt", "12": "md md:item:Open#3 \u00b7 md:row:Formats#5 \u00b7 md:code:Setup#1 Listenpunkt, T\u2026", "13": "md md:front:summary ein Frontmatter-Feld", "14": "rst rst:section:Install/Linux \u00b7 rst:paragraph:Install/Linux#1 wie in \u2026", "15": "rst sphinx-needs:REQ_042 ein Need, gefunden \u00fcber seine ID \u2013 der robus\u2026", "16": "rst sphinx-needs:REQ_042:status eine Option eines Needs", "17": "rst rst:directive:Install/Linux#note1 die erste note-Directive in die\u2026", "18": "text text:paragraph#4 \u00b7 text:line#17 reiner Text", "19": "html html:heading:Services/Consulting \u00b7 html:paragraph:Services/Consu\u2026", "20": "py py:class:Engine \u00b7 py:function:Engine.start \u00b7 py:function:main eine\u2026", "21": "py py:statement:imports \u00b7 py:statement:API \u00b7 py:statement:#2 Anweisun\u2026", "22": "json json: \u00b7 json:/color/primary \u00b7 json:/versions/0 das Dokument, ein\u2026", "23": "yaml yaml: \u00b7 yaml:/jobs/build/steps/2 dasselbe f\u00fcr YAML", "24": "PROP_SELECTORS \u2013 Element-Selektoren sind Pfade aus \u00dcberschriften plus ein Z\u00e4\u2026", "25": "Markdown", "26": "Parser: markdown-it-py (CommonMark + Tabellen); Token-Maps liefern Ze\u2026", "27": "Elemente: \u00dcberschriften-Abschnitte, Abs\u00e4tze, Listenpunkte (verschacht\u2026", "28": "Als Erstes gebaut, f\u00fcr Host-Apps (DEC_HOST_ELEMENTS): deciwa.core.ada\u2026", "29": "rST und Sphinx-Needs", "30": "PROP_RST_DOCUTILS \u2013 Der rST-Adapter parst mit docutils, ohne Sphinx auszuf\u00fchren", "31": "Q_NEED_TYPES \u2013 Welche Directive-Namen z\u00e4hlen als Needs?", "32": "Python", "33": "DEC_PYTHON_ADAPTER \u2013 deciwa.core.adapters.python liest .py- und .pyi-\u2026", "34": "Elemente: Klassen, Funktionen und Methoden, verschachtelt wie im Code\u2026", "35": "Anweisungen au\u00dferhalb von Funktionen \u2013 auf Modulebene und im Rumpf ei\u2026", "36": "Selektoren: py:<class|function>:<path> \u2013 py:function:Engine.start; ei\u2026", "37": "Text: der Quelltext der Definition, Dekoratoren eingeschlossen \u2013 jede\u2026", "38": "Zeilen: line ist die erste Zeile (der erste Dekorator), end die letzt\u2026", "39": "Eine Datei mit Syntaxfehler hat keine Elemente.", "40": "Die Elementarten class, function und statement lassen sich in den Rev\u2026", "41": "Noch nicht: Kommentare als Elemente; JS, TS und C (tree-sitter, als N\u2026", "42": "HTML-Dateien", "43": "DEC_HTML_ADAPTER \u2013 deciwa.core.adapters.html liest .html- und .htm-Da\u2026", "44": "Ein Host markiert jedes Start-Tag der dargestellten Seite mit seiner \u2026", "45": "In einem Host werden die Zeilen jedes Elements zu einem Block der Cod\u2026", "46": "Datendateien (JSON, YAML)", "47": "DEC_DATA_ADAPTERS \u2013 deciwa.core.adapters.json liest .json-Dateien, de\u2026", "48": "Elemente: das Dokument, jedes Objekt-Mitglied und jeder Array-Eintrag\u2026", "49": "Selektoren: der Name des Adapters plus der JSON Pointer des Elements \u2026", "50": "Text: der Wert in kanonischer Form \u2013 sortierte Schl\u00fcssel, keine Leerz\u2026", "51": "Bezeichnung: der Schl\u00fcssel plus eine kurze Vorschau \u2013 primary: \"#1f6f\u2026", "52": "Zeilen: line ist die Zeile des Schl\u00fcssels (Array-Eintr\u00e4ge: ihre erste\u2026", "53": "JSON: die Standardbibliothek liefert keine Positionen, deshalb liest \u2026", "54": "YAML: der Safe Loader von PyYAML \u2013 der Knotenbaum liefert die Positio\u2026", "55": "Eine ung\u00fcltige Datei hat keine Elemente.", "56": "Ein Array-Index verschiebt sich, wenn davor ein Eintrag eingef\u00fcgt wir\u2026", "57": "Reiner Text", "58": "Abs\u00e4tze sind durch Leerzeilen getrennte Bl\u00f6cke; Zeilen sind eine zwei\u2026", "59": "HTML im Browser", "60": "PROP_DOM_ADAPTER \u2013 Das Web-Skript findet die Elemente einer gerenderten Seite \u2026", "61": "Freie Textauswahl", "62": "PROP_FREE_TEXT \u2013 Eine freie Textauswahl ist ein Textzitat innerhalb ihres n\u00e4\u2026"}}</script>
+        </article>
+      </div>
+      <footer>
+        
+
+        <div class="related-pages">
+          <a class="next-page" href="file-format.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Dateiformat</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="layers.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Schichten</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, danwos
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+<div class="dw-made-by">
+  <a href="https://danwos.dev" title="danwos.dev">
+    <img src="../_static/img/logo.svg" alt="" width="22" height="31">
+    <span>a <b>danwos</b> project</span>
+  </a>
+</div>
+
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Adapter</a><ul>
+<li><a class="reference internal" href="#structural-selectors">Strukturelle Selektoren</a></li>
+<li><a class="reference internal" href="#markdown">Markdown</a></li>
+<li><a class="reference internal" href="#rst-and-sphinx-needs">rST und Sphinx-Needs</a></li>
+<li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#html-files">HTML-Dateien</a></li>
+<li><a class="reference internal" href="#data-files-json-yaml">Datendateien (JSON, YAML)</a></li>
+<li><a class="reference internal" href="#plain-text">Reiner Text</a></li>
+<li><a class="reference internal" href="#html-in-the-browser">HTML im Browser</a></li>
+<li><a class="reference internal" href="#free-text-selection">Freie Textauswahl</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=f20135ca"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/deciwa-data.js"></script>
+    <script defer="defer" src="../_static/deciwa-overlay.js?v=f3188b25"></script>
+    <script src="../_static/translations.js?v=9bf55d28"></script>
+    <script src="../_static/sphinx-data-viewer/jsonview.bundle.js?v=18cd53c5"></script>
+    <script src="../_static/sphinx-data-viewer/jsonview_loader.js?v=f7ff7e7d"></script>
+    <script src="../_static/sphinx-needs/libs/html/sphinx_needs_collapse.js?v=dca66431"></script>
+    </body>
+</html>
