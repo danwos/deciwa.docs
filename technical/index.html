@@ -1,0 +1,867 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Technical overview" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://deciwa.danwos.dev/technical/index.html" />
+<meta property="og:site_name" content="deciwa" />
+<meta property="og:description" content="Goal: Build release 0.1 ( Roadmap): the CLI with the open file format, the adapters Markdown, rST/Sphinx-Needs and plain text, and the agent skills deciwa-work and deciwa-ask – good enough that Dan..." />
+<meta property="og:image" content="https://danwos.dev/og/en/tools/deciwa.png" />
+<meta property="og:image:alt" content="deciwa – danwos" />
+<meta name="description" content="Goal: Build release 0.1 ( Roadmap): the CLI with the open file format, the adapters Markdown, rST/Sphinx-Needs and plain text, and the agent skills deciwa-work and deciwa-ask – good enough that Dan..." />
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="en_US">
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Stack" href="stack.html"><link rel="prev" title="All decisions" href="../decisions/index.html">
+        <link rel="canonical" href="https://deciwa.danwos.dev/technical/index.html">
+        <link rel="prefetch" href="../_static/deciwa.webp" as="image">
+
+    <link rel="shortcut icon" href="../_static/logo.svg"><!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Technical overview - deciwa</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/deciwa-overlay.css?v=72f4c4c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_core.css?v=f5b60a78" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_links.css?v=2150a916" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_style.css?v=92936fa5" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_toggle.css?v=5c6620df" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/needstable.css?v=7b67799e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/modern.css?v=c1bc121d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/danwos.css?v=1b418c0b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #0F766E;
+  --color-brand-content: #0F766E;
+  --color-brand-visited: #0F766E;
+  --color-background-primary: #FFFFFF;
+  --color-foreground-primary: #1B1A22;
+  --font-stack: Inter, system-ui, sans-serif;
+  --font-stack--monospace: 'JetBrains Mono', ui-monospace, monospace;
+  --font-stack--headings: 'Bricolage Grotesque', Inter, system-ui, sans-serif;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #14B8A6;
+  --color-brand-content: #14B8A6;
+  --color-brand-visited: #14B8A6;
+  --color-background-primary: #0D1B2A;
+  --color-background-secondary: #0A1622;
+  --color-foreground-primary: #E8EDF3;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #14B8A6;
+  --color-brand-content: #14B8A6;
+  --color-brand-visited: #14B8A6;
+  --color-background-primary: #0D1B2A;
+  --color-background-secondary: #0A1622;
+  --color-foreground-primary: #E8EDF3;
+  
+      }
+    }
+  }
+</style>
+
+<link rel="alternate" hreflang="en" href="https://deciwa.danwos.dev/technical/index.html">
+<link rel="alternate" hreflang="de" href="https://deciwa.danwos.dev/de/technical/index.html">
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">deciwa</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered dw-brand" href="../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/deciwa.webp" alt=""/>
+  </div>
+  <span class="dw-brand-name">deciwa</span>
+  <span class="dw-brand-slogan">decision watcher</span>
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<nav class="dw-languages" aria-label="Language">
+  <span aria-current="true" lang="en">English</span>
+  <a href="../de/technical/index.html" hreflang="de" lang="de">Deutsch</a>
+</nav><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Product</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">What deciwa is</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/ways-of-working.html">Three ways of working</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/elements.html">What you can review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/review-rules.html">What must be approved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/ui.html">The review UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/cli.html">CLI and agent skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/data.html">Where reviews are stored</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/roadmap.html">Roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Integrations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/index.html">Integration overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../integrations/sphinx/index.html">Sphinx</a><input aria-label="Toggle navigation of Sphinx" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/sphinx/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/sphinx/configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/sphinx/workflow.html">Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/web.html">Web script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/vscode.html">VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/chrome.html">Chrome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/claude.html">Claude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/monsterbrain.html">monsterbrain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/desktop.html">Desktop app</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Decisions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../decisions/index.html">All decisions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical details</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapters.html">Adapters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file-format.html">File format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="state-engine.html">State engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web.html">Web script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="skills.html">Agent skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rollout.html">Rollout in the knowledge base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hosts.html">Host apps and the standalone engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="questions.html">Open questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="working.html">Working on deciwa</a></li>
+</ul>
+
+</div></div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="dw-el-1" id="technical-overview">
+<h1>Technical overview<a class="headerlink" href="#technical-overview" title="Link to this heading">¶</a></h1>
+<div class="status-draft dw-el-2 admonition">
+<p class="admonition-title">Status: draft</p>
+<p class="dw-el-3">How the next version (0.1) is built – updated for every version. Proposals by Claude,
+2026-10-19; nothing on these pages is binding until Daniel approves it. Questions that block work are collected in
+<a class="reference internal" href="questions.html"><span class="std std-doc">Open questions</span></a>.</p>
+</div>
+<section class="dw-el-4" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">¶</a></h2>
+<p class="dw-el-5">Build release 0.1 (<a class="reference internal" href="../product/roadmap.html"><span class="doc">Roadmap</span></a>): the CLI with the open file
+format, the adapters Markdown, rST/Sphinx-Needs and plain text, and the
+agent skills <code class="docutils literal notranslate"><span class="pre">deciwa-work</span></code> and <code class="docutils literal notranslate"><span class="pre">deciwa-ask</span></code> – good enough that Daniel uses
+deciwa in his knowledge base instead of <code class="docutils literal notranslate"><span class="pre">[CHECK]</span></code> markers.</p>
+<p class="dw-el-6"><strong>Not in 0.1:</strong> <code class="docutils literal notranslate"><span class="pre">push</span></code> / <code class="docutils literal notranslate"><span class="pre">pull</span></code>, VS Code, Chrome, monsterbrain, hosted
+service, Python/HTML adapters, the standalone engine. The design must not
+block them, though – especially review on results
+(<a class="reference internal" href="../decisions/index.html#DEC_REVIEW_ON_RESULTS" title="DEC_REVIEW_ON_RESULTS"><em class="xref need">Reviews happen on results, ... (DEC_REVIEW_ON_RESULTS)</em></a>) and host apps (<a class="reference internal" href="hosts.html"><span class="doc">Host apps and the standalone engine</span></a>).</p>
+</section>
+<section class="dw-el-7" id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">¶</a></h2>
+<p class="dw-el-8">Every front end – the integrations as well as the agent skills – talks to
+the deciwa CLI and its core library, never to the files directly
+(<a class="reference internal" href="../decisions/index.html#DEC_CLI_MASTER" title="DEC_CLI_MASTER"><em class="xref need">The CLI is the master, with... (DEC_CLI_MASTER)</em></a>). The CLI stores reviews in <code class="docutils literal notranslate"><span class="pre">.deciwa/</span></code> inside the
+repository or, later, in the hosted service.</p>
+<div class="dw-el-9 dw-figure"><figure class="diagram">
+<svg viewBox="0 0 760 330" role="img" aria-labelledby="arch-t">
+  <defs><marker id="dw-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrowhead"/></marker></defs>
+  <title id="arch-t">deciwa architecture: integrations and agent skills use the CLI, the CLI stores in .deciwa or the hosted service</title>
+  <g class="box">
+    <rect x="20" y="20" width="130" height="50" rx="10"/><text x="85" y="50">VS Code</text>
+    <rect x="165" y="20" width="130" height="50" rx="10"/><text x="230" y="50">Chrome</text>
+    <rect x="310" y="20" width="130" height="50" rx="10"/><text x="375" y="50">Claude UI</text>
+    <rect x="455" y="20" width="130" height="50" rx="10"/><text x="520" y="50">Desktop app</text>
+  </g>
+  <g class="box alt">
+    <rect x="610" y="20" width="130" height="50" rx="10"/><text x="675" y="42">agent skills</text><text x="675" y="60" class="small">work · ask</text>
+  </g>
+  <text x="302" y="92" class="label">integrations</text>
+  <g class="arrow">
+    <path d="M85 70 V120"/><path d="M230 70 V120"/><path d="M375 70 V120"/><path d="M520 70 V120"/><path d="M675 70 V120"/>
+  </g>
+  <g class="box main">
+    <rect x="20" y="125" width="720" height="80" rx="14"/>
+    <text x="380" y="157" class="strong">deciwa CLI / core library – the master</text>
+    <text x="380" y="183" class="small">format adapters · selectors and fingerprints · state engine · JSON API (--json, serve)</text>
+  </g>
+  <g class="arrow"><path d="M200 205 V250"/><path d="M560 205 V250"/></g>
+  <g class="box">
+    <rect x="40" y="255" width="320" height="60" rx="10"/>
+    <text x="200" y="280">.deciwa/ in the repository</text>
+    <text x="200" y="300" class="small">open format · Git is the history · default</text>
+  </g>
+  <g class="box warm">
+    <rect x="400" y="255" width="320" height="60" rx="10"/>
+    <text x="560" y="280">hosted service (paid)</text>
+    <text x="560" y="300" class="small">sync · task lists · evaluations · audit</text>
+  </g>
+</svg>
+<figcaption>Every front end talks to the CLI, never to the files directly.</figcaption>
+</figure></div></section>
+<section class="dw-el-10" id="repository">
+<h2>Repository<a class="headerlink" href="#repository" title="Link to this heading">¶</a></h2>
+<div class="dw-el-11 highlight-text notranslate"><div class="highlight"><pre><span></span>deciwa/
+├── packages/            one package per part – see below
+│   ├── core/            deciwa-core     model, .deciwa/ store, engine
+│   ├── server/          deciwa-server   review server
+│   ├── cli/             deciwa-cli      the deciwa command
+│   ├── ui/              deciwa-ui       review overlay (JS/CSS)
+│   ├── sphinx/          deciwa-sphinx   Sphinx extension
+│   ├── client/          @danwos/deciwa-client   engine client for host apps (TypeScript)
+│   └── monsterbrain/    deciwa-monsterbrain     the monsterbrain extension
+├── docs/                these docs – product, integrations, decisions,
+│                        technical details
+├── .deciwa/             review data of these docs (config.toml: what must be approved)
+├── mockups/             first clickable mock-up of the feedback UI, demo recorder
+├── pyproject.toml       the uv workspace (all packages + docs tools)
+└── uv.lock
+</pre></div>
+</div>
+</section>
+<section class="dw-el-12" id="packages">
+<span id="id1"></span><h2>Packages<a class="headerlink" href="#packages" title="Link to this heading">¶</a></h2>
+<p class="dw-el-13">The split into packages is <a class="reference internal" href="../decisions/index.html#DEC_PACKAGES" title="DEC_PACKAGES"><em class="xref need">deciwa is one repository of... (DEC_PACKAGES)</em></a>.</p>
+<p class="dw-el-14">deciwa is one repository with one package per part – a uv workspace. All
+packages share the Python namespace <code class="docutils literal notranslate"><span class="pre">deciwa</span></code>.</p>
+<div class="dw-el-15 dw-figure"><figure class="diagram">
+<svg viewBox="0 0 760 340" role="img" aria-labelledby="pkg-t">
+  <defs><marker id="dw-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrowhead"/></marker></defs>
+  <title id="pkg-t">Packages: cli depends on server and core; sphinx on core and ui; server on core. At run time the review UI calls the server's JSON API, and the server runs the Sphinx build.</title>
+  <g class="box alt"><rect x="20" y="20" width="220" height="60" rx="10"/><text x="130" y="44">deciwa-cli</text><text x="130" y="64" class="small">the deciwa command</text></g>
+  <g class="box alt"><rect x="270" y="20" width="220" height="60" rx="10"/><text x="380" y="44">deciwa-sphinx</text><text x="380" y="64" class="small">Sphinx extension</text></g>
+  <g class="box alt"><rect x="520" y="20" width="220" height="60" rx="10"/><text x="630" y="44">later: VS Code, Chrome …</text><text x="630" y="64" class="small">own repos or integrations/</text></g>
+  <g class="box"><rect x="20" y="140" width="220" height="60" rx="10"/><text x="130" y="164">deciwa-server</text><text x="130" y="184" class="small">site + JSON API + rebuild</text></g>
+  <g class="box"><rect x="520" y="140" width="220" height="60" rx="10"/><text x="630" y="164">deciwa-ui</text><text x="630" y="184" class="small">review overlay JS / CSS</text></g>
+  <g class="box main"><rect x="20" y="245" width="720" height="56" rx="12"/><text x="380" y="267" class="strong">deciwa-core</text><text x="380" y="287" class="small">model · store · engine – all the logic</text></g>
+  <g class="arrow">
+    <path d="M130 80 V135"/><path d="M60 80 V240"/><path d="M130 200 V240"/>
+    <path d="M380 80 V240"/><path d="M430 80 L590 135"/>
+    <path d="M630 80 V135"/><path d="M540 80 L240 145"/><path d="M710 80 V240"/>
+  </g>
+  <g class="arrow run">
+    <path d="M520 178 H245"/>
+    <path d="M200 140 C230 110 255 90 265 62"/>
+  </g>
+  <text x="382" y="170" class="label">HTTP · JSON API</text>
+  <text x="210" y="112" class="label">runs the build</text>
+  <g class="legend-key">
+    <path d="M30 325 H70" class="dep"/><text x="78" y="325" class="small" style="text-anchor:start">package dependency</text>
+    <path d="M250 325 H290" class="runl"/><text x="298" y="325" class="small" style="text-anchor:start">at run time (with deciwa serve)</text>
+  </g>
+</svg>
+<figcaption>Solid: what a package imports. Dashed: how the parts talk to each other while reviewing with a server.</figcaption>
+</figure></div><div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Folder</p></th>
+<th class="head"><p>Distribution</p></th>
+<th class="head"><p>Import</p></th>
+<th class="head"><p>Contains</p></th>
+<th class="head"><p>Depends on</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="dw-el-16 row-even"><td><p><code class="docutils literal notranslate"><span class="pre">packages/core</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deciwa-core</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deciwa.core</span></code></p></td>
+<td><p>model, <code class="docutils literal notranslate"><span class="pre">.deciwa/</span></code> store, engine – states, review rules, project overview, export/import</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="dw-el-17 row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">packages/server</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deciwa-server</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deciwa.server</span></code></p></td>
+<td><p>local review server: serves a built site, the JSON API for the review UI, rebuilds and reloads on change; knows no build tool – the caller passes the build command</p></td>
+<td><p>core</p></td>
+</tr>
+<tr class="dw-el-18 row-even"><td><p><code class="docutils literal notranslate"><span class="pre">packages/cli</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deciwa-cli</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deciwa.cli</span></code></p></td>
+<td><p>the <code class="docutils literal notranslate"><span class="pre">deciwa</span></code> command; <code class="docutils literal notranslate"><span class="pre">deciwa</span> <span class="pre">serve</span></code> passes the Sphinx build to the server</p></td>
+<td><p>core, server</p></td>
+</tr>
+<tr class="dw-el-19 row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">packages/ui</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deciwa-ui</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deciwa.ui</span></code></p></td>
+<td><p>the review overlay (JavaScript, CSS, logo) in the danwos tool UI kit, including the offline engine and the web script; sources in <code class="docutils literal notranslate"><span class="pre">js/</span></code>, built with <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">build</span></code> into <code class="docutils literal notranslate"><span class="pre">static/</span></code>; no Python logic</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="dw-el-20 row-even"><td><p><code class="docutils literal notranslate"><span class="pre">packages/sphinx</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deciwa-sphinx</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deciwa.sphinx</span></code></p></td>
+<td><p>Sphinx extension: finds the elements of every page, writes the elements index, ships the review UI</p></td>
+<td><p>core, ui</p></td>
+</tr>
+<tr class="dw-el-21 row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">packages/client</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&#64;danwos/deciwa-client</span></code> (npm)</p></td>
+<td><p>–</p></td>
+<td><p>finds, starts and checks the engine for a host app, typed calls to the JSON API (<a class="reference internal" href="hosts.html"><span class="std std-doc">Host apps</span></a>)</p></td>
+<td><p>the engine (<code class="docutils literal notranslate"><span class="pre">deciwa</span> <span class="pre">serve</span> <span class="pre">--api-only</span></code>)</p></td>
+</tr>
+<tr class="dw-el-22 row-even"><td><p><code class="docutils literal notranslate"><span class="pre">packages/monsterbrain</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deciwa-monsterbrain</span></code> (npm, private)</p></td>
+<td><p>–</p></td>
+<td><p>the monsterbrain extension: overlay on rendered files, side panel, marks in the tree, MCP tools; <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">build</span></code> bundles client and overlay into <code class="docutils literal notranslate"><span class="pre">dist/</span></code></p></td>
+<td><p>client, ui</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="dw-el-23"><code class="docutils literal notranslate"><span class="pre">deciwa-sphinx</span></code> does not import <code class="docutils literal notranslate"><span class="pre">deciwa-server</span></code>: a static (offline) build
+needs no server. With <code class="docutils literal notranslate"><span class="pre">deciwa</span> <span class="pre">serve</span></code>, the server runs the Sphinx build, and
+the review UI in the pages talks to the server’s JSON API.</p>
+<p class="dw-el-24">Rules:</p>
+<ul class="simple">
+<li class="dw-el-25"><p>Logic lives in <code class="docutils literal notranslate"><span class="pre">deciwa-core</span></code> only. The offline engine in <code class="docutils literal notranslate"><span class="pre">deciwa-ui</span></code> mirrors
+its rules for reviews without a server and must be kept in step.</p></li>
+<li class="dw-el-26"><p><code class="docutils literal notranslate"><span class="pre">deciwa-server</span></code> and <code class="docutils literal notranslate"><span class="pre">deciwa-cli</span></code> are reused by every integration that
+reviews in a browser or calls the CLI.</p></li>
+<li class="dw-el-27"><p>An integration package depends on <code class="docutils literal notranslate"><span class="pre">deciwa-core</span></code> and, for a browser UI, on
+<code class="docutils literal notranslate"><span class="pre">deciwa-ui</span></code> – never on another integration.</p></li>
+</ul>
+<section class="dw-el-28" id="setting-up">
+<h3>Setting up<a class="headerlink" href="#setting-up" title="Link to this heading">¶</a></h3>
+<div class="dw-el-29 highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uv<span class="w"> </span>sync<span class="w">                          </span><span class="c1"># all packages, editable, plus the docs tools</span>
+<span class="gp">$ </span>.venv/bin/deciwa<span class="w"> </span>serve<span class="w">           </span><span class="c1"># the CLI from packages/cli</span>
+</pre></div>
+</div>
+<p class="dw-el-30">Using deciwa in another Sphinx project:</p>
+<div class="dw-el-31 highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>~/workspace/deciwa/packages
+<span class="gp">$ </span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--python<span class="w"> </span>&lt;project&gt;/.venv/bin/python<span class="w"> </span>-e<span class="w"> </span>core<span class="w"> </span>-e<span class="w"> </span>server<span class="w"> </span>-e<span class="w"> </span>cli<span class="w"> </span>-e<span class="w"> </span>ui<span class="w"> </span>-e<span class="w"> </span>sphinx
+</pre></div>
+</div>
+</section>
+</section>
+<section class="dw-el-32" id="pages">
+<h2>Pages<a class="headerlink" href="#pages" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Page</p></th>
+<th class="head"><p>Decides</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="dw-el-33 row-even"><td><p><a class="reference internal" href="stack.html"><span class="std std-doc">Stack</span></a></p></td>
+<td><p>language, packaging, tooling</p></td>
+</tr>
+<tr class="dw-el-34 row-odd"><td><p><a class="reference internal" href="layers.html"><span class="std std-doc">Layers</span></a></p></td>
+<td><p>modules of the core and how they depend on each other</p></td>
+</tr>
+<tr class="dw-el-35 row-even"><td><p><a class="reference internal" href="adapters.html"><span class="std std-doc">Adapters</span></a></p></td>
+<td><p>how a format turns into elements and selectors</p></td>
+</tr>
+<tr class="dw-el-36 row-odd"><td><p><a class="reference internal" href="file-format.html"><span class="std std-doc">File format</span></a></p></td>
+<td><p>the JSON inside <code class="docutils literal notranslate"><span class="pre">.deciwa/</span></code></p></td>
+</tr>
+<tr class="dw-el-37 row-even"><td><p><a class="reference internal" href="state-engine.html"><span class="std std-doc">State engine</span></a></p></td>
+<td><p>how the state of an element is computed</p></td>
+</tr>
+<tr class="dw-el-38 row-odd"><td><p><a class="reference internal" href="cli.html"><span class="std std-doc">CLI</span></a></p></td>
+<td><p>commands, element addressing, JSON output</p></td>
+</tr>
+<tr class="dw-el-39 row-even"><td><p><a class="reference internal" href="skills.html"><span class="std std-doc">Skills</span></a></p></td>
+<td><p>what the two agent skills do and how they ship</p></td>
+</tr>
+<tr class="dw-el-40 row-odd"><td><p><a class="reference internal" href="rollout.html"><span class="std std-doc">Rollout</span></a></p></td>
+<td><p>how 0.1 gets into Daniel’s knowledge base</p></td>
+</tr>
+<tr class="dw-el-41 row-even"><td><p><a class="reference internal" href="working.html"><span class="std std-doc">Working on deciwa</span></a></p></td>
+<td><p>docs as the truth, reviewing them in deciwa, from proposal to decision</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="dw-el-42" id="all-proposals">
+<h2>All proposals<a class="headerlink" href="#all-proposals" title="Link to this heading">¶</a></h2>
+<div class="needstable_wrapper docutils container" id="needtable-technical/index-0">
+<table class="NEEDS_TABLE docutils align-default" id="needtable-technical/index-0-table_node">
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 50.0%" />
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head needs_col_id" data-col="id" scope="col"><p>ID</p></th>
+<th class="head needs_col_title" data-col="title" scope="col"><p>Title</p></th>
+<th class="head needs_col_status" data-col="status" scope="col"><p>Status</p></th>
+<th class="head needs_col_docname" data-col="docname" scope="col"><p>page</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="need row-even" data-need-id="PROP_ADAPTER_API"><td class="needs_id"><p><a class="reference internal" href="adapters.html#PROP_ADAPTER_API">PROP_ADAPTER_API</a></p></td>
+<td class="needs_title"><p>One small adapter interface for all formats</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/adapters</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_ANNOTATION"><td class="needs_id"><p><a class="reference internal" href="file-format.html#PROP_ANNOTATION">PROP_ANNOTATION</a></p></td>
+<td class="needs_title"><p>Annotation structure</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/file-format</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_CLI_CHECK"><td class="needs_id"><p><a class="reference internal" href="cli.html#PROP_CLI_CHECK">PROP_CLI_CHECK</a></p></td>
+<td class="needs_title"><p>deciwa status can fail a CI run on freeze alarms</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/cli</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_CLI_COMMANDS"><td class="needs_id"><p><a class="reference internal" href="cli.html#PROP_CLI_COMMANDS">PROP_CLI_COMMANDS</a></p></td>
+<td class="needs_title"><p>Commands in 0.1</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/cli</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_CLI_JSON"><td class="needs_id"><p><a class="reference internal" href="cli.html#PROP_CLI_JSON">PROP_CLI_JSON</a></p></td>
+<td class="needs_title"><p>JSON output has one envelope for every command</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/cli</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_DOCS_REVIEW_SOURCE"><td class="needs_id"><p><a class="reference internal" href="working.html#PROP_DOCS_REVIEW_SOURCE">PROP_DOCS_REVIEW_SOURCE</a></p></td>
+<td class="needs_title"><p>Reviews and decisions happen only on the English docs</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/working</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_DOCS_TRANSLATION"><td class="needs_id"><p><a class="reference internal" href="working.html#PROP_DOCS_TRANSLATION">PROP_DOCS_TRANSLATION</a></p></td>
+<td class="needs_title"><p>English is the source of the docs; German is a translation in gettext catalogs</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/working</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_DOM_ADAPTER"><td class="needs_id"><p><a class="reference internal" href="adapters.html#PROP_DOM_ADAPTER">PROP_DOM_ADAPTER</a></p></td>
+<td class="needs_title"><p>The web script finds the elements of a rendered page itself</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/adapters</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_ENGINE_BINARY"><td class="needs_id"><p><a class="reference internal" href="hosts.html#PROP_ENGINE_BINARY">PROP_ENGINE_BINARY</a></p></td>
+<td class="needs_title"><p>The engine is built with PyInstaller, one folder per platform</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/hosts</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_FILE_LAYOUT"><td class="needs_id"><p><a class="reference internal" href="file-format.html#PROP_FILE_LAYOUT">PROP_FILE_LAYOUT</a></p></td>
+<td class="needs_title"><p>One annotation file per source, deterministic JSON</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/file-format</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_FINGERPRINT"><td class="needs_id"><p><a class="reference internal" href="state-engine.html#PROP_FINGERPRINT">PROP_FINGERPRINT</a></p></td>
+<td class="needs_title"><p>The fingerprint covers the source text with whitespace normalised</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/state-engine</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_FREE_TEXT"><td class="needs_id"><p><a class="reference internal" href="adapters.html#PROP_FREE_TEXT">PROP_FREE_TEXT</a></p></td>
+<td class="needs_title"><p>A free text selection is a text quote inside its nearest element</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/adapters</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_LATEST_WINS"><td class="needs_id"><p><a class="reference internal" href="file-format.html#PROP_LATEST_WINS">PROP_LATEST_WINS</a></p></td>
+<td class="needs_title"><p>While an element is unchanged, an author's latest verdict and latest rating replace the earlier ones</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/file-format</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_LAYERS"><td class="needs_id"><p><a class="reference internal" href="layers.html#PROP_LAYERS">PROP_LAYERS</a></p></td>
+<td class="needs_title"><p>The core is split into layers with a strict dependency direction</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/layers</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_OVERLAY_PARTS"><td class="needs_id"><p><a class="reference internal" href="web.html#PROP_OVERLAY_PARTS">PROP_OVERLAY_PARTS</a></p></td>
+<td class="needs_title"><p>The overlay is split into element source, store and UI</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/web</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_PYTHON_CORE"><td class="needs_id"><p><a class="reference internal" href="stack.html#PROP_PYTHON_CORE">PROP_PYTHON_CORE</a></p></td>
+<td class="needs_title"><p>The core and the CLI are written in Python</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/stack</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_RESOLVE"><td class="needs_id"><p><a class="reference internal" href="state-engine.html#PROP_RESOLVE">PROP_RESOLVE</a></p></td>
+<td class="needs_title"><p>Selectors are tried in a fixed order and the first unique hit wins</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/state-engine</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_ROLLOUT_LOCATION"><td class="needs_id"><p><a class="reference internal" href="rollout.html#PROP_ROLLOUT_LOCATION">PROP_ROLLOUT_LOCATION</a></p></td>
+<td class="needs_title"><p>.deciwa/ at the root of the knowledge base, committed</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/rollout</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_ROLLOUT_MIGRATE"><td class="needs_id"><p><a class="reference internal" href="rollout.html#PROP_ROLLOUT_MIGRATE">PROP_ROLLOUT_MIGRATE</a></p></td>
+<td class="needs_title"><p>Existing [CHECK] markers are migrated once into requests</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/rollout</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_RST_DOCUTILS"><td class="needs_id"><p><a class="reference internal" href="adapters.html#PROP_RST_DOCUTILS">PROP_RST_DOCUTILS</a></p></td>
+<td class="needs_title"><p>The rST adapter parses with docutils, without running Sphinx</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/adapters</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_SCHEMA"><td class="needs_id"><p><a class="reference internal" href="file-format.html#PROP_SCHEMA">PROP_SCHEMA</a></p></td>
+<td class="needs_title"><p>A JSON Schema is the documented contract</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/file-format</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_SELECTORS"><td class="needs_id"><p><a class="reference internal" href="adapters.html#PROP_SELECTORS">PROP_SELECTORS</a></p></td>
+<td class="needs_title"><p>Element selectors are paths of headings plus a per-section counter</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/adapters</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_SKILLS_FORMAT"><td class="needs_id"><p><a class="reference internal" href="skills.html#PROP_SKILLS_FORMAT">PROP_SKILLS_FORMAT</a></p></td>
+<td class="needs_title"><p>Two skills in the Agent Skills format, shipped in the repository</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/skills</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_SNAPSHOT"><td class="needs_id"><p><a class="reference internal" href="file-format.html#PROP_SNAPSHOT">PROP_SNAPSHOT</a></p></td>
+<td class="needs_title"><p>The snapshot of the element text is stored with every annotation</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/file-format</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_STATE_RULES"><td class="needs_id"><p><a class="reference internal" href="state-engine.html#PROP_STATE_RULES">PROP_STATE_RULES</a></p></td>
+<td class="needs_title"><p>State rules in this order</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/state-engine</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_TOOLING"><td class="needs_id"><p><a class="reference internal" href="stack.html#PROP_TOOLING">PROP_TOOLING</a></p></td>
+<td class="needs_title"><p>Tooling: Python 3.12+, uv, ruff, pytest, click</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/stack</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_VSCODE_PLATFORM"><td class="needs_id"><p><a class="reference internal" href="hosts.html#PROP_VSCODE_PLATFORM">PROP_VSCODE_PLATFORM</a></p></td>
+<td class="needs_title"><p>VS Code ships one package per platform with the engine inside</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/hosts</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_WEB_BUNDLE"><td class="needs_id"><p><a class="reference internal" href="web.html#PROP_WEB_BUNDLE">PROP_WEB_BUNDLE</a></p></td>
+<td class="needs_title"><p>One bundle built with esbuild, the UI inside a Shadow DOM</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/web</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_WEB_FILES"><td class="needs_id"><p><a class="reference internal" href="file-format.html#PROP_WEB_FILES">PROP_WEB_FILES</a></p></td>
+<td class="needs_title"><p>Web pages without a source file are stored under their address</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/file-format</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_WEB_HOSTING"><td class="needs_id"><p><a class="reference internal" href="web.html#PROP_WEB_HOSTING">PROP_WEB_HOSTING</a></p></td>
+<td class="needs_title"><p>The web script is hosted with the docs under a versioned path</p></td>
+<td class="needs_status"><p>approved</p></td>
+<td class="needs_docname"><p>technical/web</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_WEB_INDEX"><td class="needs_id"><p><a class="reference internal" href="web.html#PROP_WEB_INDEX">PROP_WEB_INDEX</a></p></td>
+<td class="needs_title"><p>The browser remembers the elements of every visited page</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/web</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_WEB_ONE_LINE"><td class="needs_id"><p><a class="reference internal" href="web.html#PROP_WEB_ONE_LINE">PROP_WEB_ONE_LINE</a></p></td>
+<td class="needs_title"><p>Loading the script is enough – deciwa always appears</p></td>
+<td class="needs_status"><p>approved</p></td>
+<td class="needs_docname"><p>technical/web</p></td>
+</tr>
+<tr class="need row-even" data-need-id="PROP_WEB_RESCAN"><td class="needs_id"><p><a class="reference internal" href="web.html#PROP_WEB_RESCAN">PROP_WEB_RESCAN</a></p></td>
+<td class="needs_title"><p>Pages that change after loading are scanned again</p></td>
+<td class="needs_status"><p>draft</p></td>
+<td class="needs_docname"><p>technical/web</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="PROP_WEB_SOURCE"><td class="needs_id"><p><a class="reference internal" href="web.html#PROP_WEB_SOURCE">PROP_WEB_SOURCE</a></p></td>
+<td class="needs_title"><p>A page is identified by its meta tag, a mapping rule or its address</p></td>
+<td class="needs_status"><p>approved</p></td>
+<td class="needs_docname"><p>technical/web</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="dw-el-43" id="how-the-proposals-relate-to-the-decisions">
+<h2>How the proposals relate to the decisions<a class="headerlink" href="#how-the-proposals-relate-to-the-decisions" title="Link to this heading">¶</a></h2>
+<figure class="dw-el-44 align-center" id="needflow-technical/index-0">
+<div class="graphviz">
+<a href="../_images/needflow-9ccb027b5fd28102ae76f8c71be7a0ae11566fa8.svg">
+<img src="../_images/needflow-9ccb027b5fd28102ae76f8c71be7a0ae11566fa8.svg" alt="needflow graphviz diagram" class="graphviz"></img>
+</a>
+</div>
+</figure>
+</section>
+</section>
+<script type="application/json" id="deciwa-page">{"doc": "technical/index", "source": "docs/technical/index.md", "mode": "offline", "keys": {"1": "md:heading:Technical overview", "2": "md:note:Technical overview#1", "3": "md:paragraph:Technical overview#1", "4": "md:heading:Technical overview/Goal", "5": "md:paragraph:Technical overview/Goal#1", "6": "md:paragraph:Technical overview/Goal#2", "7": "md:heading:Technical overview/Architecture", "8": "md:paragraph:Technical overview/Architecture#1", "9": "md:figure:Technical overview/Architecture#1", "10": "md:heading:Technical overview/Repository", "11": "md:code:Technical overview/Repository#1", "12": "md:heading:Technical overview/Packages", "13": "md:paragraph:Technical overview/Packages#1", "14": "md:paragraph:Technical overview/Packages#2", "15": "md:figure:Technical overview/Packages#1", "16": "md:row:Technical overview/Packages#1", "17": "md:row:Technical overview/Packages#2", "18": "md:row:Technical overview/Packages#3", "19": "md:row:Technical overview/Packages#4", "20": "md:row:Technical overview/Packages#5", "21": "md:row:Technical overview/Packages#6", "22": "md:row:Technical overview/Packages#7", "23": "md:paragraph:Technical overview/Packages#3", "24": "md:paragraph:Technical overview/Packages#4", "25": "md:item:Technical overview/Packages#1", "26": "md:item:Technical overview/Packages#2", "27": "md:item:Technical overview/Packages#3", "28": "md:heading:Technical overview/Packages/Setting up", "29": "md:code:Technical overview/Packages/Setting up#1", "30": "md:paragraph:Technical overview/Packages/Setting up#1", "31": "md:code:Technical overview/Packages/Setting up#2", "32": "md:heading:Technical overview/Pages", "33": "md:row:Technical overview/Pages#1", "34": "md:row:Technical overview/Pages#2", "35": "md:row:Technical overview/Pages#3", "36": "md:row:Technical overview/Pages#4", "37": "md:row:Technical overview/Pages#5", "38": "md:row:Technical overview/Pages#6", "39": "md:row:Technical overview/Pages#7", "40": "md:row:Technical overview/Pages#8", "41": "md:row:Technical overview/Pages#9", "42": "md:heading:Technical overview/All proposals", "43": "md:heading:Technical overview/How the proposals relate to the decisions", "44": "md:figure:Technical overview/How the proposals relate to the decisions#1"}, "kinds": {"1": "heading", "2": "note", "3": "paragraph", "4": "heading", "5": "paragraph", "6": "paragraph", "7": "heading", "8": "paragraph", "9": "figure", "10": "heading", "11": "code", "12": "heading", "13": "paragraph", "14": "paragraph", "15": "figure", "16": "row", "17": "row", "18": "row", "19": "row", "20": "row", "21": "row", "22": "row", "23": "paragraph", "24": "paragraph", "25": "item", "26": "item", "27": "item", "28": "heading", "29": "code", "30": "paragraph", "31": "code", "32": "heading", "33": "row", "34": "row", "35": "row", "36": "row", "37": "row", "38": "row", "39": "row", "40": "row", "41": "row", "42": "heading", "43": "heading", "44": "figure"}, "labels": {"1": "Technical overview", "2": "Status: draft How the next version (0.1) is built \u2013 updated for every\u2026", "3": "How the next version (0.1) is built \u2013 updated for every version. Prop\u2026", "4": "Goal", "5": "Build release 0.1 (Roadmap): the CLI with the open file format, the a\u2026", "6": "Not in 0.1: push / pull, VS Code, Chrome, monsterbrain, hosted servic\u2026", "7": "Architecture", "8": "Every front end \u2013 the integrations as well as the agent skills \u2013 talk\u2026", "9": "Every front end talks to the CLI, never to the files directly.", "10": "Repository", "11": "deciwa/ \u251c\u2500\u2500 packages/ one package per part \u2013 see below \u2502 \u251c\u2500\u2500 core/ de\u2026", "12": "Packages", "13": "The split into packages is DEC_PACKAGES.", "14": "deciwa is one repository with one package per part \u2013 a uv workspace. \u2026", "15": "Solid: what a package imports. Dashed: how the parts talk to each oth\u2026", "16": "packages/core deciwa-core deciwa.core model, .deciwa/ store, engine \u2013\u2026", "17": "packages/server deciwa-server deciwa.server local review server: serv\u2026", "18": "packages/cli deciwa-cli deciwa.cli the deciwa command; deciwa serve p\u2026", "19": "packages/ui deciwa-ui deciwa.ui the review overlay (JavaScript, CSS, \u2026", "20": "packages/sphinx deciwa-sphinx deciwa.sphinx Sphinx extension: finds t\u2026", "21": "packages/client @danwos/deciwa-client (npm) \u2013 finds, starts and check\u2026", "22": "packages/monsterbrain deciwa-monsterbrain (npm, private) \u2013 the monste\u2026", "23": "deciwa-sphinx does not import deciwa-server: a static (offline) build\u2026", "24": "Rules:", "25": "Logic lives in deciwa-core only. The offline engine in deciwa-ui mirr\u2026", "26": "deciwa-server and deciwa-cli are reused by every integration that rev\u2026", "27": "An integration package depends on deciwa-core and, for a browser UI, \u2026", "28": "Setting up", "29": "$ uv sync # all packages, editable, plus the docs tools $ .venv/bin/d\u2026", "30": "Using deciwa in another Sphinx project:", "31": "$ cd ~/workspace/deciwa/packages $ uv pip install --python <project>/\u2026", "32": "Pages", "33": "Stack language, packaging, tooling", "34": "Layers modules of the core and how they depend on each other", "35": "Adapters how a format turns into elements and selectors", "36": "File format the JSON inside .deciwa/", "37": "State engine how the state of an element is computed", "38": "CLI commands, element addressing, JSON output", "39": "Skills what the two agent skills do and how they ship", "40": "Rollout how 0.1 gets into Daniel\u2019s knowledge base", "41": "Working on deciwa docs as the truth, reviewing them in deciwa, from p\u2026", "42": "All proposals", "43": "How the proposals relate to the decisions", "44": "picture"}}</script>
+        </article>
+      </div>
+      <footer>
+        
+
+        <div class="related-pages">
+          <a class="next-page" href="stack.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Stack</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../decisions/index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">All decisions</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, danwos
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+<div class="dw-made-by">
+  <a href="https://danwos.dev" title="danwos.dev">
+    <img src="../_static/img/logo.svg" alt="" width="22" height="31">
+    <span>a <b>danwos</b> project</span>
+  </a>
+</div>
+<div class="dw-legal">
+  <a href="https://danwos.dev/en/imprint/">Imprint</a>
+  <a href="https://danwos.dev/en/privacy/">Privacy</a>
+</div>
+
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Technical overview</a><ul>
+<li><a class="reference internal" href="#goal">Goal</a></li>
+<li><a class="reference internal" href="#architecture">Architecture</a></li>
+<li><a class="reference internal" href="#repository">Repository</a></li>
+<li><a class="reference internal" href="#packages">Packages</a><ul>
+<li><a class="reference internal" href="#setting-up">Setting up</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pages">Pages</a></li>
+<li><a class="reference internal" href="#all-proposals">All proposals</a></li>
+<li><a class="reference internal" href="#how-the-proposals-relate-to-the-decisions">How the proposals relate to the decisions</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/deciwa-data.js"></script>
+    <script defer="defer" src="../_static/deciwa-overlay.js?v=3968dfb1"></script>
+    <script src="../_static/sphinx-data-viewer/jsonview.bundle.js?v=18cd53c5"></script>
+    <script src="../_static/sphinx-data-viewer/jsonview_loader.js?v=f7ff7e7d"></script>
+    <script src="../_static/sphinx-needs/libs/html/sphinx_needs_collapse.js?v=dca66431"></script>
+    <script async="async" data-goatcounter="https://deciwadocs.goatcounter.com/count" src="https://gc.zgo.at/count.js"></script>
+    </body>
+</html>

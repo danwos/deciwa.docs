@@ -1,0 +1,1458 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="All decisions" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://deciwa.danwos.dev/decisions/index.html" />
+<meta property="og:site_name" content="deciwa" />
+<meta property="og:description" content="Product and technical decisions on deciwa. All decided by Daniel; they are binding requirements for every feature and every piece of code. Business decisions (pricing, licence, market) are kept out..." />
+<meta property="og:image" content="https://danwos.dev/og/en/tools/deciwa.png" />
+<meta property="og:image:alt" content="deciwa – danwos" />
+<meta name="description" content="Product and technical decisions on deciwa. All decided by Daniel; they are binding requirements for every feature and every piece of code. Business decisions (pricing, licence, market) are kept out..." />
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="en_US">
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Technical overview" href="../technical/index.html"><link rel="prev" title="Desktop app" href="../integrations/desktop.html">
+        <link rel="canonical" href="https://deciwa.danwos.dev/decisions/index.html">
+        <link rel="prefetch" href="../_static/deciwa.webp" as="image">
+
+    <link rel="shortcut icon" href="../_static/logo.svg"><!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>All decisions - deciwa</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/deciwa-overlay.css?v=72f4c4c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_core.css?v=f5b60a78" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_links.css?v=2150a916" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_style.css?v=92936fa5" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/need_toggle.css?v=5c6620df" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/common_css/needstable.css?v=7b67799e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-needs/modern.css?v=c1bc121d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/danwos.css?v=1b418c0b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #0F766E;
+  --color-brand-content: #0F766E;
+  --color-brand-visited: #0F766E;
+  --color-background-primary: #FFFFFF;
+  --color-foreground-primary: #1B1A22;
+  --font-stack: Inter, system-ui, sans-serif;
+  --font-stack--monospace: 'JetBrains Mono', ui-monospace, monospace;
+  --font-stack--headings: 'Bricolage Grotesque', Inter, system-ui, sans-serif;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #14B8A6;
+  --color-brand-content: #14B8A6;
+  --color-brand-visited: #14B8A6;
+  --color-background-primary: #0D1B2A;
+  --color-background-secondary: #0A1622;
+  --color-foreground-primary: #E8EDF3;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #14B8A6;
+  --color-brand-content: #14B8A6;
+  --color-brand-visited: #14B8A6;
+  --color-background-primary: #0D1B2A;
+  --color-background-secondary: #0A1622;
+  --color-foreground-primary: #E8EDF3;
+  
+      }
+    }
+  }
+</style>
+
+<link rel="alternate" hreflang="en" href="https://deciwa.danwos.dev/decisions/index.html">
+<link rel="alternate" hreflang="de" href="https://deciwa.danwos.dev/de/decisions/index.html">
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">deciwa</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered dw-brand" href="../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/deciwa.webp" alt=""/>
+  </div>
+  <span class="dw-brand-name">deciwa</span>
+  <span class="dw-brand-slogan">decision watcher</span>
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div>
+<nav class="dw-languages" aria-label="Language">
+  <span aria-current="true" lang="en">English</span>
+  <a href="../de/decisions/index.html" hreflang="de" lang="de">Deutsch</a>
+</nav><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Product</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">What deciwa is</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo.html">Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/ways-of-working.html">Three ways of working</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/elements.html">What you can review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/review-rules.html">What must be approved</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/ui.html">The review UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/cli.html">CLI and agent skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/data.html">Where reviews are stored</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product/roadmap.html">Roadmap</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Integrations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/index.html">Integration overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../integrations/sphinx/index.html">Sphinx</a><input aria-label="Toggle navigation of Sphinx" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/sphinx/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/sphinx/configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/sphinx/workflow.html">Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/web.html">Web script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/vscode.html">VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/chrome.html">Chrome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/claude.html">Claude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/monsterbrain.html">monsterbrain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/desktop.html">Desktop app</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Decisions</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">All decisions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical details</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical/index.html">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/stack.html">Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/adapters.html">Adapters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/file-format.html">File format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/state-engine.html">State engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/web.html">Web script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/skills.html">Agent skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/rollout.html">Rollout in the knowledge base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/hosts.html">Host apps and the standalone engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/questions.html">Open questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/working.html">Working on deciwa</a></li>
+</ul>
+
+</div></div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="dw-el-1" id="all-decisions">
+<h1>All decisions<a class="headerlink" href="#all-decisions" title="Link to this heading">¶</a></h1>
+<p class="dw-el-2">Product and technical decisions on deciwa. All decided by Daniel; they are
+binding requirements for every feature and every piece of code. Business
+decisions (pricing, licence, market) are kept outside this repository.</p>
+<p class="dw-el-3">A new decision comes from an approved proposal in the technical details – see
+<a class="reference internal" href="../technical/working.html"><span class="std std-doc">Working on deciwa</span></a>.</p>
+<div class="needstable_wrapper docutils container" id="needtable-decisions/index-0">
+<table class="NEEDS_TABLE docutils align-default" id="needtable-decisions/index-0-table_node">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head needs_col_id" data-col="id" scope="col"><p>ID</p></th>
+<th class="head needs_col_title" data-col="title" scope="col"><p>Title</p></th>
+<th class="head needs_col_decided" data-col="decided" scope="col"><p>Decided</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="need row-even" data-need-id="DEC_PURPOSE"><td class="needs_id"><p><a class="reference internal" href="#DEC_PURPOSE">DEC_PURPOSE</a></p></td>
+<td class="needs_title"><p>deciwa is a review and decision tool for everyone who works with docs and code</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_NO_ENFORCING"><td class="needs_id"><p><a class="reference internal" href="#DEC_NO_ENFORCING">DEC_NO_ENFORCING</a></p></td>
+<td class="needs_title"><p>deciwa collects, evaluates and shows; it does not watch that decisions are kept</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_VERDICTS"><td class="needs_id"><p><a class="reference internal" href="#DEC_VERDICTS">DEC_VERDICTS</a></p></td>
+<td class="needs_title"><p>Feedback verdicts plus quick actions for the AI</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_FREEZE"><td class="needs_id"><p><a class="reference internal" href="#DEC_FREEZE">DEC_FREEZE</a></p></td>
+<td class="needs_title"><p>New verdict freeze</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_DECISION_IS_APPROVAL"><td class="needs_id"><p><a class="reference internal" href="#DEC_DECISION_IS_APPROVAL">DEC_DECISION_IS_APPROVAL</a></p></td>
+<td class="needs_title"><p>A decision is an approved statement, not an extra object</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_NO_MARKERS"><td class="needs_id"><p><a class="reference internal" href="#DEC_NO_MARKERS">DEC_NO_MARKERS</a></p></td>
+<td class="needs_title"><p>No markers in the source; elements come from the content</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_FORMATS"><td class="needs_id"><p><a class="reference internal" href="#DEC_FORMATS">DEC_FORMATS</a></p></td>
+<td class="needs_title"><p>Formats: text, HTML, Python, C, JS, TS, rST, Markdown, AsciiDoc</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_HOVER_SELECT"><td class="needs_id"><p><a class="reference internal" href="#DEC_HOVER_SELECT">DEC_HOVER_SELECT</a></p></td>
+<td class="needs_title"><p>Format objects are highlighted on hover and directly selectable; free text selection down to single words</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_REVIEW_ON_RESULTS"><td class="needs_id"><p><a class="reference internal" href="#DEC_REVIEW_ON_RESULTS">DEC_REVIEW_ON_RESULTS</a></p></td>
+<td class="needs_title"><p>Reviews happen on results, not only on source</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_CLI_MASTER"><td class="needs_id"><p><a class="reference internal" href="#DEC_CLI_MASTER">DEC_CLI_MASTER</a></p></td>
+<td class="needs_title"><p>The CLI is the master, with an openly documented file format</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_DECIWA_FOLDER"><td class="needs_id"><p><a class="reference internal" href="#DEC_DECIWA_FOLDER">DEC_DECIWA_FOLDER</a></p></td>
+<td class="needs_title"><p>All deciwa files in one .deciwa/ folder at the repository root or in a parent folder</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_GIT_COMMITTED"><td class="needs_id"><p><a class="reference internal" href="#DEC_GIT_COMMITTED">DEC_GIT_COMMITTED</a></p></td>
+<td class="needs_title"><p>.deciwa/ is committed to Git by default</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_SKILLS"><td class="needs_id"><p><a class="reference internal" href="#DEC_SKILLS">DEC_SKILLS</a></p></td>
+<td class="needs_title"><p>One or two agent skills for working with deciwa</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_INTEGRATIONS"><td class="needs_id"><p><a class="reference internal" href="#DEC_INTEGRATIONS">DEC_INTEGRATIONS</a></p></td>
+<td class="needs_title"><p>Integrations: VS Code, Chrome, Claude UI, desktop app</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_FEEDBACK_CARD"><td class="needs_id"><p><a class="reference internal" href="#DEC_FEEDBACK_CARD">DEC_FEEDBACK_CARD</a></p></td>
+<td class="needs_title"><p>Feedback card at the element is the default UI; side panel is the alternative; radial menu dropped</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_DANWOS_TOKENS"><td class="needs_id"><p><a class="reference internal" href="#DEC_DANWOS_TOKENS">DEC_DANWOS_TOKENS</a></p></td>
+<td class="needs_title"><p>deciwa uses the danwos colours and tokens</p></td>
+<td class="needs_decided"><p>2026-10-17</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_THREE_MODES"><td class="needs_id"><p><a class="reference internal" href="#DEC_THREE_MODES">DEC_THREE_MODES</a></p></td>
+<td class="needs_title"><p>Three ways of working that stay separate: feedback, quality rating, AI communication</p></td>
+<td class="needs_decided"><p>2026-10-18</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_CARD_VERDICTS"><td class="needs_id"><p><a class="reference internal" href="#DEC_CARD_VERDICTS">DEC_CARD_VERDICTS</a></p></td>
+<td class="needs_title"><p>The feedback card has four verdicts – approve, reject, approve &amp; freeze, delete – plus a comment; a comment alone is a note; quality is rated with 0–5 stars</p></td>
+<td class="needs_decided"><p>2026-10-19</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_FREEZE_BY_VERDICT"><td class="needs_id"><p><a class="reference internal" href="#DEC_FREEZE_BY_VERDICT">DEC_FREEZE_BY_VERDICT</a></p></td>
+<td class="needs_title"><p>A freeze ends with a new verdict; there is no separate &quot;lift freeze&quot;</p></td>
+<td class="needs_decided"><p>2026-10-19</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_DOCS_IN_REPO"><td class="needs_id"><p><a class="reference internal" href="#DEC_DOCS_IN_REPO">DEC_DOCS_IN_REPO</a></p></td>
+<td class="needs_title"><p>Decisions, features and concepts live in the repository as Sphinx docs with Sphinx-Needs</p></td>
+<td class="needs_decided"><p>2026-10-19</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_WEB_SCRIPT_FIRST"><td class="needs_id"><p><a class="reference internal" href="#DEC_WEB_SCRIPT_FIRST">DEC_WEB_SCRIPT_FIRST</a></p></td>
+<td class="needs_title"><p>The web script comes as 0.2, before VS Code</p></td>
+<td class="needs_decided"><p>2026-10-20</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_WEB_ONE_LINE"><td class="needs_id"><p><a class="reference internal" href="#DEC_WEB_ONE_LINE">DEC_WEB_ONE_LINE</a></p></td>
+<td class="needs_title"><p>One script tag is enough – deciwa always appears where it is loaded</p></td>
+<td class="needs_decided"><p>2026-10-20</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_WEB_HOSTING"><td class="needs_id"><p><a class="reference internal" href="#DEC_WEB_HOSTING">DEC_WEB_HOSTING</a></p></td>
+<td class="needs_title"><p>The web script is hosted with the docs under deciwa.danwos.dev/js/&lt;version&gt;/</p></td>
+<td class="needs_decided"><p>2026-10-20</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_WEB_SOURCE"><td class="needs_id"><p><a class="reference internal" href="#DEC_WEB_SOURCE">DEC_WEB_SOURCE</a></p></td>
+<td class="needs_title"><p>Mapping pages to source files is optional; the address is the fallback</p></td>
+<td class="needs_decided"><p>2026-10-20</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_PACKAGES"><td class="needs_id"><p><a class="reference internal" href="#DEC_PACKAGES">DEC_PACKAGES</a></p></td>
+<td class="needs_title"><p>deciwa is one repository of separate packages: core, server, CLI, UI and one per integration</p></td>
+<td class="needs_decided"><p>2026-10-20</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_REPLACES_CHECK"><td class="needs_id"><p><a class="reference internal" href="#DEC_REPLACES_CHECK">DEC_REPLACES_CHECK</a></p></td>
+<td class="needs_title"><p>deciwa replaces the [CHECK] markers in Daniel's knowledge base</p></td>
+<td class="needs_decided"><p>2026-10-22</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_HOST_EXTENSIONS"><td class="needs_id"><p><a class="reference internal" href="#DEC_HOST_EXTENSIONS">DEC_HOST_EXTENSIONS</a></p></td>
+<td class="needs_title"><p>Host apps get deciwa as an extension that lives in this repository; the host only offers generic extension points</p></td>
+<td class="needs_decided"><p>2026-10-22</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_STANDALONE_ENGINE"><td class="needs_id"><p><a class="reference internal" href="#DEC_STANDALONE_ENGINE">DEC_STANDALONE_ENGINE</a></p></td>
+<td class="needs_title"><p>The Python parts can be shipped as a standalone binary that host apps bundle</p></td>
+<td class="needs_decided"><p>2026-10-22</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_SERVE_API_ONLY"><td class="needs_id"><p><a class="reference internal" href="#DEC_SERVE_API_ONLY">DEC_SERVE_API_ONLY</a></p></td>
+<td class="needs_title"><p>A host talks to deciwa serve --api-only: the JSON API for one folder, no build, token and handshake, stops with the host</p></td>
+<td class="needs_decided"><p>2026-10-22</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_HOST_ELEMENTS"><td class="needs_id"><p><a class="reference internal" href="#DEC_HOST_ELEMENTS">DEC_HOST_ELEMENTS</a></p></td>
+<td class="needs_title"><p>In a host the overlay gets its elements from the engine's adapter, matched to the blocks the host marks with their source line</p></td>
+<td class="needs_decided"><p>2026-10-22</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_CLIENT_PACKAGE"><td class="needs_id"><p><a class="reference internal" href="#DEC_CLIENT_PACKAGE">DEC_CLIENT_PACKAGE</a></p></td>
+<td class="needs_title"><p>One TypeScript client for all hosts finds, starts and checks the engine and calls its API</p></td>
+<td class="needs_decided"><p>2026-10-22</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_PYTHON_ADAPTER"><td class="needs_id"><p><a class="reference internal" href="#DEC_PYTHON_ADAPTER">DEC_PYTHON_ADAPTER</a></p></td>
+<td class="needs_title"><p>Python source is reviewed per class, function, method and statement outside functions, read with the standard library ast</p></td>
+<td class="needs_decided"><p>2026-10-22</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_HTML_ADAPTER"><td class="needs_id"><p><a class="reference internal" href="#DEC_HTML_ADAPTER">DEC_HTML_ADAPTER</a></p></td>
+<td class="needs_title"><p>HTML files are read by an adapter in the engine, with source lines; the rendered page and the source view share its elements</p></td>
+<td class="needs_decided"><p>2026-10-22</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_FACT_BLOCKS"><td class="needs_id"><p><a class="reference internal" href="#DEC_FACT_BLOCKS">DEC_FACT_BLOCKS</a></p></td>
+<td class="needs_title"><p>A fact is a structural block of a facts file – a list item, a table row or a free paragraph – not a meaning found in the text</p></td>
+<td class="needs_decided"><p>2026-10-22</p></td>
+</tr>
+<tr class="need row-even" data-need-id="DEC_DATA_ADAPTERS"><td class="needs_id"><p><a class="reference internal" href="#DEC_DATA_ADAPTERS">DEC_DATA_ADAPTERS</a></p></td>
+<td class="needs_title"><p>JSON and YAML files are reviewed value by value; selectors are JSON Pointers</p></td>
+<td class="needs_decided"><p>2026-10-22</p></td>
+</tr>
+<tr class="need row-odd" data-need-id="DEC_HOST_ORDER"><td class="needs_id"><p><a class="reference internal" href="#DEC_HOST_ORDER">DEC_HOST_ORDER</a></p></td>
+<td class="needs_title"><p>monsterbrain is the first host, before VS Code</p></td>
+<td class="needs_decided"><p>2026-10-22</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section class="dw-el-4" id="purpose-and-scope">
+<h2>Purpose and scope<a class="headerlink" href="#purpose-and-scope" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-29b75d2b">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_PURPOSE">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">deciwa is a review and decision tool for everyone who works with docs and code</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_PURPOSE" title="DEC_PURPOSE">DEC_PURPOSE</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Daniel needs a simple way to review content and agree to statements (trigger: his own work in his knowledge base).</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">a decision log only; a tool for one group (developers, AI agents or management).</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-f80a506e">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_NO_ENFORCING">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">deciwa collects, evaluates and shows; it does not watch that decisions are kept</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_NO_ENFORCING" title="DEC_NO_ENFORCING">DEC_NO_ENFORCING</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Enforcing decisions is not possible; doing the work is the job of the AI or the developer.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">a &quot;watcher&quot; that checks the implementation (dropped).</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/cli.html#PROP_CLI_CHECK" title="DEC_NO_ENFORCING">PROP_CLI_CHECK</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-8c15ce6d">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_THREE_MODES">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Three ways of working that stay separate: feedback, quality rating, AI communication</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_THREE_MODES" title="DEC_THREE_MODES">DEC_THREE_MODES</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-18</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Stars are a quick judgement independent of any verdict, to focus on weak areas later; AI questions are answered at the element by verdict or text.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">stars as part of a verdict.</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/file-format.html#PROP_ANNOTATION" title="DEC_THREE_MODES">PROP_ANNOTATION</a>, <a class="reference internal" href="../technical/file-format.html#PROP_LATEST_WINS" title="DEC_THREE_MODES">PROP_LATEST_WINS</a>, <a class="reference internal" href="../technical/state-engine.html#PROP_STATE_RULES" title="DEC_THREE_MODES">PROP_STATE_RULES</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="dw-el-8" id="feedback-and-decisions">
+<h2>Feedback and decisions<a class="headerlink" href="#feedback-and-decisions" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-2dc24fc2">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_CARD_VERDICTS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">The feedback card has four verdicts – approve, reject, approve &amp; freeze, delete – plus a comment; a comment alone is a note; quality is rated with 0–5 stars</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_CARD_VERDICTS" title="DEC_CARD_VERDICTS">DEC_CARD_VERDICTS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-19</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Seen in the prototype: seven three-line buttons were too big; what should change about a text is said better in the comment than with rephrase or more-details buttons; a note is just a comment without verdict; quality needs a clear scale with keys.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">the seven buttons of the clickable prototype (approve, rephrase, more details, delete, freeze, reject, note) and 1–5 stars.</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/skills.html#Q_QUICK_ACTIONS" title="DEC_CARD_VERDICTS">Q_QUICK_ACTIONS</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-a58e8461">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_FREEZE_BY_VERDICT">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">A freeze ends with a new verdict; there is no separate &quot;lift freeze&quot;</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_FREEZE_BY_VERDICT" title="DEC_FREEZE_BY_VERDICT">DEC_FREEZE_BY_VERDICT</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-19</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Approving an element again replaces one's own freeze anyway (latest verdict wins while the element is unchanged); a second way to lift it only confuses.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">an explicit unfreeze command for humans only; deleting the freeze annotation.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-74ab86a2">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_VERDICTS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Feedback verdicts plus quick actions for the AI</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_VERDICTS" title="DEC_VERDICTS">DEC_VERDICTS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Approve, reject, note and the quick actions rephrase, more details and delete give the AI a complete instruction with one click.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">free comments only.</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/file-format.html#PROP_ANNOTATION" title="DEC_VERDICTS">PROP_ANNOTATION</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-2152a4cb">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_FREEZE">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">New verdict freeze</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_FREEZE" title="DEC_FREEZE">DEC_FREEZE</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Some wording must survive every edit; the AI must never change it, and deciwa raises an alarm if it changes anyway.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">–</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/file-format.html#PROP_ANNOTATION" title="DEC_FREEZE">PROP_ANNOTATION</a>, <a class="reference internal" href="../technical/cli.html#PROP_CLI_CHECK" title="DEC_FREEZE">PROP_CLI_CHECK</a>, <a class="reference internal" href="../technical/state-engine.html#PROP_STATE_RULES" title="DEC_FREEZE">PROP_STATE_RULES</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-c08b99eb">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_DECISION_IS_APPROVAL">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">A decision is an approved statement, not an extra object</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_DECISION_IS_APPROVAL" title="DEC_DECISION_IS_APPROVAL">DEC_DECISION_IS_APPROVAL</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Decisions can then be mapped onto anything that is an element.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">separate decision records in the source.</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/state-engine.html#PROP_STATE_RULES" title="DEC_DECISION_IS_APPROVAL">PROP_STATE_RULES</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="dw-el-14" id="elements-and-formats">
+<h2>Elements and formats<a class="headerlink" href="#elements-and-formats" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-08f9ce9d">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_NO_MARKERS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">No markers in the source; elements come from the content</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_NO_MARKERS" title="DEC_NO_MARKERS">DEC_NO_MARKERS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">The source stays clean and every element stays documented (a Sphinx-Needs requirement, a heading, a Python function, an HTML container, a selected word).</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">[CHECK]-style markers or ids in the text.</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/adapters.html#PROP_ADAPTER_API" title="DEC_NO_MARKERS">PROP_ADAPTER_API</a>, <a class="reference internal" href="../technical/state-engine.html#PROP_RESOLVE" title="DEC_NO_MARKERS">PROP_RESOLVE</a>, <a class="reference internal" href="../technical/rollout.html#PROP_ROLLOUT_MIGRATE" title="DEC_NO_MARKERS">PROP_ROLLOUT_MIGRATE</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-a2e9c6a6">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_REPLACES_CHECK">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">deciwa replaces the [CHECK] markers in Daniel's knowledge base</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_REPLACES_CHECK" title="DEC_REPLACES_CHECK">DEC_REPLACES_CHECK</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-22</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">A question at the element with addressee and state replaces a marker in the text ({need}`DEC_NO_MARKERS`); open questions show up in every integration instead of being searched with `rg`.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">keeping `[CHECK]` beside deciwa.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-8d7ae8a6">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_FORMATS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Formats: text, HTML, Python, C, JS, TS, rST, Markdown, AsciiDoc</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_FORMATS" title="DEC_FORMATS">DEC_FORMATS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Docs-as-code plus the results and code around it.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">Markdown only.</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/stack.html#PROP_PYTHON_CORE" title="DEC_FORMATS">PROP_PYTHON_CORE</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-43e6e18f">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_HOVER_SELECT">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Format objects are highlighted on hover and directly selectable; free text selection down to single words</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_HOVER_SELECT" title="DEC_HOVER_SELECT">DEC_HOVER_SELECT</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Pointing must be as fast as looking.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">line-based selection like a code review.</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/adapters.html#PROP_ADAPTER_API" title="DEC_HOVER_SELECT">PROP_ADAPTER_API</a>, <a class="reference internal" href="../technical/adapters.html#PROP_FREE_TEXT" title="DEC_HOVER_SELECT">PROP_FREE_TEXT</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-d9755dab">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_REVIEW_ON_RESULTS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Reviews happen on results, not only on source</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_REVIEW_ON_RESULTS" title="DEC_REVIEW_ON_RESULTS">DEC_REVIEW_ON_RESULTS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Rendered docs and websites are what reviewers see; deciwa must not look like a pull-request code review. The source view shows the same element.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">source-only review.</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/stack.html#PROP_PYTHON_CORE" title="DEC_REVIEW_ON_RESULTS">PROP_PYTHON_CORE</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="dw-el-20" id="architecture-and-data">
+<h2>Architecture and data<a class="headerlink" href="#architecture-and-data" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-e3fefd0a">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_CLI_MASTER">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">The CLI is the master, with an openly documented file format</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_CLI_MASTER" title="DEC_CLI_MASTER">DEC_CLI_MASTER</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">One logic for all front ends; agents and integrations use the same commands and JSON.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">a web app as the core.</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/cli.html#PROP_CLI_COMMANDS" title="DEC_CLI_MASTER">PROP_CLI_COMMANDS</a>, <a class="reference internal" href="../technical/cli.html#PROP_CLI_JSON" title="DEC_CLI_MASTER">PROP_CLI_JSON</a>, <a class="reference internal" href="../technical/layers.html#PROP_LAYERS" title="DEC_CLI_MASTER">PROP_LAYERS</a>, <a class="reference internal" href="../technical/web.html#PROP_OVERLAY_PARTS" title="DEC_CLI_MASTER">PROP_OVERLAY_PARTS</a>, <a class="reference internal" href="../technical/stack.html#PROP_PYTHON_CORE" title="DEC_CLI_MASTER">PROP_PYTHON_CORE</a>, <a class="reference internal" href="../technical/file-format.html#PROP_SCHEMA" title="DEC_CLI_MASTER">PROP_SCHEMA</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-72b601e7">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_DECIWA_FOLDER">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">All deciwa files in one .deciwa/ folder at the repository root or in a parent folder</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_DECIWA_FOLDER" title="DEC_DECIWA_FOLDER">DEC_DECIWA_FOLDER</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">The files must not get in the user's way; a parent folder covers several repositories or repositories that must stay untouched.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">sidecar files next to each source.</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/file-format.html#PROP_FILE_LAYOUT" title="DEC_DECIWA_FOLDER">PROP_FILE_LAYOUT</a>, <a class="reference internal" href="../technical/rollout.html#PROP_ROLLOUT_LOCATION" title="DEC_DECIWA_FOLDER">PROP_ROLLOUT_LOCATION</a>, <a class="reference internal" href="../technical/web.html#PROP_WEB_SOURCE" title="DEC_DECIWA_FOLDER">PROP_WEB_SOURCE</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-09b340fd">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_GIT_COMMITTED">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">.deciwa/ is committed to Git by default</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_GIT_COMMITTED" title="DEC_GIT_COMMITTED">DEC_GIT_COMMITTED</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Reviews are versioned together with the content.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">git-ignored until a team decides.</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/file-format.html#PROP_FILE_LAYOUT" title="DEC_GIT_COMMITTED">PROP_FILE_LAYOUT</a>, <a class="reference internal" href="../technical/rollout.html#PROP_ROLLOUT_LOCATION" title="DEC_GIT_COMMITTED">PROP_ROLLOUT_LOCATION</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-f6b20fc4">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_SKILLS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">One or two agent skills for working with deciwa</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_SKILLS" title="DEC_SKILLS">DEC_SKILLS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Agents should pick up feedback and ask questions without extra prompting (deciwa-work, deciwa-ask).</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">–</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/skills.html#PROP_SKILLS_FORMAT" title="DEC_SKILLS">PROP_SKILLS_FORMAT</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-ae5d3489">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_HOST_EXTENSIONS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Host apps get deciwa as an extension that lives in this repository; the host only offers generic extension points</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_HOST_EXTENSIONS" title="DEC_HOST_EXTENSIONS">DEC_HOST_EXTENSIONS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-22</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">deciwa is developed here only; a host such as monsterbrain or VS Code must not carry a copy of deciwa code. The same server API and overlay serve every host, only a thin adapter differs.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">copying the overlay and a port of the engine into the host; a deciwa integration built into the host.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-f046bfc7">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_STANDALONE_ENGINE">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">The Python parts can be shipped as a standalone binary that host apps bundle</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_STANDALONE_ENGINE" title="DEC_STANDALONE_ENGINE">DEC_STANDALONE_ENGINE</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-22</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">monsterbrain will be distributed and the VS Code extension must work without Python on the machine; users install one app, not a Python environment.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">Python and `uv tool install deciwa` as a prerequisite for every host; a TypeScript port of the core.</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/hosts.html#PROP_ENGINE_BINARY" title="DEC_STANDALONE_ENGINE">PROP_ENGINE_BINARY</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-e850053b">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_SERVE_API_ONLY">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">A host talks to deciwa serve --api-only: the JSON API for one folder, no build, token and handshake, stops with the host</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_SERVE_API_ONLY" title="DEC_SERVE_API_ONLY">DEC_SERVE_API_ONLY</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-22</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">A host renders the content itself and only needs the engine's logic; port 0 and a token keep several hosts and other local pages apart; closing stdin ends the engine, so it never outlives its host.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">the full `deciwa serve` with a built site; the engine as a Python library inside the host.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-6b54855a">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_HOST_ELEMENTS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">In a host the overlay gets its elements from the engine's adapter, matched to the blocks the host marks with their source line</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_HOST_ELEMENTS" title="DEC_HOST_ELEMENTS">DEC_HOST_ELEMENTS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-22</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">The host renders, the adapter knows the elements – feedback gets the same selectors as in the CLI, so `deciwa todo` points at the source line. Rendered HTML files keep the DOM scan with the file path as source.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">a DOM scan of the host's rendering (other selectors than the CLI); the host sending its own element list.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-aca5dc6d">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_CLIENT_PACKAGE">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">One TypeScript client for all hosts finds, starts and checks the engine and calls its API</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_CLIENT_PACKAGE" title="DEC_CLIENT_PACKAGE">DEC_CLIENT_PACKAGE</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-22</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">monsterbrain and VS Code need the same engine handling; only the adapter that puts the results into the host's UI differs.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">every host adapter talking to the engine on its own.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-b68ff35a">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_PYTHON_ADAPTER">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Python source is reviewed per class, function, method and statement outside functions, read with the standard library ast</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_PYTHON_ADAPTER" title="DEC_PYTHON_ADAPTER">DEC_PYTHON_ADAPTER</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-22</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Code repositories are reviewed in monsterbrain next to the knowledge base; ast gives exact line ranges without a new dependency. The Python adapter moves up from 0.4; JS, TS and C follow with tree-sitter.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">tree-sitter for all languages at once (more dependencies, a bigger standalone engine); review of single lines only.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-67d79c38">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_HTML_ADAPTER">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">HTML files are read by an adapter in the engine, with source lines; the rendered page and the source view share its elements</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_HTML_ADAPTER" title="DEC_HTML_ADAPTER">DEC_HTML_ADAPTER</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-22</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">HTML results in a knowledge base are reviewed both as a page and as code; with source lines from the engine, feedback on the page points at the source and `deciwa todo` names the line. It follows the rules of the browser's DOM scan, so the selectors stay the same.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">the DOM scan of the rendered page only (no source lines, no review of the code).</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-96986f50">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_FACT_BLOCKS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">A fact is a structural block of a facts file – a list item, a table row or a free paragraph – not a meaning found in the text</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_FACT_BLOCKS" title="DEC_FACT_BLOCKS">DEC_FACT_BLOCKS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-22</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">The selectors and fingerprints of the Markdown adapter make every block reviewable without markup, the same on every run; an AI that finds the facts by meaning cuts differently each time and approvals lose their anchor. The brain is written in bullets and tables already, with one fact per list item as the writing rule. A facts file can also be approved as a whole; that approval gets stale on any change in the file, while the approvals of its facts stay per fact.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">a whole section as one fact (fewer, coarser approvals); explicit markup with an id per fact; facts extracted by AI.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-4307f070">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_DATA_ADAPTERS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">JSON and YAML files are reviewed value by value; selectors are JSON Pointers</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_DATA_ADAPTERS" title="DEC_DATA_ADAPTERS">DEC_DATA_ADAPTERS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-22</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Data files – design tokens, configs, `needs.json`, exports – are results too. Every value is an element, leaves included: the document, every object member and every array item. Selectors are JSON Pointers (RFC 6901) with the index for array items; there are no rules that depend on the data (no id fields, no special views for known files). An item that moves when something is inserted in front keeps its review because the engine follows moved elements, for every format. Only standard JSON (no JSON Lines, no JSONC) and the first document of a YAML file.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">id fields to name array items (data-dependent); special views for `needs.json` or tokens; review by line only.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-8609042d">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_HOST_ORDER">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">monsterbrain is the first host, before VS Code</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_HOST_ORDER" title="DEC_HOST_ORDER">DEC_HOST_ORDER</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-22</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Daniel uses monsterbrain daily on his knowledge base, the first use of deciwa; it tests the API server, the host element source and the client that VS Code needs later.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">VS Code first.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="dw-el-35" id="ui-and-integrations">
+<h2>UI and integrations<a class="headerlink" href="#ui-and-integrations" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-b8f40c17">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_INTEGRATIONS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Integrations: VS Code, Chrome, Claude UI, desktop app</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_INTEGRATIONS" title="DEC_INTEGRATIONS">DEC_INTEGRATIONS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Reviews happen where people already work – editor, browser, chat; the desktop app covers people without an IDE.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">–</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/web.html#PROP_WEB_ONE_LINE" title="DEC_INTEGRATIONS">PROP_WEB_ONE_LINE</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-19d45949">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_FEEDBACK_CARD">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Feedback card at the element is the default UI; side panel is the alternative; radial menu dropped</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_FEEDBACK_CARD" title="DEC_FEEDBACK_CARD">DEC_FEEDBACK_CARD</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Compared in the clickable prototype.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">radial menu at the cursor.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-b3609d01">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_DANWOS_TOKENS">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">deciwa uses the danwos colours and tokens</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_DANWOS_TOKENS" title="DEC_DANWOS_TOKENS">DEC_DANWOS_TOKENS</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-17</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Recognition across all danwos tools; the deciwa monster colours are only for pictures.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">an own deciwa colour scheme.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-4670415a">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_WEB_SCRIPT_FIRST">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">The web script comes as 0.2, before VS Code</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_WEB_SCRIPT_FIRST" title="DEC_WEB_SCRIPT_FIRST">DEC_WEB_SCRIPT_FIRST</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-20</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">The first real use is the danwos website; the Chrome extension builds on the same script.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">the web script as part of the Chrome extension in 0.3.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-47e6699b">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_WEB_ONE_LINE">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">One script tag is enough – deciwa always appears where it is loaded</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_WEB_ONE_LINE" title="DEC_WEB_ONE_LINE">DEC_WEB_ONE_LINE</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-20</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Quick integration and tests without prior knowledge; every setting is optional, hiding deciwa behind `?deciwa` is an opt-in.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">`?deciwa` in the address as the only way to load it.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-e4c436fd">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_WEB_HOSTING">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">The web script is hosted with the docs under deciwa.danwos.dev/js/&lt;version&gt;/</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_WEB_HOSTING" title="DEC_WEB_HOSTING">DEC_WEB_HOSTING</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-20</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">The docs workflow already publishes deciwa.danwos.dev; versioned paths allow pinning.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">npm with jsDelivr.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-1af9bfb0">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_WEB_SOURCE">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Mapping pages to source files is optional; the address is the fallback</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_WEB_SOURCE" title="DEC_WEB_SOURCE">DEC_WEB_SOURCE</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-20</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">deciwa must work without a configuration file; a mapping added later must not lose feedback.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">a required `deciwa-source` meta tag on every page.</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="dw-el-43" id="working-on-deciwa">
+<h2>Working on deciwa<a class="headerlink" href="#working-on-deciwa" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-731cf94b">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_PACKAGES">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">deciwa is one repository of separate packages: core, server, CLI, UI and one per integration</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_PACKAGES" title="DEC_PACKAGES">DEC_PACKAGES</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-20</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">The CLI and the server are reused by every integration; the logic stays in one place (core); integrations such as Sphinx, VS Code or Chrome stay independent of each other.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">one package with everything (the first prototype, deciwa_proto).</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/layers.html#PROP_LAYERS" title="DEC_PACKAGES">PROP_LAYERS</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-18b9e19b">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_dec docutils align-default" id="DEC_DOCS_IN_REPO">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Decision</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Decisions, features and concepts live in the repository as Sphinx docs with Sphinx-Needs</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#DEC_DOCS_IN_REPO" title="DEC_DOCS_IN_REPO">DEC_DOCS_IN_REPO</a></span>  <span class="needs needs_collapse" id="target__hide__meta"><span class="needs collapsed collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_decided"><span class="needs_label">decided: </span><span class="needs_data">2026-10-19</span></span></div>
+<div class="line"><span class="needs_reason"><span class="needs_label">reason: </span><span class="needs_data">Others develop in the repository too, and decisions act as requirements; Sphinx-Needs gives every decision an id, a status and links, and deciwa can later review its own docs.</span></span></div>
+<div class="line"><span class="needs_alternatives"><span class="needs_label">alternatives: </span><span class="needs_data">decisions in Daniel's knowledge base only; MkDocs Material (plain text without ids or traceability).</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">refined by: <span class="refines"><span><a class="reference internal" href="../technical/working.html#PROP_DOCS_TRANSLATION" title="DEC_DOCS_IN_REPO">PROP_DOCS_TRANSLATION</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<script type="application/json" id="deciwa-page">{"doc": "decisions/index", "source": "docs/decisions/index.md", "mode": "offline", "keys": {"1": "md:heading:All decisions", "2": "md:paragraph:All decisions#1", "3": "md:paragraph:All decisions#2", "4": "md:heading:All decisions/Purpose and scope", "5": "sphinx-needs:DEC_PURPOSE", "6": "sphinx-needs:DEC_NO_ENFORCING", "7": "sphinx-needs:DEC_THREE_MODES", "8": "md:heading:All decisions/Feedback and decisions", "9": "sphinx-needs:DEC_CARD_VERDICTS", "10": "sphinx-needs:DEC_FREEZE_BY_VERDICT", "11": "sphinx-needs:DEC_VERDICTS", "12": "sphinx-needs:DEC_FREEZE", "13": "sphinx-needs:DEC_DECISION_IS_APPROVAL", "14": "md:heading:All decisions/Elements and formats", "15": "sphinx-needs:DEC_NO_MARKERS", "16": "sphinx-needs:DEC_REPLACES_CHECK", "17": "sphinx-needs:DEC_FORMATS", "18": "sphinx-needs:DEC_HOVER_SELECT", "19": "sphinx-needs:DEC_REVIEW_ON_RESULTS", "20": "md:heading:All decisions/Architecture and data", "21": "sphinx-needs:DEC_CLI_MASTER", "22": "sphinx-needs:DEC_DECIWA_FOLDER", "23": "sphinx-needs:DEC_GIT_COMMITTED", "24": "sphinx-needs:DEC_SKILLS", "25": "sphinx-needs:DEC_HOST_EXTENSIONS", "26": "sphinx-needs:DEC_STANDALONE_ENGINE", "27": "sphinx-needs:DEC_SERVE_API_ONLY", "28": "sphinx-needs:DEC_HOST_ELEMENTS", "29": "sphinx-needs:DEC_CLIENT_PACKAGE", "30": "sphinx-needs:DEC_PYTHON_ADAPTER", "31": "sphinx-needs:DEC_HTML_ADAPTER", "32": "sphinx-needs:DEC_FACT_BLOCKS", "33": "sphinx-needs:DEC_DATA_ADAPTERS", "34": "sphinx-needs:DEC_HOST_ORDER", "35": "md:heading:All decisions/UI and integrations", "36": "sphinx-needs:DEC_INTEGRATIONS", "37": "sphinx-needs:DEC_FEEDBACK_CARD", "38": "sphinx-needs:DEC_DANWOS_TOKENS", "39": "sphinx-needs:DEC_WEB_SCRIPT_FIRST", "40": "sphinx-needs:DEC_WEB_ONE_LINE", "41": "sphinx-needs:DEC_WEB_HOSTING", "42": "sphinx-needs:DEC_WEB_SOURCE", "43": "md:heading:All decisions/Working on deciwa", "44": "sphinx-needs:DEC_PACKAGES", "45": "sphinx-needs:DEC_DOCS_IN_REPO"}, "kinds": {"1": "heading", "2": "paragraph", "3": "paragraph", "4": "heading", "5": "need", "6": "need", "7": "need", "8": "heading", "9": "need", "10": "need", "11": "need", "12": "need", "13": "need", "14": "heading", "15": "need", "16": "need", "17": "need", "18": "need", "19": "need", "20": "heading", "21": "need", "22": "need", "23": "need", "24": "need", "25": "need", "26": "need", "27": "need", "28": "need", "29": "need", "30": "need", "31": "need", "32": "need", "33": "need", "34": "need", "35": "heading", "36": "need", "37": "need", "38": "need", "39": "need", "40": "need", "41": "need", "42": "need", "43": "heading", "44": "need", "45": "need"}, "labels": {"1": "All decisions", "2": "Product and technical decisions on deciwa. All decided by Daniel; the\u2026", "3": "A new decision comes from an approved proposal in the technical detai\u2026", "4": "Purpose and scope", "5": "DEC_PURPOSE \u2013 deciwa is a review and decision tool for everyone who works\u2026", "6": "DEC_NO_ENFORCING \u2013 deciwa collects, evaluates and shows; it does not watch tha\u2026", "7": "DEC_THREE_MODES \u2013 Three ways of working that stay separate: feedback, quality\u2026", "8": "Feedback and decisions", "9": "DEC_CARD_VERDICTS \u2013 The feedback card has four verdicts \u2013 approve, reject, appr\u2026", "10": "DEC_FREEZE_BY_VERDICT \u2013 A freeze ends with a new verdict; there is no separate \"lif\u2026", "11": "DEC_VERDICTS \u2013 Feedback verdicts plus quick actions for the AI", "12": "DEC_FREEZE \u2013 New verdict freeze", "13": "DEC_DECISION_IS_APPROVAL \u2013 A decision is an approved statement, not an extra object", "14": "Elements and formats", "15": "DEC_NO_MARKERS \u2013 No markers in the source; elements come from the content", "16": "DEC_REPLACES_CHECK \u2013 deciwa replaces the [CHECK] markers in Daniel's knowledge b\u2026", "17": "DEC_FORMATS \u2013 Formats: text, HTML, Python, C, JS, TS, rST, Markdown, Asci\u2026", "18": "DEC_HOVER_SELECT \u2013 Format objects are highlighted on hover and directly select\u2026", "19": "DEC_REVIEW_ON_RESULTS \u2013 Reviews happen on results, not only on source", "20": "Architecture and data", "21": "DEC_CLI_MASTER \u2013 The CLI is the master, with an openly documented file format", "22": "DEC_DECIWA_FOLDER \u2013 All deciwa files in one .deciwa/ folder at the repository r\u2026", "23": "DEC_GIT_COMMITTED \u2013 .deciwa/ is committed to Git by default", "24": "DEC_SKILLS \u2013 One or two agent skills for working with deciwa", "25": "DEC_HOST_EXTENSIONS \u2013 Host apps get deciwa as an extension that lives in this rep\u2026", "26": "DEC_STANDALONE_ENGINE \u2013 The Python parts can be shipped as a standalone binary that\u2026", "27": "DEC_SERVE_API_ONLY \u2013 A host talks to deciwa serve --api-only: the JSON API for o\u2026", "28": "DEC_HOST_ELEMENTS \u2013 In a host the overlay gets its elements from the engine's a\u2026", "29": "DEC_CLIENT_PACKAGE \u2013 One TypeScript client for all hosts finds, starts and check\u2026", "30": "DEC_PYTHON_ADAPTER \u2013 Python source is reviewed per class, function, method and s\u2026", "31": "DEC_HTML_ADAPTER \u2013 HTML files are read by an adapter in the engine, with sourc\u2026", "32": "DEC_FACT_BLOCKS \u2013 A fact is a structural block of a facts file \u2013 a list item,\u2026", "33": "DEC_DATA_ADAPTERS \u2013 JSON and YAML files are reviewed value by value; selectors \u2026", "34": "DEC_HOST_ORDER \u2013 monsterbrain is the first host, before VS Code", "35": "UI and integrations", "36": "DEC_INTEGRATIONS \u2013 Integrations: VS Code, Chrome, Claude UI, desktop app", "37": "DEC_FEEDBACK_CARD \u2013 Feedback card at the element is the default UI; side panel \u2026", "38": "DEC_DANWOS_TOKENS \u2013 deciwa uses the danwos colours and tokens", "39": "DEC_WEB_SCRIPT_FIRST \u2013 The web script comes as 0.2, before VS Code", "40": "DEC_WEB_ONE_LINE \u2013 One script tag is enough \u2013 deciwa always appears where it i\u2026", "41": "DEC_WEB_HOSTING \u2013 The web script is hosted with the docs under deciwa.danwos.\u2026", "42": "DEC_WEB_SOURCE \u2013 Mapping pages to source files is optional; the address is t\u2026", "43": "Working on deciwa", "44": "DEC_PACKAGES \u2013 deciwa is one repository of separate packages: core, server\u2026", "45": "DEC_DOCS_IN_REPO \u2013 Decisions, features and concepts live in the repository as \u2026"}}</script>
+        </article>
+      </div>
+      <footer>
+        
+
+        <div class="related-pages">
+          <a class="next-page" href="../technical/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Technical overview</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../integrations/desktop.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Desktop app</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, danwos
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+<div class="dw-made-by">
+  <a href="https://danwos.dev" title="danwos.dev">
+    <img src="../_static/img/logo.svg" alt="" width="22" height="31">
+    <span>a <b>danwos</b> project</span>
+  </a>
+</div>
+<div class="dw-legal">
+  <a href="https://danwos.dev/en/imprint/">Imprint</a>
+  <a href="https://danwos.dev/en/privacy/">Privacy</a>
+</div>
+
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">All decisions</a><ul>
+<li><a class="reference internal" href="#purpose-and-scope">Purpose and scope</a></li>
+<li><a class="reference internal" href="#feedback-and-decisions">Feedback and decisions</a></li>
+<li><a class="reference internal" href="#elements-and-formats">Elements and formats</a></li>
+<li><a class="reference internal" href="#architecture-and-data">Architecture and data</a></li>
+<li><a class="reference internal" href="#ui-and-integrations">UI and integrations</a></li>
+<li><a class="reference internal" href="#working-on-deciwa">Working on deciwa</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/deciwa-data.js"></script>
+    <script defer="defer" src="../_static/deciwa-overlay.js?v=3968dfb1"></script>
+    <script src="../_static/sphinx-data-viewer/jsonview.bundle.js?v=18cd53c5"></script>
+    <script src="../_static/sphinx-data-viewer/jsonview_loader.js?v=f7ff7e7d"></script>
+    <script src="../_static/sphinx-needs/libs/html/sphinx_needs_collapse.js?v=dca66431"></script>
+    <script async="async" data-goatcounter="https://deciwadocs.goatcounter.com/count" src="https://gc.zgo.at/count.js"></script>
+    </body>
+</html>
